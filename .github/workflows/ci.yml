@@ -41,3 +41,9 @@ jobs:
         run: uv sync
       - name: Integration tests
         run: uv run pytest -m integration
+      - name: Phase 0 exit criteria
+        run: |
+          uv run vdbmat-utils generate-fixture multimaterial -o /tmp/exit-criteria
+          uv run vdbmat-utils inspect /tmp/exit-criteria/multimaterial.voxels.json
+          uv run vdbmat-utils validate /tmp/exit-criteria/multimaterial.voxels.json
+          uv run vdbmat import-voxels /tmp/exit-criteria/multimaterial.voxels.json /tmp/exit-criteria/multimaterial.zarr

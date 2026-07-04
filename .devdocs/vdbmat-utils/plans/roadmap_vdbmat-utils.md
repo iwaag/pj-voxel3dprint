@@ -109,6 +109,12 @@ needed.
 
 ### Phase 0 — Repository and Contract Foundation
 
+**Status: complete (2026-07-05).** All bullets below are implemented in `vdbmat-utils`; the exit
+criteria run in CI (`.github/workflows/ci.yml`, "Phase 0 exit criteria" step). Execution reports:
+`.devdocs/vdbmat-utils/reports/phase0/`. Decisions recorded as ADRs 0001–0003 in
+`vdbmat-utils/docs/adr/`. Two upstream follow-ups noted for `vdbmat`: ship a `py.typed` marker
+and re-export `Matrix4` from `vdbmat.core`.
+
 **Goal:** establish a small, testable foundation shared by every generator.
 
 - Set up Python packaging, a supported Python-version policy, linting, type checking, tests, and CI.
