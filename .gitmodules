@@ -1,0 +1,6 @@
+[submodule "vbdmat"]
+	path = vbdmat
+	url = https://github.com/iwaag/vbdmat.git
+[submodule "vbdmat-utils"]
+	path = vbdmat-utils
+	url = https://github.com/iwaag/vbdmat-utils.git
