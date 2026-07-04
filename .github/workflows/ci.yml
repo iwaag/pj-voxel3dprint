@@ -1,0 +1,43 @@
+name: CI
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+
+jobs:
+  vdbmat-utils-minimal:
+    name: vdbmat-utils (minimal install)
+    runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: vdbmat-utils
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          submodules: recursive
+      - uses: astral-sh/setup-uv@v5
+      - name: Sync (no extras)
+        run: uv sync
+      - name: Lint
+        run: uv run ruff check .
+      - name: Type check
+        run: uv run mypy src
+      - name: Unit and contract tests
+        run: uv run pytest -m "not integration"
+
+  vdbmat-utils-integration:
+    name: vdbmat-utils (integration with pinned vdbmat CLI)
+    runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: vdbmat-utils
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          submodules: recursive
+      - uses: astral-sh/setup-uv@v5
+      - name: Sync (no extras)
+        run: uv sync
+      - name: Integration tests
+        run: uv run pytest -m integration

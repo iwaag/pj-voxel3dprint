@@ -282,9 +282,15 @@ These decisions should be settled before implementing procedural, service, OpenV
 
 ## Decision Log
 
-- **Naming (2026-07-05):** the canonical spelling is `vbdmat` / `vbdmat-utils` everywhere —
-  repository names, package names, docs, and devdocs paths. Earlier documents used `vdmat-utils`
-  and `vdbmat` inconsistently; those spellings are deprecated.
+- **Naming correction (2026-07-05, Phase 0 Step 0):** the canonical spelling is `vdbmat` /
+  `vdbmat-utils` — matching the actual GitHub repositories, the published Python package name
+  (`vdbmat`, per its `pyproject.toml`), and the submodule paths in `pj-voxel3dprint`. The earlier
+  decision below declared `vbdmat` canonical, but that spelling contradicts every artifact on
+  disk and was itself a typo. All occurrences of `vbdmat` in this document should be read as
+  `vdbmat`.
+- **Naming (2026-07-05, superseded):** the canonical spelling is `vbdmat` / `vbdmat-utils`
+  everywhere — repository names, package names, docs, and devdocs paths. Earlier documents used
+  `vdmat-utils` and `vdbmat` inconsistently; those spellings are deprecated.
 - **OpenVDB positioning (2026-07-05):** the original discussion started from "generate voxels
   usable in OpenVDB", but in this project the primary handoff is the `vbdmat.voxels` manifest +
   NPY payload. OpenVDB is deliberately demoted to an optional adapter (preview, sparse inspection,
