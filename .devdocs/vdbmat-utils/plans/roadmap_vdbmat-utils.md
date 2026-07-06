@@ -137,6 +137,21 @@ and re-export `Matrix4` from `vdbmat.core`.
 
 ### Phase 1 — First Useful Conversion Workflows
 
+**Status: complete (2026-07-07).** All bullets below are implemented in `vdbmat-utils`
+(plan: `.devdocs/vdbmat-utils/plans/phase1/plan.md`; execution reports 0–6:
+`.devdocs/vdbmat-utils/reports/phase1/`). The mesh path (`voxelize-mesh`) is a port of the
+voxelizer recovered from `vdbmat` commit `8f55562` per `memo_stltovoxel.md`, constants
+preserved verbatim; the image-stack generator moved to `convert-image-stack` and
+`vdbmat/tools/image_stack_generator/` was deleted outright (no equivalence shim, per the
+2026-07-06 no-backward-compat decision). Decisions recorded as ADRs 0004–0006; user docs in
+`vdbmat-utils/docs/{voxelization,image-stacks,previews}.md`. Exit criteria run in CI
+("Phase 1 exit criteria" step: both workflows → `validate` → `vdbmat import-voxels` →
+`vdbmat convert`), alongside a minimal-install leg proving STL + PGM + previews need no
+extras (only PNG needs `image`/Pillow). Upstream `vdbmat` follow-ups: the two Phase 0 items
+(`py.typed`, `Matrix4` re-export) remain open, plus new: 8 pre-existing ruff errors in
+`vdbmat/examples/phase1/demo/blender_glass_demo.py`, and the superproject submodule pin must
+be bumped for the tool-deletion commit (ADR 0001 procedure).
+
 **Goal:** provide practical non-ML paths for producing valid `vbdmat` inputs.
 
 - Port or reimplement mesh-to-voxel conversion using the preserved knowledge in

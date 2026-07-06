@@ -25,6 +25,22 @@ jobs:
         run: uv run mypy src
       - name: Unit and contract tests
         run: uv run pytest -m "not integration"
+      - name: Minimal-install workflows (PGM stack, STL mesh, previews)
+        run: |
+          uv run python -c "
+          from pathlib import Path
+          from vdbmat_utils.fixtures import write_image_stack_fixture, write_mesh_fixture
+          _, stack_config = write_image_stack_fixture(Path('/tmp/minimal/slices'))
+          Path('/tmp/minimal/stack.json').write_text(stack_config.to_json(), encoding='utf-8')
+          _, mesh_config = write_mesh_fixture(Path('/tmp/minimal/mesh'))
+          Path('/tmp/minimal/mesh.json').write_text(mesh_config.to_json(), encoding='utf-8')
+          "
+          uv run vdbmat-utils convert-image-stack /tmp/minimal/slices --config /tmp/minimal/stack.json --out /tmp/minimal/out --name stack
+          uv run vdbmat-utils voxelize-mesh /tmp/minimal/mesh/l_bracket.stl --config /tmp/minimal/mesh.json --out /tmp/minimal/out --name bracket
+          uv run vdbmat-utils validate /tmp/minimal/out/stack.voxels.json
+          uv run vdbmat-utils validate /tmp/minimal/out/bracket.voxels.json
+          uv run vdbmat-utils preview-slices /tmp/minimal/out/bracket.voxels.json --axis z
+          uv run vdbmat-utils material-counts /tmp/minimal/out/bracket.voxels.json --json
 
   vdbmat-utils-integration:
     name: vdbmat-utils (integration with pinned vdbmat CLI)
@@ -37,8 +53,10 @@ jobs:
         with:
           submodules: recursive
       - uses: astral-sh/setup-uv@v5
-      - name: Sync (no extras)
-        run: uv sync
+      - name: Sync (all extras)
+        run: uv sync --all-extras
+      - name: Unit and contract tests (with extras, PNG included)
+        run: uv run pytest -m "not integration"
       - name: Integration tests
         run: uv run pytest -m integration
       - name: Phase 0 exit criteria
@@ -47,3 +65,21 @@ jobs:
           uv run vdbmat-utils inspect /tmp/exit-criteria/multimaterial.voxels.json
           uv run vdbmat-utils validate /tmp/exit-criteria/multimaterial.voxels.json
           uv run vdbmat import-voxels /tmp/exit-criteria/multimaterial.voxels.json /tmp/exit-criteria/multimaterial.zarr
+      - name: Phase 1 exit criteria
+        run: |
+          uv run python -c "
+          from pathlib import Path
+          from vdbmat_utils.fixtures import write_image_stack_fixture, write_mesh_fixture
+          _, stack_config = write_image_stack_fixture(Path('/tmp/phase1/slices'))
+          Path('/tmp/phase1/stack.json').write_text(stack_config.to_json(), encoding='utf-8')
+          _, mesh_config = write_mesh_fixture(Path('/tmp/phase1/mesh'))
+          Path('/tmp/phase1/mesh.json').write_text(mesh_config.to_json(), encoding='utf-8')
+          "
+          uv run vdbmat-utils convert-image-stack /tmp/phase1/slices --config /tmp/phase1/stack.json --out /tmp/phase1/out --name stack
+          uv run vdbmat-utils voxelize-mesh /tmp/phase1/mesh/l_bracket.stl --config /tmp/phase1/mesh.json --out /tmp/phase1/out --name bracket
+          uv run vdbmat-utils validate /tmp/phase1/out/stack.voxels.json
+          uv run vdbmat-utils validate /tmp/phase1/out/bracket.voxels.json
+          uv run vdbmat import-voxels /tmp/phase1/out/stack.voxels.json /tmp/phase1/stack.zarr
+          uv run vdbmat convert /tmp/phase1/stack.zarr /tmp/phase1/stack-optical.zarr
+          uv run vdbmat import-voxels /tmp/phase1/out/bracket.voxels.json /tmp/phase1/bracket.zarr
+          uv run vdbmat convert /tmp/phase1/bracket.zarr /tmp/phase1/bracket-optical.zarr
