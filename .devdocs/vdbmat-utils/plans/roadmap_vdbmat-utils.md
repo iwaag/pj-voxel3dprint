@@ -201,6 +201,24 @@ obtain deterministic, contract-valid output with documented topology and label b
 
 ### Phase 3 — Procedural Natural-Material Generators
 
+**Status: complete (2026-07-07).** Implemented in `vdbmat-utils`
+(plan: `.devdocs/vdbmat-utils/plans/phase3/plan.md`; execution reports:
+`.devdocs/vdbmat-utils/reports/phase3/`). New workflows:
+`generate-formation` (host/strata/veins/grains/pores/fractures with ordered
+painter assembly), `formation-stats` (volume fractions, local-thickness proxy,
+6-connected components, constraint reports), and `sweep-formation` (bounded
+parameter grids with deterministic `sweep_summary.json`). Reference marble-like
+and granite-like configs live in `vdbmat-utils/examples/phase3/` with payload,
+stats, ASCII orientation, double-run, and seed-sensitivity contract tests.
+Non-built-in material names emit companion `vdbmat.optical-mapping` documents
+through vdbmat's public optics API; integration tests validate mapping digests
+and run `vdbmat convert --mapping-file`. Decisions recorded as ADRs 0010–0012;
+user docs in `vdbmat-utils/docs/{procedural,stats,optical-mappings}.md`. Exit
+criteria run in CI ("Phase 3 exit criteria") and the minimal-install leg proves
+the procedural stack adds no runtime dependencies. No new upstream `vdbmat`
+API follow-ups were raised; the Phase 0/1 follow-ups (`py.typed`, `Matrix4`
+re-export, example ruff errors, submodule pin bump) remain open.
+
 **Goal:** generate controllable mineral-, rock-, and formation-like material distributions.
 
 - Implement reusable seeded primitives: multi-scale noise, Voronoi/Worley cells, ridges, domain

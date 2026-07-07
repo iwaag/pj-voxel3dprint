@@ -55,6 +55,17 @@ jobs:
           uv run vdbmat-utils apply-pipeline --config /tmp/minimal2/assets/pipeline.json --out /tmp/minimal2/out --name composed
           uv run vdbmat-utils validate /tmp/minimal2/out/morphed.voxels.json
           uv run vdbmat-utils validate /tmp/minimal2/out/composed.voxels.json
+      - name: Minimal-install Phase 3 workflows (formations — no extras needed)
+        run: |
+          uv run vdbmat-utils generate-formation --config examples/phase3/marble-like.formation.json --out /tmp/minimal3/out --name marble-like --strict
+          uv run vdbmat-utils generate-formation --config examples/phase3/granite-like.formation.json --out /tmp/minimal3/out --name granite-like --strict
+          uv run vdbmat-utils formation-stats /tmp/minimal3/out/marble-like.voxels.json --constraints examples/phase3/marble-like.formation.json --out /tmp/minimal3/out/marble-like.recomputed.stats.json
+          uv run vdbmat-utils validate /tmp/minimal3/out/marble-like.voxels.json
+          uv run vdbmat-utils validate /tmp/minimal3/out/granite-like.voxels.json
+          uv run vdbmat import-voxels /tmp/minimal3/out/marble-like.voxels.json /tmp/minimal3/marble-like.zarr
+          uv run vdbmat convert /tmp/minimal3/marble-like.zarr /tmp/minimal3/marble-like-optical.zarr --mapping-file /tmp/minimal3/out/marble-like.optical-mapping.json
+          uv run vdbmat import-voxels /tmp/minimal3/out/granite-like.voxels.json /tmp/minimal3/granite-like.zarr
+          uv run vdbmat convert /tmp/minimal3/granite-like.zarr /tmp/minimal3/granite-like-optical.zarr --mapping-file /tmp/minimal3/out/granite-like.optical-mapping.json
 
   vdbmat-utils-integration:
     name: vdbmat-utils (integration with pinned vdbmat CLI)
@@ -114,3 +125,17 @@ jobs:
           uv run vdbmat convert /tmp/phase2/morphed.zarr /tmp/phase2/morphed-optical.zarr
           uv run vdbmat import-voxels /tmp/phase2/out/composed.voxels.json /tmp/phase2/composed.zarr
           uv run vdbmat convert /tmp/phase2/composed.zarr /tmp/phase2/composed-optical.zarr
+      - name: Phase 3 exit criteria
+        run: |
+          uv run vdbmat-utils generate-formation --config examples/phase3/marble-like.formation.json --out /tmp/phase3/out --name marble-like --strict
+          uv run vdbmat-utils generate-formation --config examples/phase3/granite-like.formation.json --out /tmp/phase3/out --name granite-like --strict
+          uv run vdbmat-utils sweep-formation --config examples/phase3/tiny-sweep.sweep.json --out /tmp/phase3/sweep --name tiny
+          uv run vdbmat-utils formation-stats /tmp/phase3/out/granite-like.voxels.json --constraints examples/phase3/granite-like.formation.json --out /tmp/phase3/out/granite-like.recomputed.stats.json
+          uv run vdbmat-utils validate /tmp/phase3/out/marble-like.voxels.json
+          uv run vdbmat-utils validate /tmp/phase3/out/granite-like.voxels.json
+          uv run vdbmat import-voxels /tmp/phase3/out/marble-like.voxels.json /tmp/phase3/marble-like.zarr
+          uv run vdbmat mapping-digest /tmp/phase3/out/marble-like.optical-mapping.json
+          uv run vdbmat convert /tmp/phase3/marble-like.zarr /tmp/phase3/marble-like-optical.zarr --mapping-file /tmp/phase3/out/marble-like.optical-mapping.json
+          uv run vdbmat import-voxels /tmp/phase3/out/granite-like.voxels.json /tmp/phase3/granite-like.zarr
+          uv run vdbmat mapping-digest /tmp/phase3/out/granite-like.optical-mapping.json
+          uv run vdbmat convert /tmp/phase3/granite-like.zarr /tmp/phase3/granite-like-optical.zarr --mapping-file /tmp/phase3/out/granite-like.optical-mapping.json
