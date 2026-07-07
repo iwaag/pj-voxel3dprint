@@ -169,6 +169,22 @@ workflow into validated `vbdmat` inputs, with diagnostic output for common failu
 
 ### Phase 2 — Image Morphing and Volume Composition
 
+**Status: complete (2026-07-07).** All bullets below are implemented in `vdbmat-utils`
+(plan: `.devdocs/vdbmat-utils/plans/phase2/plan.md`; execution reports:
+`.devdocs/vdbmat-utils/reports/phase2/`). New workflows: `morph-stack` (per-label SDF
+interpolation of sparse key slices; in-repo exact EDT, no scipy) and `apply-pipeline`
+(SSA-style config-driven op pipelines over `crop`/`pad`/`resample`/`orient`/`place`/
+`apply-mask`/`compose`/`remap-materials`). Label safety is structural: the
+`fields.ScalarField` type split, the quantize-only scalar→label gate, an AST guard test,
+and nearest-neighbor-only resampling. Topology/missing-slice/label-conflict/edge behavior
+is documented in `vdbmat-utils/docs/{morphing,volume-ops,pipelines}.md`; decisions recorded
+as ADRs 0007–0009. Exit criteria run in CI ("Phase 2 exit criteria" step: both workflows →
+`validate` → `vdbmat import-voxels` → `vdbmat convert`) and the minimal-install leg runs
+both workflows with no extras (Phase 2 added no runtime dependencies). No new upstream
+`vdbmat` follow-ups: the pipeline input reader uses the public
+`vdbmat.io.read_material_label_manifest` (Step 0.0 finding); the Phase 0/1 follow-ups
+(`py.typed`, `Matrix4` re-export, example ruff errors, submodule pin bump) remain open.
+
 **Goal:** support authored volumetric structures that are not direct mesh voxelizations.
 
 - Add interpolation and morphing between labeled 2D slices while preserving discrete material IDs.

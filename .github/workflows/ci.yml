@@ -41,6 +41,20 @@ jobs:
           uv run vdbmat-utils validate /tmp/minimal/out/bracket.voxels.json
           uv run vdbmat-utils preview-slices /tmp/minimal/out/bracket.voxels.json --axis z
           uv run vdbmat-utils material-counts /tmp/minimal/out/bracket.voxels.json --json
+      - name: Minimal-install Phase 2 workflows (morph, pipeline — no extras needed)
+        run: |
+          uv run python -c "
+          from pathlib import Path
+          from vdbmat_utils.fixtures import write_morph_fixture, write_pipeline_fixture
+          _, morph_config = write_morph_fixture(Path('/tmp/minimal2/keyslices'))
+          Path('/tmp/minimal2/morph.json').write_text(morph_config.to_json(), encoding='utf-8')
+          write_pipeline_fixture(Path('/tmp/minimal2/assets'))
+          "
+          uv run vdbmat-utils morph-stack /tmp/minimal2/keyslices --config /tmp/minimal2/morph.json --out /tmp/minimal2/out --name morphed
+          uv run vdbmat-utils apply-pipeline --config /tmp/minimal2/assets/pipeline.json --out /tmp/minimal2/out --name composed --dry-run
+          uv run vdbmat-utils apply-pipeline --config /tmp/minimal2/assets/pipeline.json --out /tmp/minimal2/out --name composed
+          uv run vdbmat-utils validate /tmp/minimal2/out/morphed.voxels.json
+          uv run vdbmat-utils validate /tmp/minimal2/out/composed.voxels.json
 
   vdbmat-utils-integration:
     name: vdbmat-utils (integration with pinned vdbmat CLI)
@@ -83,3 +97,20 @@ jobs:
           uv run vdbmat convert /tmp/phase1/stack.zarr /tmp/phase1/stack-optical.zarr
           uv run vdbmat import-voxels /tmp/phase1/out/bracket.voxels.json /tmp/phase1/bracket.zarr
           uv run vdbmat convert /tmp/phase1/bracket.zarr /tmp/phase1/bracket-optical.zarr
+      - name: Phase 2 exit criteria
+        run: |
+          uv run python -c "
+          from pathlib import Path
+          from vdbmat_utils.fixtures import write_morph_fixture, write_pipeline_fixture
+          _, morph_config = write_morph_fixture(Path('/tmp/phase2/keyslices'))
+          Path('/tmp/phase2/morph.json').write_text(morph_config.to_json(), encoding='utf-8')
+          write_pipeline_fixture(Path('/tmp/phase2/assets'))
+          "
+          uv run vdbmat-utils morph-stack /tmp/phase2/keyslices --config /tmp/phase2/morph.json --out /tmp/phase2/out --name morphed
+          uv run vdbmat-utils apply-pipeline --config /tmp/phase2/assets/pipeline.json --out /tmp/phase2/out --name composed
+          uv run vdbmat-utils validate /tmp/phase2/out/morphed.voxels.json
+          uv run vdbmat-utils validate /tmp/phase2/out/composed.voxels.json
+          uv run vdbmat import-voxels /tmp/phase2/out/morphed.voxels.json /tmp/phase2/morphed.zarr
+          uv run vdbmat convert /tmp/phase2/morphed.zarr /tmp/phase2/morphed-optical.zarr
+          uv run vdbmat import-voxels /tmp/phase2/out/composed.voxels.json /tmp/phase2/composed.zarr
+          uv run vdbmat convert /tmp/phase2/composed.zarr /tmp/phase2/composed-optical.zarr
