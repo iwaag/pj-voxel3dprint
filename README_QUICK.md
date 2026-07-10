@@ -225,12 +225,12 @@ uv run --group mitsuba vdbmat export mitsuba \
 
 ```bash
 # Run OpenVDB/Cycles proof inside Docker container
-docker build -t vdbmat-phase0:blender \
-      -f tools/phase0/Dockerfile.openvdb-cycles .
+docker build -t vdbmat-openvdb-cycles:blender4.5.11 \
+      -f tools/Dockerfile.openvdb-cycles .
 
 docker run --rm \
       -v "$PWD:/work" -w /work \
-     vdbmat-phase0:blender \
+     vdbmat-openvdb-cycles:blender4.5.11 \
      python3 -m pytest -q tests/integration/test_blender_cycles.py
 ```
 
@@ -338,5 +338,4 @@ Zarr v3 format. `material.zarr/` stores material IDs; `optical.zarr/` stores opt
 - [vdbmat-utils README](vdbmat-utils/README.md) — Utilities details
 - [vdbmat ADRs](vdbmat/docs/adr/) — Architecture Decision Records
 - [vdbmat-utils ADRs](vdbmat-utils/docs/adr/) — Utilities Architecture Decision Records
-- [vdbmat Phase 0 Feasibility Report](vdbmat/docs/phase0-feasibility-report.md)
 - [vdbmat-utils Determinism Specification](vdbmat-utils/docs/determinism.md)

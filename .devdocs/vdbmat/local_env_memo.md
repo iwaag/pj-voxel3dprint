@@ -1,13 +1,19 @@
 # ローカル開発環境メモ
 
-## OpenVDB / Blender Cycles（Phase 0 Step 10）
+## OpenVDB / Blender Cycles
 
 OpenVDBとBlenderはホストへ直接インストールせず、Dockerイメージに隔離してある。
+イメージ名・Dockerfileパスは開発フェーズ番号に依存させず、ツール内容ベースで
+固定している（フェーズが進むたびに新旧イメージが並立して混乱するのを避けるため）。
 以降の作業では次のイメージを使用すること。
 
 ```text
-vbdmat-phase0-step10:blender4.5.11
+vdbmat-openvdb-cycles:blender4.5.11
 ```
+
+venv入りのため、zarrが必要な場面（下記「Phase 1以降（zarr経由）のワークフロー」）も
+system-site-packages経由でpyopenvdbも参照できるため、Phase 0のnative統合テストも
+このイメージ1つで問題なく通る。
 
 収録環境:
 
@@ -31,7 +37,7 @@ docker run --rm \
   -e PYTHONPATH=/work/src \
   -v "$PWD:/work" \
   -w /work \
-  vbdmat-phase0-step10:blender4.5.11 \
+  vdbmat-openvdb-cycles:blender4.5.11 \
   python3 -m pytest -q \
   tests/integration/test_openvdb.py \
   tests/integration/test_blender_cycles.py
@@ -48,7 +54,7 @@ docker run --rm \
   -e PYTHONPATH=/work/src \
   -v "$PWD:/work" \
   -w /work \
-  vbdmat-phase0-step10:blender4.5.11 \
+  vdbmat-openvdb-cycles:blender4.5.11 \
   python3 examples/phase0/export_openvdb_fixtures.py \
   .local/phase0/openvdb-step10-native
 ```
@@ -61,7 +67,7 @@ docker run --rm \
   -e HOME=/tmp \
   -v "$PWD:/work" \
   -w /work \
-  vbdmat-phase0-step10:blender4.5.11 \
+  vdbmat-openvdb-cycles:blender4.5.11 \
   python3 examples/phase0/render_blender_fixtures.py \
   .local/phase0/openvdb-step10-native \
   .local/phase0/cycles-step10-native \
@@ -77,10 +83,46 @@ docker run --rm \
 
 ```bash
 docker build \
-  -t vbdmat-phase0-step10:blender4.5.11 \
-  -f tools/phase0/Dockerfile.openvdb-cycles \
+  -t vdbmat-openvdb-cycles:blender4.5.11 \
+  -f tools/Dockerfile.openvdb-cycles \
   .
 ```
+
+## Phase 1以降（zarr経由）のワークフロー
+
+`vdbmat run`が生成する`optical.zarr`を読む`vdbmat export openvdb`には、
+イメージ内の`numpy==1.26.4` / `zarr==3.0.10`入りvenv（system-site-packages経由で
+`pyopenvdb`も参照可能）を使う必要がある（システムの`python3`にはzarrが無く
+`ModuleNotFoundError`になる）。このvenvは`ENV PATH`で最優先に通してあるので、
+コンテナ内では単に`python3`と呼べばよい（venvの絶対パスをコマンドに書かない —
+再buildのタイミングでディレクトリ名が変わることがあるため）。
+
+例：`vdbmat-utils generate-formation` → `vdbmat run` → `vdbmat export openvdb`
+→ Blenderレンダー、という一連の流れ。
+
+```bash
+# export openvdb（zarr → VDB）
+docker run --rm \
+  --user "$(id -u):$(id -g)" \
+  -e HOME=/tmp \
+  -v "$PWD:/work" -w /work/vdbmat \
+  vdbmat-openvdb-cycles:blender4.5.11 bash -c "
+    PYTHONPATH=/work/vdbmat/src python3 \
+      -m vdbmat.cli.main export openvdb <OPTICAL_ZARR> <OUT_DIR> --overwrite
+  "
+
+# Blenderレンダー
+docker run --rm \
+  --user "$(id -u):$(id -g)" \
+  -e HOME=/tmp \
+  -v "$PWD:/work" -w /work \
+  vdbmat-openvdb-cycles:blender4.5.11 \
+  blender --background --python <RENDER_SCRIPT.py> -- <MANIFEST> <OUTPUT_PNG>
+```
+
+`--user "$(id -u):$(id -g)"`を忘れると生成物がroot所有になるので必ず付ける。
+イメージが手元に無ければ`vdbmat/tools/Dockerfile.openvdb-cycles`から
+同名でbuildし直せばよい（新規タグで作り直す必要はない）。
 
 ### 注意事項
 

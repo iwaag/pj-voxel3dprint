@@ -108,7 +108,7 @@ Docker（`vbdmat-openvdb-cycles`）で徹底検証した結果、現行の黒画
   3. Glass BSDF（IOR は `scene-summary.json` / 既知値）を割り当て
   4. 任意で `exports/openvdb/volume.vdb` を内部媒質として重ねる（大半透明なので効果は限定的）
   5. `DEMO_CAM` から高解像度・デノイザ有効でレンダー → PNG 出力
-- Docker は既存の `tools/phase0/Dockerfile.openvdb-cycles` を流用。
+- Docker は既存の `tools/Dockerfile.openvdb-cycles` を流用。
 - 完了条件：1コマンドで window_coupon / stepped_wedge の“作品ショット”PNGが出る
   （手続き版は達成済み。`demo_stage.blend` 版が残り）。
 
