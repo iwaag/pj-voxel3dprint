@@ -261,6 +261,70 @@ docker run --rm \
 See `vdbmat/examples/pipeline_run/demo/blender_glass_demo.py` for the from-scratch scene
 variant, used when no template is available.
 
+### Preview a Spatial Material Distribution (Glass Surface + OpenVDB)
+
+`blender_template_swap.py` replaces only the exterior surface. To see absorption and
+scattering distributed through the voxel volume—such as an opaque core inside a
+transparent cube—use `blender_template_hybrid.py`. This is a qualitative,
+uncalibrated preview: Cycles uses scalar reductions of the RGB coefficients and does
+not render internal IOR interfaces.
+
+A deterministic nested-cube input is included. Its 16 x 16 x 16 voxel array contains
+3,880 transparent-resin cells surrounding a centred 6 x 6 x 6 black-opaque-resin core
+(216 cells).
+
+```bash
+# 1. Material voxels -> material.zarr + optical.zarr
+cd vdbmat
+uv run vdbmat run \
+  examples/pipeline_run/configs/nested_material_cube.run.json
+
+# 2. Exterior glass surface (the transparent boundary produces one exterior PLY)
+uv run --group mitsuba vdbmat export mitsuba \
+  .local/blender_improve1/nested_material_cube/optical.zarr \
+  ../.local/blender_improve1/nested_material_cube_mitsuba
+cd ..
+
+# 3. Spatial absorption/scattering volume
+docker run --rm \
+  --user "$(id -u):$(id -g)" \
+  -e HOME=/tmp \
+  -v "$PWD:/work" -w /work/vdbmat \
+  vdbmat-openvdb-cycles:blender4.5.11 bash -c "
+    PYTHONPATH=/work/vdbmat/src python3 -m vdbmat.cli.main export openvdb \
+      .local/blender_improve1/nested_material_cube/optical.zarr \
+      /work/.local/blender_improve1/nested_material_cube_openvdb
+  "
+
+# 4. Place the glass exterior and VDB volume at the same template anchor and render
+docker run --rm \
+  --user "$(id -u):$(id -g)" \
+  -e HOME=/tmp \
+  -v "$PWD:/work" -w /work \
+  vdbmat-openvdb-cycles:blender4.5.11 \
+  blender --background \
+    --python vdbmat/examples/pipeline_run/demo/blender_template_hybrid.py -- \
+    .local/local_demo/template_scene/cube_diorama.blend \
+    .local/blender_improve1/nested_material_cube_mitsuba \
+    .local/blender_improve1/nested_material_cube_openvdb/openvdb-manifest.json \
+    .local/blender_improve1/nested_material_cube_hybrid.png \
+    --target-object exterior-000 \
+    --samples 96 \
+    --save-blend .local/blender_improve1/nested_material_cube_hybrid.blend
+```
+
+The current helper accepts exactly one `exterior-*.ply`; inputs whose boundary is
+split into multiple IOR groups fail explicitly. PLY and VDB receive the placeholder's
+same positive uniform-scale transform. Non-uniform scale, shear, reflection, missing
+required VDB grids, and non-Cycles templates are rejected rather than approximated
+silently.
+
+If the exterior appears but the internal distribution does not, check the `HYBRID`
+line for `cycles_absorption` and `cycles_scattering`, then inspect their value ranges in
+the VDB. The hand-built template must be saved by a Blender version compatible with
+the pinned 4.5.11 LTS renderer; opening a newer `.blend` may warn about data loss and
+change the resulting lighting or image.
+
 ---
 
 ## Overall Workflow Summary
