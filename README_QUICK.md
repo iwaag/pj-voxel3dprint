@@ -243,9 +243,10 @@ each time) is often too plain to judge. `vdbmat/examples/pipeline_run/demo/blend
 instead opens a hand-authored template `.blend` (e.g.
 `.local/local_demo/template_scene/cube_diorama.blend`) that already has lighting, a
 camera, and a placeholder object positioned/scaled the way you want, and swaps that
-placeholder's mesh for a newly generated `exterior-*.ply`. Only the mesh data changes —
-the placeholder's transform, materials, and name stay put, so the template's
-manually-tuned framing carries over automatically.
+placeholder's mesh for a newly generated `exterior-*.ply`. The placeholder's
+materials, scale/rotation, and name stay put. The replacement is
+translated so its world-space bounds centre matches the former placeholder centre, so
+different source-coordinate origins do not move models out of the tuned framing.
 
 ```bash
 docker run --rm \
@@ -314,10 +315,11 @@ docker run --rm \
 ```
 
 The current helper accepts exactly one `exterior-*.ply`; inputs whose boundary is
-split into multiple IOR groups fail explicitly. PLY and VDB receive the placeholder's
-same positive uniform-scale transform. Non-uniform scale, shear, reflection, missing
-required VDB grids, and non-Cycles templates are rejected rather than approximated
-silently.
+split into multiple IOR groups fail explicitly. It preserves the placeholder's material
+slots and positive uniform scale/rotation, translates the replacement to the former
+placeholder bounds centre, then gives the PLY and VDB the same adjusted transform.
+Non-uniform scale, shear, reflection, missing required VDB grids, disabled View Layers,
+and non-Cycles templates are rejected rather than approximated silently.
 
 If the exterior appears but the internal distribution does not, check the `HYBRID`
 line for `cycles_absorption` and `cycles_scattering`, then inspect their value ranges in
