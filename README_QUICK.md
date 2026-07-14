@@ -108,7 +108,7 @@ cd vdbmat-utils
 
 # Generate marble-like pattern
 uv run vdbmat-utils generate-formation \
-     --config examples/phase3/marble-like.formation.json \
+     --config examples/formation_generation/marble-like.formation.json \
      --out output/marble \
      --name marble-like \
      --strict
@@ -118,7 +118,7 @@ uv run vdbmat-utils formation-stats output/marble/marble-like.voxels.json
 
 # Run parameter sweep
 uv run vdbmat-utils sweep-formation \
-     --config examples/phase3/tiny-sweep.sweep.json \
+     --config examples/formation_generation/tiny-sweep.sweep.json \
      --out output/sweep \
      --name tiny
 ```
@@ -193,7 +193,7 @@ Apply optical property mapping to voxel data in vdbmat and generate optical volu
 cd vdbmat
 
 # Run the optical mapping pipeline
-uv run vdbmat run examples/phase1/configs/window_coupon.run.json
+uv run vdbmat run examples/pipeline_run/configs/window_coupon.run.json
 
 # Validate the result
 uv run vdbmat validate .local/phase1/quickstart/window_coupon --json
@@ -233,6 +233,33 @@ docker run --rm \
      vdbmat-openvdb-cycles:blender4.5.11 \
      python3 -m pytest -q tests/integration/test_blender_cycles.py
 ```
+
+---
+
+## Handy Tool: Preview a Model in a Hand-Built Diorama Scene
+
+For a real appearance check, a from-scratch Blender scene (lighting/camera built fresh
+each time) is often too plain to judge. `vdbmat/examples/pipeline_run/demo/blender_template_swap.py`
+instead opens a hand-authored template `.blend` (e.g.
+`.local/local_demo/template_scene/cube_diorama.blend`) that already has lighting, a
+camera, and a placeholder object positioned/scaled the way you want, and swaps that
+placeholder's mesh for a newly generated `exterior-*.ply`. Only the mesh data changes —
+the placeholder's transform, materials, and name stay put, so the template's
+manually-tuned framing carries over automatically.
+
+```bash
+docker run --rm \
+      -v "$PWD:/work" -w /work \
+     vdbmat-openvdb-cycles:blender4.5.11 \
+     blender --background --python vdbmat/examples/pipeline_run/demo/blender_template_swap.py -- \
+     .local/local_demo/template_scene/cube_diorama.blend \
+     output/mitsuba/exterior-000.ply \
+     output/preview.png \
+     --target-object exterior-000
+```
+
+See `vdbmat/examples/pipeline_run/demo/blender_glass_demo.py` for the from-scratch scene
+variant, used when no template is available.
 
 ---
 
