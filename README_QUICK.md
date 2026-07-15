@@ -400,6 +400,36 @@ Non-goals: no changes to `prepare_mitsuba_scene()` / `render_mitsuba()` /
 no photorealistic room — just procedural checkerboard planes and simple geometry so
 the render is "readable".
 
+#### Adjust the Stage with a Preset (`*.stage.json`)
+
+The stage (lights, camera, backdrop/floor patterns and colours, render
+resolution/spp) is described by a JSON-round-trippable `StageConfig`
+(`vdbmat/examples/pipeline_run/demo/mitsuba_stage.py`) and can be overridden with
+`--stage-config`. Presets are the headless reproduction contract: a GUI for
+exploring these parameters interactively is planned (see
+`.devdocs/vision/mitsuba_gui/roadmap.md`), and whatever it saves is exactly such a
+preset file, replayable with the command below. Sample presets live in
+`vdbmat/examples/pipeline_run/demo/presets/`: `stage-default.stage.json` (all
+fields explicit, equal to the built-in defaults — a schema reference) and
+`stage-highkey.stage.json` (a partial preset: stronger warm key light, solid grey
+floor, elevated camera; omitted fields keep their defaults).
+
+```bash
+cd vdbmat
+uv run --group mitsuba python \
+  examples/pipeline_run/demo/mitsuba_stage_demo.py -- \
+  .local/blender_improve1/nested_material_cube/optical.zarr \
+  ../.local/mitsuba_improve1/nested_material_cube_highkey.png \
+  --stage-config examples/pipeline_run/demo/presets/stage-highkey.stage.json
+```
+
+The `camera` and `backlight` sections default to `null`, which means "leave the
+canonical sensor/backlight from `prepare_mitsuba_scene()` untouched" — so a run
+without a preset (or with `stage-default.stage.json`) is pixel-identical to the
+original stage demo. Explicit `--width/--height/--spp/--checker-scale` arguments
+win over the preset. Unknown keys, wrong types, and out-of-range values in a
+preset are rejected explicitly.
+
 ---
 
 ## Overall Workflow Summary
