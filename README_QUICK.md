@@ -448,14 +448,20 @@ uv run --group mitsuba-viewer python \
   .local/blender_improve1/nested_material_cube/optical.zarr \
   --stage-config examples/pipeline_run/demo/presets/stage-highkey.stage.json \
   --work-dir ../.local/mitsuba_gui/viewer \
+  --interactive-spp 4 --preview-spp 16 \
   --port 8080
 # then open http://127.0.0.1:8080
 ```
 
 Scene side-effect files (PLYs etc.) and default outputs land in `--work-dir`
-(a fresh temp directory if omitted). `--preview-size` / `--preview-spp`
-(defaults 256 / 16) trade preview quality for latency. The GUI runs Mitsuba on
-the host — no Docker — and over SSH it works with plain port forwarding.
+(a fresh temp directory if omitted). A change first produces an interactive
+low-spp image and, after `--settle-delay` (default 0.35 seconds) without another
+change, a settled image at `--preview-spp`. `--preview-size` / `--preview-spp` /
+`--interactive-spp` (defaults 256 / 16 / 4) trade preview quality for latency.
+The status line reports `traverse` for an in-place update and `rebuild` when a
+pattern, enabled state, or override mode changes the scene graph. The GUI runs
+Mitsuba on the host — no Docker — and over SSH it works with plain port
+forwarding.
 
 ---
 
