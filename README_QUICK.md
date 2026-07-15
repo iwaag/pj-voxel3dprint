@@ -386,9 +386,11 @@ uv run --group mitsuba python \
 ```
 
 The script prints `PIXELSTATS` (min/max/mean/std of the rendered pixels), the same
-headless regression signal used by the Blender demo scripts. On the built-in
-`nested_material_cube` fixture, the checkerboard backdrop/floor visibly warps through
-the transparent shell and is occluded by the opaque core, which is far more legible
+headless regression signal used by the Blender demo scripts. The backdrop and floor
+use distinct hue pairs (teal/orange vs. indigo/yellow, not just distinct greys) and
+the key light is tinted slightly warm, so on the built-in `nested_material_cube`
+fixture a viewer can tell which of the two checkerboard surfaces is bending through
+the transparent shell, not just that something is distorted. This is far more legible
 than the plain-white canonical render. It has also been run against the more complex
 `marble-like` formation (multiple `interior-*.ply` boundary groups) and loads/renders
 without error.

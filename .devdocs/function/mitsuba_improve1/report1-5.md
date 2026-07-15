@@ -59,8 +59,10 @@ uv run --group mitsuba python \
 結果: `PIXELSTATS min=0 max=21.0502 mean=0.100658 std=0.183592`、
 実行時間 約5.8秒（host上、Docker不要）。
 
-出力画像（`.devdocs/function/mitsuba_improve1/report_assets/nested_material_cube_stage.png`
-にコピー）:
+出力画像（動作確認用の成果物のため `.local/local_demo/mitsuba_stage/
+nested_material_cube_stage.png` に保存。`.devdocs`にはコピーしない — 開発記録は
+コマンドと結果の記述で足り、画像そのものはgitignore対象の`.local/`が適切な置き場
+のため）:
 
 - 市松模様の背景・床が透明外殻越しに歪んで見え、屈折の判断材料になっている。
 - 中心の不透明コアが背景パターンを遮蔽し、輪郭が判別できる。
@@ -87,8 +89,7 @@ uv run --group mitsuba python \
 実行時間 約2.5秒。`exterior-001/002.ply` と `interior-003/005/006/008.ply` を含む
 複数境界群がエラーなくロード・レンダーされた。
 
-出力画像（`.devdocs/function/mitsuba_improve1/report_assets/marble_like_stage.png`
-にコピー）:
+出力画像（`.local/local_demo/mitsuba_stage/marble_like_stage.png` に保存）:
 
 - 被写体はほぼ不透明（marble-like formationの吸収係数が高いため）で、背景越しの
   歪みよりも輪郭のファセット（複数interior境界に由来する非直方体な角）と
@@ -123,3 +124,51 @@ uv run ruff check examples/pipeline_run/demo/mitsuba_stage_demo.py            # 
 事象（checkerboard歪みが小さすぎる、backlightとbackdropの深刻な干渉、marble-like
 での計算コスト急増）はいずれも発生しなかったため、追加のパラメータ調整は行って
 いない。
+
+## 追記: 色分けによる可読性改善
+
+初回レンダーはbackdrop/floorとも同系統のグレーで塗っており、レビュー時に
+「白黒だと判断しづらい」との指摘を受けた。これは技術的制約ではなく単なる色選択の
+問題（`variant="llvm_ad_rgb"`はRGBをフルに扱え、medium係数自体も
+`capabilities.json`の`optical_basis`エントリが示す通り3chのRGBテンソル）だった
+ため、以下を追加調整した。
+
+- backdrop: teal (`(0.02, 0.09, 0.11)`) / orange (`(0.85, 0.5, 0.12)`) の市松模様
+- floor: indigo (`(0.03, 0.03, 0.13)`) / yellow (`(0.82, 0.76, 0.14)`) の市松模様
+- key light: 純白ではなく暖色寄り (`[6.4, 5.6, 4.2]`) にトーン付け
+
+`nested_material_cube` / `marble-like` を再レンダーし、`.local/local_demo/
+mitsuba_stage/` の画像を更新済み。色相を変えたことで「どちらの面（backdropか
+floorか）が歪んで見えているか」を判別しやすくなった。medium係数やBSDFの物理値、
+canonical exporterには一切触れていない。
+
+## 追記: 内部コアの配置が光学的に正しいかの検証
+
+レビューで「`.local/local_demo/nested_material_cube_swap_interior.png`
+（Blender版、interior meshを不透明diffuseで塗った近似）と比べると、内側コアが
+あるべき位置にあるか目視では判断しにくい」との指摘を受けた。目視ではなく、
+座標を直接突き合わせて検証した。
+
+1. `nested_material_cube.material_id.npy`（16×16×16, ZYX）を読み、材質IDごとの
+   index範囲を確認: 不透明コア(material_id=3)は `x,y,z ∈ [5,10]`（inclusive）、
+   216セル。16セル中央対称（`16-6=10`, `10/2=5`）であり、意図どおり中央配置。
+2. `GridGeometry.continuous_index_to_world()` で、そのindex範囲
+   （連続座標では `[5,11]`）をワールド座標に変換: 期待コアbbox =
+   `(0.005,0.005,0.005)`〜`(0.011,0.011,0.011)` m。同様に外殻全体は
+   `(0,0,0)`〜`(0.016,0.016,0.016)` m。
+3. `prepare_mitsuba_scene()` が実際に書き出した
+   `interior-001.ply`/`interior-002.ply`（本デモが使っているのと同じファイル）の
+   頂点座標を読み、bboxを計算: `(0.005,0.011)` を3軸とも厳密に一致。
+   `exterior-000.ply` も `(0,0.016)` と厳密に一致。
+
+すなわちcanonical exporter（本デモは変更していない）は、コアを座標レベルで
+厳密に正しい位置に出力している。レンダー画像で位置を判断しにくかったのは
+配置バグではなく、透明な外殻を実際にdielectricとして屈折させてレンダリング
+しているため——斜めから見た透明体越しの像は、水中の物体のように実位置から
+ずれて見えるのが物理的に正しい挙動——という理由による。Blender版が判断しやすい
+のは、`blender_template_swap.py`がinterior meshを内部屈折なしの不透明diffuse
+近似で描いているため、見た目上の位置ズレが生じないからであり、物理的な正しさ
+という点ではMitsuba版（実屈折あり）の方が忠実である。
+
+この検証はcanonical exporterの幾何ロジック自体（本デモの範囲外）の正しさを
+数値で裏付けるものであり、本デモスクリプトへのコード変更は行っていない。
