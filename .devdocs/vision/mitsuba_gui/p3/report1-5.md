@@ -132,3 +132,12 @@ generation が存在する場合、その画像が一度も publish されない
 - render cancel、段階別解像度、adaptive sampling は非ゴールのため未実施。
 - すべての予定 traverse 項目が更新可能だったため、項目単位の恒久 rebuild 化や
   Phase 3 の縮小打ち切りは不要だった。
+
+## 動作確認後の追補 — CUDA backend
+
+Quadro RTX 8000 搭載環境でGPU利用を選択できるよう、viewer と headless demo に
+`--variant llvm_ad_rgb|cuda_ad_rgb` を追加した。既定はGPUのない環境との互換性を
+保つためCPUの `llvm_ad_rgb` のままとした。64²/spp4 の
+`nested_material_cube` を `cuda_ad_rgb` で実レンダーし、scene summary の variant
+が `cuda_ad_rgb`、PNG出力とPIXELSTATS生成が成功することを確認した。canonical
+`MitsubaExportConfig` の既定値は変更していない。

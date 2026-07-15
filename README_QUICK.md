@@ -449,6 +449,7 @@ uv run --group mitsuba-viewer python \
   --stage-config examples/pipeline_run/demo/presets/stage-highkey.stage.json \
   --work-dir ../.local/mitsuba_gui/viewer \
   --interactive-spp 4 --preview-spp 16 \
+  --variant cuda_ad_rgb \
   --port 8080
 # then open http://127.0.0.1:8080
 ```
@@ -462,6 +463,11 @@ The status line reports `traverse` for an in-place update and `rebuild` when a
 pattern, enabled state, or override mode changes the scene graph. The GUI runs
 Mitsuba on the host — no Docker — and over SSH it works with plain port
 forwarding.
+
+On a CUDA-capable NVIDIA GPU, `--variant cuda_ad_rgb` enables GPU rendering.
+The default remains `llvm_ad_rgb` (CPU) so the viewer also starts on machines
+without CUDA. When replaying a GPU-rendered preset headlessly, pass the same
+`--variant cuda_ad_rgb` to `mitsuba_stage_demo.py`.
 
 ---
 
