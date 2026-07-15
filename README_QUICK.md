@@ -360,6 +360,44 @@ the VDB. The hand-built template must be saved by a Blender version compatible w
 the pinned 4.5.11 LTS renderer; opening a newer `.blend` may warn about data loss and
 change the resulting lighting or image.
 
+### Preview a Model with a Legible Mitsuba Stage (Checkerboard Backdrop/Floor)
+
+`vdbmat.exporters.mitsuba.prepare_mitsuba_scene()` / `render_mitsuba()` build a
+scientifically faithful but visually plain scene: a `heterogeneous` medium, the
+exterior/interior IOR meshes, and one plain white backlight rectangle. That is enough
+to judge optical coefficients numerically, but a rendered PNG of it looks like "a
+faint cube-ish shape on white" — there is nothing in frame whose distortion or
+occlusion tells a viewer where refraction or an opaque interior actually is.
+`vdbmat/examples/pipeline_run/demo/mitsuba_stage_demo.py` is a demo-track helper
+(qualitative, uncalibrated, not part of the canonical exporter) that takes the
+`scene_dict` returned by `prepare_mitsuba_scene()` unmodified and additively adds a
+checkerboard backdrop plane, a checkerboard floor plane, and one oblique key light,
+then renders directly with `mi.render` at a higher resolution/sample count than the
+canonical `DEFAULT_MITSUBA_CONFIG` (64x64, spp 32). It runs on the host — Mitsuba is a
+`pip`-installable Python package, no Docker/Blender needed.
+
+```bash
+cd vdbmat
+uv run --group mitsuba python \
+  examples/pipeline_run/demo/mitsuba_stage_demo.py -- \
+  .local/blender_improve1/nested_material_cube/optical.zarr \
+  ../.local/mitsuba_improve1/nested_material_cube_stage.png \
+  --width 512 --height 512 --spp 128 --checker-scale 8
+```
+
+The script prints `PIXELSTATS` (min/max/mean/std of the rendered pixels), the same
+headless regression signal used by the Blender demo scripts. On the built-in
+`nested_material_cube` fixture, the checkerboard backdrop/floor visibly warps through
+the transparent shell and is occluded by the opaque core, which is far more legible
+than the plain-white canonical render. It has also been run against the more complex
+`marble-like` formation (multiple `interior-*.ply` boundary groups) and loads/renders
+without error.
+
+Non-goals: no changes to `prepare_mitsuba_scene()` / `render_mitsuba()` /
+`MitsubaExportConfig`, no changes to medium coefficients or exterior/interior BSDFs,
+no photorealistic room — just procedural checkerboard planes and simple geometry so
+the render is "readable".
+
 ---
 
 ## Overall Workflow Summary
