@@ -430,6 +430,33 @@ original stage demo. Explicit `--width/--height/--spp/--checker-scale` arguments
 win over the preset. Unknown keys, wrong types, and out-of-range values in a
 preset are rejected explicitly.
 
+#### Tune the Stage Interactively in a Browser (viser GUI)
+
+`mitsuba_stage_viewer.py` serves a browser GUI (via
+[viser](https://github.com/nerfstudio-project/viser)) with sliders and colour
+pickers for every `StageConfig` field — lights, camera, backdrop/floor patterns
+and colours — and re-renders a low-resolution preview as you drag (sub-second on
+the built-in fixtures). It is a demo-track tool for *exploring* stage settings:
+the durable outputs are a `*.stage.json` preset ("Save preset") and a final PNG
+("Render final"), and the saved preset replayed through
+`mitsuba_stage_demo.py --stage-config` reproduces the final PNG pixel-identically.
+
+```bash
+cd vdbmat
+uv run --group mitsuba-viewer python \
+  examples/pipeline_run/demo/mitsuba_stage_viewer.py -- \
+  .local/blender_improve1/nested_material_cube/optical.zarr \
+  --stage-config examples/pipeline_run/demo/presets/stage-highkey.stage.json \
+  --work-dir ../.local/mitsuba_gui/viewer \
+  --port 8080
+# then open http://127.0.0.1:8080
+```
+
+Scene side-effect files (PLYs etc.) and default outputs land in `--work-dir`
+(a fresh temp directory if omitted). `--preview-size` / `--preview-spp`
+(defaults 256 / 16) trade preview quality for latency. The GUI runs Mitsuba on
+the host — no Docker — and over SSH it works with plain port forwarding.
+
 ---
 
 ## Overall Workflow Summary
