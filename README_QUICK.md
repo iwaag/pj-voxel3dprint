@@ -262,6 +262,39 @@ docker run --rm \
 See `vdbmat/examples/pipeline_run/demo/blender_glass_demo.py` for the from-scratch scene
 variant, used when no template is available.
 
+### Preview a Nested Opaque Core (Glass Surface + Interior Meshes)
+
+`vdbmat export mitsuba` also writes `interior-*.ply` for internal material
+interfaces—e.g. an opaque core nested inside a transparent shell. These are Mitsuba
+dielectric patches (`int_ior`/`ext_ior`) meant for internal-IOR light transport, which
+Cycles has no equivalent for. `blender_template_swap.py` accepts them via
+`--interior-ply` (repeatable) and paints each one with a flat dark Diffuse BSDF instead,
+anchored to the exact same transform the exterior ends up with. This is a qualitative
+approximation—no internal refraction—but it is enough to see that the nested geometry
+is there and roughly where it sits. Omitting `--interior-ply` reproduces the
+exterior-only behaviour above exactly.
+
+```bash
+docker run --rm \
+      --user "$(id -u):$(id -g)" -e HOME=/tmp \
+      -v "$PWD:/work" -w /work \
+     vdbmat-openvdb-cycles:blender4.5.11 \
+     blender --background --python vdbmat/examples/pipeline_run/demo/blender_template_swap.py -- \
+     .local/local_demo/template_scene/cube_diorama.blend \
+     .local/local_demo/nested_material_cube_mitsuba/exterior-000.ply \
+     .local/local_demo/nested_material_cube_swap_interior.png \
+     --samples 96 \
+     --interior-ply .local/local_demo/nested_material_cube_mitsuba/interior-001.ply \
+     --interior-ply .local/local_demo/nested_material_cube_mitsuba/interior-002.ply
+```
+
+The `SWAP` log line reports `interior_count=N` so a run with no interior meshes placed
+is easy to spot. At the coarse 16 x 16 x 16 resolution of the built-in
+`nested_material_cube` fixture, the core's marching-cubes boundary renders with a
+slightly stepped/doubled look rather than a clean cube face; that is the input
+resolution and the un-rendered internal IOR interface showing through, not a placement
+bug—the core's presence and rough position are still clearly readable.
+
 ### Preview a Spatial Material Distribution (Glass Surface + OpenVDB)
 
 `blender_template_swap.py` replaces only the exterior surface. To see absorption and

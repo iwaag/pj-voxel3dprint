@@ -1,5 +1,10 @@
 # demo_improve1 実装計画 — 手作りシーンで入れ子キューブの内部不透明コアを可視化する
 
+## 実装状況
+
+- Step 1〜5: 完了。`report1-5.md` 参照。
+- Step 6: 完了。`report6.md` 参照。
+
 ## 前提調査（確認済み事実）
 
 `blender_template_swap.py` を pinned Docker image
