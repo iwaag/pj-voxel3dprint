@@ -382,11 +382,12 @@ uv run --group mitsuba python \
   examples/pipeline_run/demo/mitsuba_stage_demo.py -- \
   .local/blender_improve1/nested_material_cube/optical.zarr \
   ../.local/mitsuba_improve1/nested_material_cube_stage.png \
-  --width 512 --height 512 --spp 128 --checker-scale 8
+  --width 512 --height 512 --spp 128 --max-depth 8 --checker-scale 8
 ```
 
-The script prints `PIXELSTATS` (min/max/mean/std of the rendered pixels), the same
-headless regression signal used by the Blender demo scripts. The backdrop and floor
+The script prints the effective `max_depth` and `PIXELSTATS`
+(min/max/mean/std of the rendered pixels), the same headless regression signal used
+by the Blender demo scripts. The backdrop and floor
 use distinct hue pairs (teal/orange vs. indigo/yellow, not just distinct greys) and
 the key light is tinted slightly warm, so on the built-in `nested_material_cube`
 fixture a viewer can tell which of the two checkerboard surfaces is bending through
@@ -403,12 +404,11 @@ the render is "readable".
 #### Adjust the Stage with a Preset (`*.stage.json`)
 
 The stage (lights, camera, backdrop/floor patterns and colours, render
-resolution/spp) is described by a JSON-round-trippable `StageConfig`
+resolution/spp/max depth) is described by a JSON-round-trippable `StageConfig`
 (`vdbmat/examples/pipeline_run/demo/mitsuba_stage.py`) and can be overridden with
-`--stage-config`. Presets are the headless reproduction contract: a GUI for
-exploring these parameters interactively is planned (see
-`.devdocs/vision/mitsuba_gui/roadmap.md`), and whatever it saves is exactly such a
-preset file, replayable with the command below. Sample presets live in
+`--stage-config`. Presets are the headless reproduction contract: the browser GUI
+described below saves exactly such a preset, replayable with the command below.
+Sample presets live in
 `vdbmat/examples/pipeline_run/demo/presets/`: `stage-default.stage.json` (all
 fields explicit, equal to the built-in defaults — a schema reference) and
 `stage-highkey.stage.json` (a partial preset: stronger warm key light, solid grey
@@ -420,23 +420,29 @@ uv run --group mitsuba python \
   examples/pipeline_run/demo/mitsuba_stage_demo.py -- \
   .local/blender_improve1/nested_material_cube/optical.zarr \
   ../.local/mitsuba_improve1/nested_material_cube_highkey.png \
-  --stage-config examples/pipeline_run/demo/presets/stage-highkey.stage.json
+  --stage-config examples/pipeline_run/demo/presets/stage-highkey.stage.json \
+  --max-depth 16
 ```
 
 The `camera` and `backlight` sections default to `null`, which means "leave the
 canonical sensor/backlight from `prepare_mitsuba_scene()` untouched" — so a run
 without a preset (or with `stage-default.stage.json`) is pixel-identical to the
-original stage demo. Explicit `--width/--height/--spp/--checker-scale` arguments
-win over the preset. Unknown keys, wrong types, and out-of-range values in a
-preset are rejected explicitly.
+original stage demo. Explicit
+`--width/--height/--spp/--max-depth/--checker-scale` arguments win over the
+preset. `max_depth` is a positive integer path-depth limit; its default is 8, and
+higher values may increase render time. The current writer emits stage-config 1.1.
+The reader also accepts existing 1.0 presets and supplies `max_depth=8`; a 1.0
+document cannot contain the new field. Unknown keys, wrong types, unsupported
+versions, and out-of-range values are rejected explicitly.
 
 #### Tune the Stage Interactively in a Browser (viser GUI)
 
 `mitsuba_stage_viewer.py` serves a browser GUI (via
 [viser](https://github.com/nerfstudio-project/viser)) with sliders and colour
 pickers for every `StageConfig` field — lights, camera, backdrop/floor patterns
-and colours — and re-renders a low-resolution preview as you drag (sub-second on
-the built-in fixtures). It is a demo-track tool for *exploring* stage settings:
+and colours, render resolution/spp, and max depth — and re-renders a
+low-resolution preview as you drag (sub-second on the built-in fixtures). It is a
+demo-track tool for *exploring* stage settings:
 the durable outputs are a `*.stage.json` preset ("Save preset") and a final PNG
 ("Render final"), and the saved preset replayed through
 `mitsuba_stage_demo.py --stage-config` reproduces the final PNG pixel-identically.
@@ -459,10 +465,13 @@ Scene side-effect files (PLYs etc.) and default outputs land in `--work-dir`
 low-spp image and, after `--settle-delay` (default 0.35 seconds) without another
 change, a settled image at `--preview-spp`. `--preview-size` / `--preview-spp` /
 `--interactive-spp` (defaults 256 / 16 / 4) trade preview quality for latency.
-The status line reports `traverse` for an in-place update and `rebuild` when a
-pattern, enabled state, or override mode changes the scene graph. The GUI runs
-Mitsuba on the host — no Docker — and over SSH it works with plain port
-forwarding.
+The status line reports the effective `max_depth`, `traverse` for an in-place
+update, and `rebuild` when a pattern, enabled state, override mode, or max depth
+requires a fresh scene load. Changing max depth rebuilds only the preview scene
+dict and integrator; it does not regenerate PLY/grid artifacts. A final render
+re-prepares its scene when resolution or max depth changes so its
+`scene-summary.json` records the effective value. The GUI runs Mitsuba on the
+host — no Docker — and over SSH it works with plain port forwarding.
 
 On a CUDA-capable NVIDIA GPU, `--variant cuda_ad_rgb` enables GPU rendering.
 The default remains `llvm_ad_rgb` (CPU) so the viewer also starts on machines
