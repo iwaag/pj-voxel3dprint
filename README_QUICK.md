@@ -452,6 +452,7 @@ cd vdbmat
 uv run --group mitsuba-viewer python \
   examples/pipeline_run/demo/mitsuba_stage_viewer.py -- \
   .local/blender_improve1/nested_material_cube/optical.zarr \
+  --input-root .local/blender_improve1 \
   --stage-config examples/pipeline_run/demo/presets/stage-highkey.stage.json \
   --work-dir ../.local/mitsuba_gui/viewer \
   --interactive-spp 4 --preview-spp 16 \
@@ -459,6 +460,23 @@ uv run --group mitsuba-viewer python \
   --port 8080
 # then open http://127.0.0.1:8080
 ```
+
+The first positional argument is the initial input. It may be either a canonical
+run bundle directory (containing `run.json` and `optical.zarr`) or a standalone
+optical-property `*.zarr` store. `--input-root` defines the server-local directory
+shown in the **Input** tab; if omitted, it defaults to the initial input's parent.
+The catalog lists run bundles and standalone optical stores only. It does not upload
+volume data through the browser, include material-only stores, or follow a symlink
+whose resolved target escapes the input root.
+
+To switch models without restarting the viewer, choose a catalog entry in the Input
+tab, review its schema/shape/voxel-size summary, and click **Load / Rebuild**. Changing
+the dropdown or clicking **Refresh** only updates the selection/catalog; neither
+action rebuilds the scene. Load/Rebuild validates and prepares the candidate in a
+new per-input work directory, loads it, and performs a smoke render before swapping
+the live session. If any stage fails, the status names the failing stage and the
+current scene, preview, and stage/render settings (including `max_depth`) remain in
+use. A successful swap keeps those settings and schedules a preview of the new input.
 
 Scene side-effect files (PLYs etc.) and default outputs land in `--work-dir`
 (a fresh temp directory if omitted). A change first produces an interactive
