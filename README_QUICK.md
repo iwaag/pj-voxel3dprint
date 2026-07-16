@@ -385,9 +385,11 @@ uv run --group mitsuba python \
   --width 512 --height 512 --spp 128 --max-depth 8 --checker-scale 8
 ```
 
-The script prints the effective `max_depth` and `PIXELSTATS`
+The script prints the effective `variant`, `seed`, `max_depth`, and `PIXELSTATS`
 (min/max/mean/std of the rendered pixels), the same headless regression signal used
-by the Blender demo scripts. The backdrop and floor
+by the Blender demo scripts. `--seed` overrides the default
+(`MitsubaExportConfig().seed`); it and `--variant` are also how a saved stage
+preset's fixed values get reproduced pixel-identically alongside `--stage-config`. The backdrop and floor
 use distinct hue pairs (teal/orange vs. indigo/yellow, not just distinct greys) and
 the key light is tinted slightly warm, so on the built-in `nested_material_cube`
 fixture a viewer can tell which of the two checkerboard surfaces is bending through
@@ -495,6 +497,87 @@ On a CUDA-capable NVIDIA GPU, `--variant cuda_ad_rgb` enables GPU rendering.
 The default remains `llvm_ad_rgb` (CPU) so the viewer also starts on machines
 without CUDA. When replaying a GPU-rendered preset headlessly, pass the same
 `--variant cuda_ad_rgb` to `mitsuba_stage_demo.py`.
+
+#### Apply an Existing Preset from the Browser (Preset Tab)
+
+The **Preset** tab lists `*.stage.json` files under `--preset-root` (default:
+`--stage-config`'s parent, or the checked-in `examples/pipeline_run/demo/presets/`
+if neither is given). Selecting an entry or clicking **Refresh** only updates the
+dropdown/summary — it never changes the live stage or triggers a render. Only
+**Apply stage preset** replaces every stage/render field at once and schedules
+exactly one preview; a broken or out-of-root preset leaves the current settings
+and preview untouched, with the failing stage named in the status line.
+
+#### Save and Restore a Full Viewer State (Session Save/Load)
+
+A viewer **session** (`vdbmat.viewer-session` JSON, distinct from a stage
+preset) additionally pins the current input, Mitsuba variant, and seed, each
+with a SHA-256 digest, so it can be replayed byte-for-byte later — including
+headlessly (below). `--session-root DIR` scopes the GUI's Save/Load session
+path fields (default: `--session`'s parent at startup, else `--work-dir`); as
+with `--input-root`/`--preset-root`, paths outside the root are rejected.
+
+- **Output tab → Save session**: re-verifies the current input against
+  `--input-root`, hashes its `optical.zarr` (and `run.json` for a bundle), and
+  atomically writes the session next to the current stage/render settings,
+  variant, seed, and (if the current settings still match one) the applied
+  preset's path/digest.
+- **Input tab → Load session**: parses, resolves, and verifies every digest
+  (input, run manifest, preset) *before* touching anything live; only after a
+  successful smoke render does it commit the new input, full stage/render
+  settings, and seed as one atomic swap, and schedule one preview. Any failure
+  — digest mismatch, missing file, wrong Mitsuba variant, root escape — leaves
+  the current input, settings, and preview exactly as they were, with the
+  failing stage named in the status line.
+
+To restore a full session at startup instead of the positional input form:
+
+```bash
+cd vdbmat
+uv run --group mitsuba-viewer python \
+  examples/pipeline_run/demo/mitsuba_stage_viewer.py -- \
+  --session ../.local/mitsuba_gui/viewer/viewer.session.json \
+  --input-root .local/blender_improve1 \
+  --preset-root examples/pipeline_run/demo/presets \
+  --port 8080
+# then open http://127.0.0.1:8080
+```
+
+`--session` and the positional `OPTICAL_ZARR_OR_BUNDLE`/`--stage-config` are
+mutually exclusive; `--input-root` is required with `--session` since the
+session's input path is root-relative. An explicit `--variant`/`--seed` is
+accepted only if it matches the session's recorded value — this catches a
+stale command line rather than silently overriding what "restore this
+session" means. Because the Mitsuba variant is resolved and the module
+imported before any scene is built, a session recorded with a different
+variant (e.g. `cuda_ad_rgb` vs. `llvm_ad_rgb`) requires restarting the
+viewer with that variant; there is no in-process hot switch.
+
+#### Replay a Saved Session Headlessly
+
+`mitsuba_stage_demo.py --session` renders a saved session exactly, without a
+browser, using the same resolver the viewer uses for path containment and
+digest verification:
+
+```bash
+cd vdbmat
+uv run --group mitsuba python \
+  examples/pipeline_run/demo/mitsuba_stage_demo.py -- \
+  --session ../.local/mitsuba_gui/viewer/viewer.session.json \
+  --input-root .local/blender_improve1 \
+  --preset-root examples/pipeline_run/demo/presets \
+  --output-png ../.local/mitsuba_gui/viewer/replay.png
+```
+
+This form cannot be combined with the positional `OPTICAL_ZARR OUTPUT_PNG`
+form, `--stage-config`, or any of the
+`--width`/`--height`/`--spp`/`--max-depth`/`--checker-scale` overrides — the
+session already carries a fully-resolved effective stage/render config, so
+mixing in overrides would make "session replay" ambiguous. As with the
+viewer, an explicit `--variant`/`--seed` is accepted only if it agrees with
+the session. For the same input digest, effective stage/render config,
+variant, and seed, this headless PNG and the viewer's **Render final** output
+are pixel-identical.
 
 ---
 
