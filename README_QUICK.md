@@ -480,6 +480,54 @@ the live session. If any stage fails, the status names the failing stage and the
 current scene, preview, and stage/render settings (including `max_depth`) remain in
 use. A successful swap keeps those settings and schedules a preview of the new input.
 
+#### Compare Optical Mappings without Restarting the Viewer
+
+For a canonical run bundle (a catalog entry containing `run.json`, `source/`, and
+`optical.zarr`), the same Input tab can rebuild its preserved material input with a
+different existing `vdbmat.optical-mapping` JSON. Standalone `optical.zarr` inputs
+cannot be re-mapped because they do not contain the source material labels.
+
+Keep editable mapping copies and all generated bundles under `.local`:
+
+```bash
+cd vdbmat
+mkdir -p ../.local/mitsubagui_improve/p4/mappings
+cp examples/pipeline_run/mappings/*.optical-mapping.json \
+  ../.local/mitsubagui_improve/p4/mappings/
+
+uv run --group mitsuba-viewer python \
+  examples/pipeline_run/demo/mitsuba_stage_viewer.py -- \
+  .local/blender_improve1/nested_material_cube \
+  --input-root .local/blender_improve1 \
+  --mapping-root ../.local/mitsubagui_improve/p4/mappings \
+  --mapping-work-root ../.local/mitsubagui_improve/p4/derived \
+  --work-dir ../.local/mitsubagui_improve/p4/viewer \
+  --port 8080
+```
+
+The checked-in `phase0-provisional-materials-v1-tinted.optical-mapping.json` is an
+uncalibrated comparison sample with stronger red absorption in
+`transparent-resin`; it is a visual diagnostic, not measured material data.
+
+The standard edit/compare loop is:
+
+1. Select a run bundle in **Input** and a mapping in **optical mapping**.
+2. Review the mapping configuration id, version, calibration status, materials, and
+   semantic digest. Selection and **Refresh** do not change the live scene.
+3. Click **Load / Rebuild**. The viewer validates the source and mapping, creates or
+   reuses a derived canonical bundle below `--mapping-work-root`, smoke-renders it,
+   and swaps it only on success. Select `(bundle optical as-is)` to return to the
+   bundle's original optical volume.
+4. Edit the mapping JSON externally, click mapping **Refresh**, review the new digest,
+   and click **Load / Rebuild** again. The input bundle and mapping file are never
+   overwritten.
+5. Use **Output → Save session** after the desired mapping has been applied. Saving is
+   rejected if the mapping changed since the last successful Load/Rebuild.
+
+The derived bundle's `run.json` and `optical.zarr` provenance record the mapping
+digest. Repeating the same source-payload/mapping-digest pair reuses the cached bundle;
+changing the mapping content produces a different cache key.
+
 Scene side-effect files (PLYs etc.) and default outputs land in `--work-dir`
 (a fresh temp directory if omitted). A change first produces an interactive
 low-spp image and, after `--settle-delay` (default 0.35 seconds) without another
@@ -511,7 +559,8 @@ and preview untouched, with the failing stage named in the status line.
 #### Save and Restore a Full Viewer State (Session Save/Load)
 
 A viewer **session** (`vdbmat.viewer-session` JSON, distinct from a stage
-preset) additionally pins the current input, Mitsuba variant, and seed, each
+preset) additionally pins the current input, optional mapping and derived optical
+digest, Mitsuba variant, and seed, each
 with a SHA-256 digest, so it can be replayed byte-for-byte later — including
 headlessly (below). `--session-root DIR` scopes the GUI's Save/Load session
 path fields (default: `--session`'s parent at startup, else `--work-dir`); as
@@ -566,8 +615,16 @@ uv run --group mitsuba python \
   --session ../.local/mitsuba_gui/viewer/viewer.session.json \
   --input-root .local/blender_improve1 \
   --preset-root examples/pipeline_run/demo/presets \
+  --mapping-root ../.local/mitsubagui_improve/p4/mappings \
+  --mapping-work-root ../.local/mitsubagui_improve/p4/headless-derived \
   --output-png ../.local/mitsuba_gui/viewer/replay.png
 ```
+
+`--mapping-root` and `--mapping-work-root` are required together when the saved
+session contains a mapping reference, and are unnecessary for an as-is session.
+Headless replay resolves the source bundle and mapping digests, regenerates or reuses
+the derived canonical bundle, verifies its pinned `optical.zarr` digest, and only then
+renders. The mapping work root must not overlap the input root.
 
 This form cannot be combined with the positional `OPTICAL_ZARR OUTPUT_PNG`
 form, `--stage-config`, or any of the
