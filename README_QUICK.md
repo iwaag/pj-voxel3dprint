@@ -132,6 +132,27 @@ uv run vdbmat-utils sweep-formation \
 
 ---
 
+## Use Case 4b: Generate a Primitive Array (Transparent Block + Opaque Inclusions)
+
+Build a transparent base block containing an A x B x C grid of opaque cube or sphere
+inclusions from one flat config with no input files — a minimal, easily-countable optical
+test pattern for the `designlab` input pipeline.
+
+```bash
+cd vdbmat-utils
+
+uv run vdbmat-utils generate-primitive-array \
+     --config primarray.json \
+     --out output/ \
+     --name demo
+
+uv run vdbmat-utils preview-slices output/demo.voxels.json --axis z
+```
+
+See `vdbmat-utils/docs/primitive-arrays.md` for the config fields and grid-derivation rules.
+
+---
+
 ## Use Case 5: Apply Volume Operation Pipeline
 
 Apply operations such as crop, pad, resample, orient, place, apply-mask, compose, and remap-materials as a pipeline.
@@ -832,6 +853,7 @@ every generated file under `.local/mitsubagui_improve/p5/` — never commit
 | `convert-image-stack` | Convert image stack to voxels |
 | `morph-stack` | SDF interpolation between key slices |
 | `apply-pipeline` | Apply volume operation pipeline |
+| `generate-primitive-array` | Generate transparent block + opaque cube/sphere inclusion array |
 | `generate-formation` | Generate procedural formation |
 | `formation-stats` | Display formation statistics |
 | `sweep-formation` | Run parameter sweep |
