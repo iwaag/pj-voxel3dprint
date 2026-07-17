@@ -4,6 +4,22 @@
 機能追加ではなく可読性・保守性のための構造整理として着手する。新しいフェーズ／
 ロードマップは必要とせず、単一 function の実装計画として進める。
 
+## 実装状況
+
+- Step 1〜4: 完了。`mitsuba_stage_core.py`（858行）と `mitsuba_stage_binder.py`
+  （520行）を新設し、`mitsuba_stage_viewer.py` は2816行から1496行へ縮小した。
+  移動した名前は `mitsuba_stage_viewer.py` から `from mitsuba_stage_core import
+  X as X` 等の明示的re-exportで公開を維持しており、
+  `tests/test_mitsuba_stage_viewer_worker.py` は無改修のまま45件全PASS。
+  `tests/integration/test_mitsuba_stage_viewer.py` と
+  `test_mitsuba_stage_viewer_regression.py` は、モジュールを跨いで直接importする
+  形（`from mitsuba_stage_core import InputLoadError, StageCore, ...`）に更新し、
+  前提調査で特定した2箇所のモンキーパッチ（`prepare_mitsuba_scene`,
+  `TraversedPreviewScene`）を `mitsuba_stage_core` へ retarget した。
+  分割前後でPASS/FAILが一致すること（92件全PASS）、retarget後のモンキーパッチが
+  実際に効いていること（対象テストが期待どおり `prepare`/`load` ステージで
+  `InputLoadError` を送出すること）を確認済み。`ruff check` はクリーン。
+
 ## 前提調査（確認済み事実）
 
 - `vdbmat/examples/pipeline_run/demo/mitsuba_stage_viewer.py` は現在 2816 行。
