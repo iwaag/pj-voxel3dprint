@@ -448,6 +448,8 @@ demo-track tool for *exploring* stage settings:
 the durable outputs are a `*.stage.json` preset ("Save preset") and a final PNG
 ("Render final"), and the saved preset replayed through
 `mitsuba_stage_demo.py --stage-config` reproduces the final PNG pixel-identically.
+For a screenshot-by-screenshot tour of every tab, see
+[`vdbmat/docs/gui/stage_viewer_manual.md`](vdbmat/docs/gui/stage_viewer_manual.md).
 
 ```bash
 cd vdbmat
