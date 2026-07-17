@@ -153,6 +153,34 @@ See `vdbmat-utils/docs/primitive-arrays.md` for the config fields and grid-deriv
 
 ---
 
+## Use Case 4c: Build Inputs in a Browser GUI (`designlab`)
+
+`designlab` is a browser GUI that fills in a generator config form, saves/loads it, and
+runs generate → optical mapping → publish as one background job — so trying an input
+model doesn't require hand-writing config JSON or chaining the CLI calls above by hand.
+It publishes a canonical run bundle directly into an existing viewer's `--input-root`.
+Phase 2 wires up one method, `generate-primitive-array`.
+
+```bash
+cd vdbmat-utils
+
+uv run --group designlab python examples/designlab/designlab_app.py -- \
+     --config-root ../.local/designlab/config \
+     --output-root ../.local/designlab/output \
+     --port 8081
+# then open http://127.0.0.1:8081
+```
+
+Fill in the primitive-array form (or Load a previously Saved config), give the job a
+name, and click Generate; the status line reports `STAGE` progress and, on success, the
+published bundle's path. Point `mitsuba_stage_viewer.py --input-root` at the same
+`--output-root` to see it in that viewer's Input catalog (Use Case 8's "Tune the Stage
+Interactively in a Browser" section above). See `vdbmat-utils/docs/designlab.md` for the
+form/config field mapping, the publish-naming and reuse rules, and the registry
+interface used to add further generation methods.
+
+---
+
 ## Use Case 5: Apply Volume Operation Pipeline
 
 Apply operations such as crop, pad, resample, orient, place, apply-mask, compose, and remap-materials as a pipeline.
