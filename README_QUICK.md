@@ -636,6 +636,157 @@ the session. For the same input digest, effective stage/render config,
 variant, and seed, this headless PNG and the viewer's **Render final** output
 are pixel-identical.
 
+#### Operations: Staying in Control During Day-to-Day Use
+
+The rest of this section covers the viewer's operational surface: what the
+status line's stage words mean, how leftover files are (and are not) cleaned
+up automatically, how to trace a final PNG back to the conditions that
+produced it, how to catch a file that changed under you, and how to confirm
+a CPU and a GPU render used the same scientific input.
+
+**Stage vocabulary and elapsed time.** Every Load/Rebuild and Load session
+passes through the same named stages, printed both in the GUI status line and
+as `STAGE <transaction> <stage> <elapsed_s>` lines on stdout:
+
+| Status line word | Roadmap name      | What happens |
+| ----------------- | ------------------ | ------------ |
+| `validate`         | `validate`          | Catalog/mapping reference resolution and content validation |
+| `map`               | `persist`            | Mapping applied via `run_pipeline()` (skipped, shown as `map: reused cache`, if the source/mapping digest pair was already derived) |
+| `prepare`           | `prepare preview`    | Preview scene built from the candidate |
+| `load`              | `load`               | Preview scene loaded into Mitsuba |
+| `smoke`             | `smoke render`       | One low-spp render to catch a broken scene before it goes live |
+| `swap`/`commit`     | `swap`               | Atomic replacement of the live session; nothing before this point touches the live scene |
+
+Any failure before `swap`/`commit` leaves the current session, preview, and
+GUI settings exactly as they were — the status line names the stage that
+failed. The status line shows the just-completed stage's duration in
+parentheses (e.g. `input load: prepare… (map 3.2s)`) and the total once the
+transaction finishes; the `STAGE` stdout lines are the same data in a
+greppable form, and are what the Step 1 cancel-adoption measurement (below)
+was based on.
+
+**Is a Cancel button needed?** No — measured against the checked-in fixtures
+and the larger `.local` `marble-like` bundle, the worst-case cold Load/Rebuild
+was under 5 seconds (see `.devdocs/vision/mitsubagui_improve/p5/report1.md`
+for the full measurement and the ~30-second adoption threshold). If a much
+larger input someday pushes past that threshold, the `STAGE` log is the
+data to re-run this judgment with; the underlying generation guard
+(a stale render never publishes over a newer swap) is already in place either
+way.
+
+**Cleanup rules.**
+
+- A successful Load/Rebuild swap discards the *previous* session's own
+  `--work-dir/inputs/NNN-slug/` work directory (PLYs, preview scene) — never
+  the new, now-current one. The render worker only ever runs one job at a
+  time, so nothing still references the discarded directory.
+- On startup, the viewer sweeps stale `--work-dir/inputs/` entries left by a
+  prior process using the same `--work-dir`. It never touches
+  `--mapping-work-root`'s `derived/` contents or any other file.
+- `--mapping-work-root` (the derived-bundle cache) is content-addressed by
+  source-payload digest and mapping digest, and is **safe to delete
+  wholesale** whenever no viewer or headless replay is using it — the next
+  Load/Rebuild or session replay regenerates whatever it needs.
+- A `.<name>.tmp-*` directory from an interrupted `run_pipeline()` write is
+  cleaned up automatically the next time something writes to that same
+  output path; nothing sweeps it proactively, since the viewer and a
+  concurrent headless replay may share one `--mapping-work-root`.
+
+**Tracing a final PNG back to its conditions.** **Render final** writes
+`<basename>.session.json` next to the PNG — the same `vdbmat.viewer-session`
+document `Save session` writes, so it is both a provenance record and a
+ready-made `mitsuba_stage_demo.py --session` input (see above). If the
+current input can't be resolved back into a session (e.g. it is still the
+viewer's initial-argument sentinel, outside `--input-root`, or its mapping
+has changed since it was applied), the PNG is still written and the status
+line reports `final: session sidecar skipped: <reason>` — a render never
+fails because of the sidecar.
+
+**Verify digests.** The Input tab's **Effective state** panel is a read-only
+summary of the *committed* session — input, derivation/mapping, stage preset
+provenance, render settings, Mitsuba variant/seed, and digests — and never
+reflects an unapplied dropdown selection. Digests are computed once per
+loaded session and cached (Save session and the final-render sidecar reuse
+that cache instead of re-hashing every time). Click **Verify digests** to
+force a fresh hash of the live input (and, for a mapping-derived session, the
+mapping file) and compare it against the cached value; the status line and
+Effective state panel report `ok` or `drift: <what changed>`. This is the
+only way to detect that a bundle or mapping file was edited externally after
+it was loaded — the viewer does not poll for external changes on its own.
+
+**Comparing a CPU and a GPU session.** Since a running viewer pins one
+Mitsuba variant per process (no in-process hot switch — see "Save and
+Restore a Full Viewer State" above), confirming that a `cuda_ad_rgb` render
+and an `llvm_ad_rgb` render are testing the same thing means saving a session
+under each variant and diffing the two manifests:
+
+```bash
+cd vdbmat
+uv run python examples/pipeline_run/demo/mitsuba_session_compat.py \
+  ../.local/mitsuba_gui/viewer/cpu.session.json \
+  ../.local/mitsuba_gui/viewer/gpu.session.json
+```
+
+`mitsuba_session_compat.py` is a pure module (no Mitsuba/viser dependency) that
+diffs everything a session records *except* the variant itself: the input
+reference and its optical/run-manifest digests, the mapping reference and its
+digest and derived-optical digest, the effective stage/render digest, and the
+seed. Exit code `0` means the two sessions are "scientifically equal" (the
+variant is the only difference, if any); a non-zero exit prints one `DIFF`
+line per differing field. Render both sessions headlessly and compare their
+`PIXELSTATS` lines by eye — pixel-identical output across variants is *not*
+expected or required (different Mitsuba backends are allowed to differ
+numerically); `mitsuba_session_compat.py` only confirms the two renders were
+asked to compute the same thing.
+
+**Working with a larger `.local` input (`marble-like`).** The `marble-like`
+formation (Use Case 4 above) is generated by `vdbmat-utils`, not by anything
+`vdbmat`'s own test suite can produce, so it is not part of the automated
+representative-input regression
+(`vdbmat/tests/integration/test_mitsuba_stage_viewer_regression.py`) and is
+never checked into git. Its own mapping,
+`.local/marble/marble-like.optical-mapping.json`, must be used instead of the
+checked-in `phase0-provisional-materials-v1*` mappings — palette coverage
+checks material *names*, not just IDs, and the checked-in mappings' resin
+material names don't match `marble-like`'s (`calcite-matrix`,
+`dolomite-vein`, `dark-fracture-fill`); applying one raises a `map`-stage
+`InputLoadError`. Copy it (and, to exercise a second mapping, a locally
+edited copy with different coefficients) under `.local` and point the viewer
+at the existing bundle like any other catalog entry:
+
+```bash
+cd vdbmat
+mkdir -p ../.local/mitsubagui_improve/p5/marble-manual/mappings
+cp ../.local/marble/marble-like.optical-mapping.json \
+  ../.local/mitsubagui_improve/p5/marble-manual/mappings/
+
+uv run --group mitsuba-viewer python \
+  examples/pipeline_run/demo/mitsuba_stage_viewer.py -- \
+  ../.local/marble/bundle \
+  --input-root ../.local/marble \
+  --mapping-root ../.local/mitsubagui_improve/p5/marble-manual/mappings \
+  --mapping-work-root ../.local/mitsubagui_improve/p5/marble-manual/derived \
+  --work-dir ../.local/mitsubagui_improve/p5/marble-manual/viewer \
+  --variant cuda_ad_rgb \
+  --port 8080
+# then open http://127.0.0.1:8080
+```
+
+A reasonable smoke pass: switch between `(bundle optical as-is)` and
+`marble-like.optical-mapping.json` a couple of times (confirms Load/Rebuild
+round-trips on a bundle with multiple `interior-*.ply` boundary groups), save
+a session, replay it headlessly and confirm pixel-identical output, click
+**Verify digests** (expect `ok`), then repeat the save with
+`--variant llvm_ad_rgb` in a second viewer instance and diff the two sessions
+with `mitsuba_session_compat.py` as above. This exact sequence (scripted
+through the viewer core rather than a browser, since this repository's own
+development environment cannot drive one) confirmed a scientifically-equal
+CPU/GPU session pair and pixel-identical session-sidecar/headless-replay
+output on `marble-like`; see
+`.devdocs/vision/mitsubagui_improve/p5/report5.md` for the results. Keep
+every generated file under `.local/mitsubagui_improve/p5/` — never commit
+`marble-like` bundles, session JSON, or PNGs from this walkthrough.
+
 ---
 
 ## Overall Workflow Summary
