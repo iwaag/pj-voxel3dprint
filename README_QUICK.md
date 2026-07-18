@@ -513,13 +513,18 @@ touches PIXELSTATS or the science track: the un-denoised raw image is always
 written first, alongside the denoised one, as `<output stem>.raw<suffix>`
 (e.g. `final.png` → `final.raw.png`), and PIXELSTATS is always computed from
 that raw image — so denoising cannot mask an optical-coefficient regression.
-Because `mi.OptixDenoiser`'s output can depend on the OptiX/driver version,
-the "same input → pixel-identical" reproduction contract (headless replay,
-CPU/GPU session comparison) applies to the *raw* image unconditionally, and
-to the *denoised* image only on the same GPU and driver. `denoise` is
-recorded in stage presets and viewer sessions like any other render field, so
-`mitsuba_session_compat.py` reports a denoise-only difference between two
-sessions the same way it reports any other stage/render difference.
+The "same input → pixel-identical" reproduction contract (headless replay,
+CPU/GPU session comparison) applies to the *raw* image unconditionally
+(`mi.render` itself is deterministic given the same scene/seed, confirmed by
+a real render on this repo's development GPU). The *denoised* image is only
+a close match, even on the same GPU and driver: `mi.OptixDenoiser` was
+observed to have up to +/-1 sRGB step of run-to-run nondeterminism on a
+small fraction of pixels between two separate renders of the same scene —
+treat it as a cosmetic post-process, and use the raw sidecar for any
+byte-exact reproduction check. `denoise` is recorded in stage presets and
+viewer sessions like any other render field, so `mitsuba_session_compat.py`
+reports a denoise-only difference between two sessions the same way it
+reports any other stage/render difference.
 
 ```bash
 cd vdbmat
@@ -732,9 +737,14 @@ would make "session replay" ambiguous. As with the viewer, an explicit
 `--variant`/`--seed` is accepted only if it agrees with the session. For the
 same input digest, effective stage/render config, variant, and seed, this
 headless PNG and the viewer's **Render final** output are pixel-identical
-(the denoised PNG only on the same GPU/driver, per "Reduce Noise with OptiX
-Denoising" above; the raw `.raw.png` sidecar is pixel-identical
-unconditionally).
+when `denoise` is off, and the raw `.raw.png` sidecar is pixel-identical
+whenever `denoise` is on (`mi.render` itself is fully deterministic given
+the same scene/seed). The final *denoised* PNG, when `denoise` is on, is
+only near-identical even on the same GPU/driver: `mi.OptixDenoiser` was
+observed to have up to +/-1 sRGB step of run-to-run nondeterminism on a
+small fraction of pixels between separate renders of the same scene — see
+"Reduce Noise with OptiX Denoising" above. Use the raw sidecar, not the
+denoised PNG, for any byte-exact reproduction check.
 
 #### Operations: Staying in Control During Day-to-Day Use
 
