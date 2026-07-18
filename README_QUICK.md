@@ -479,12 +479,56 @@ The `camera` and `backlight` sections default to `null`, which means "leave the
 canonical sensor/backlight from `prepare_mitsuba_scene()` untouched" — so a run
 without a preset (or with `stage-default.stage.json`) is pixel-identical to the
 original stage demo. Explicit
-`--width/--height/--spp/--max-depth/--checker-scale` arguments win over the
-preset. `max_depth` is a positive integer path-depth limit; its default is 8, and
-higher values may increase render time. The current writer emits stage-config 1.1.
-The reader also accepts existing 1.0 presets and supplies `max_depth=8`; a 1.0
-document cannot contain the new field. Unknown keys, wrong types, unsupported
-versions, and out-of-range values are rejected explicitly.
+`--width/--height/--spp/--max-depth/--checker-scale/--denoise/--no-denoise`
+arguments win over the preset. `max_depth` is a positive integer path-depth
+limit; its default is 8, and higher values may increase render time. The
+current writer emits stage-config 1.2. The reader also accepts existing 1.0
+and 1.1 presets and supplies defaults for fields introduced later
+(`max_depth=8` since 1.1, `denoise=False` since 1.2); an older document
+cannot itself contain a field introduced after it. Unknown keys, wrong
+types, unsupported versions, and out-of-range values are rejected
+explicitly.
+
+#### Reduce Noise with OptiX Denoising (Scattering Media Subjects)
+
+A subject that combines a delta-BSDF dielectric shell (the exterior/interior
+IOR meshes — `volpath` cannot next-event-estimate through a delta boundary)
+with a scattering medium inside is one of the worst cases for `volpath`'s
+1/√N convergence: grainy noise persists even at `spp` 1024. For such
+subjects, first raise `max_depth` — the default 8 needlessly truncates long
+scattered paths and measurably darkens the image (energy loss from
+truncation, not just extra noise); 32–64 is a reasonable range for a
+scattering-medium subject and recovers the lost brightness at the cost of
+some fireflies, which denoising then mostly absorbs. Then add
+`--denoise` (`render.denoise` in a stage-config, stage-config 1.2+) to run
+Mitsuba's built-in `mi.OptixDenoiser` as a post-process on the final render
+and the viewer's settled preview — this typically gets a noise level
+comparable to `spp` 1024+undenoised at `spp` 256–512.
+
+`--denoise` requires `--variant cuda_ad_rgb` (OptiX is CUDA-only); requesting
+it under `llvm_ad_rgb` fails explicitly rather than silently skipping
+denoising, and the viewer's Render tab checkbox is disabled unless the
+viewer itself was started with `--variant cuda_ad_rgb`. Denoising never
+touches PIXELSTATS or the science track: the un-denoised raw image is always
+written first, alongside the denoised one, as `<output stem>.raw<suffix>`
+(e.g. `final.png` → `final.raw.png`), and PIXELSTATS is always computed from
+that raw image — so denoising cannot mask an optical-coefficient regression.
+Because `mi.OptixDenoiser`'s output can depend on the OptiX/driver version,
+the "same input → pixel-identical" reproduction contract (headless replay,
+CPU/GPU session comparison) applies to the *raw* image unconditionally, and
+to the *denoised* image only on the same GPU and driver. `denoise` is
+recorded in stage presets and viewer sessions like any other render field, so
+`mitsuba_session_compat.py` reports a denoise-only difference between two
+sessions the same way it reports any other stage/render difference.
+
+```bash
+cd vdbmat
+uv run --group mitsuba python \
+  examples/pipeline_run/demo/mitsuba_stage_demo.py -- \
+  .local/blender_improve1/nested_material_cube/optical.zarr \
+  ../.local/mitsuba_improve1/nested_material_cube_denoised.png \
+  --max-depth 32 --spp 256 --denoise --variant cuda_ad_rgb
+```
 
 #### Tune the Stage Interactively in a Browser (viser GUI)
 
@@ -595,7 +639,9 @@ host — no Docker — and over SSH it works with plain port forwarding.
 On a CUDA-capable NVIDIA GPU, `--variant cuda_ad_rgb` enables GPU rendering.
 The default remains `llvm_ad_rgb` (CPU) so the viewer also starts on machines
 without CUDA. When replaying a GPU-rendered preset headlessly, pass the same
-`--variant cuda_ad_rgb` to `mitsuba_stage_demo.py`.
+`--variant cuda_ad_rgb` to `mitsuba_stage_demo.py`. The Render tab's
+`denoise (OptiX)` checkbox (see "Reduce Noise with OptiX Denoising" above)
+is enabled only when the viewer was started with `--variant cuda_ad_rgb`.
 
 #### Apply an Existing Preset from the Browser (Preset Tab)
 
@@ -679,13 +725,16 @@ renders. The mapping work root must not overlap the input root.
 
 This form cannot be combined with the positional `OPTICAL_ZARR OUTPUT_PNG`
 form, `--stage-config`, or any of the
-`--width`/`--height`/`--spp`/`--max-depth`/`--checker-scale` overrides — the
-session already carries a fully-resolved effective stage/render config, so
-mixing in overrides would make "session replay" ambiguous. As with the
-viewer, an explicit `--variant`/`--seed` is accepted only if it agrees with
-the session. For the same input digest, effective stage/render config,
-variant, and seed, this headless PNG and the viewer's **Render final** output
-are pixel-identical.
+`--width`/`--height`/`--spp`/`--max-depth`/`--checker-scale`/`--denoise`/
+`--no-denoise` overrides — the session already carries a fully-resolved
+effective stage/render config (including `denoise`), so mixing in overrides
+would make "session replay" ambiguous. As with the viewer, an explicit
+`--variant`/`--seed` is accepted only if it agrees with the session. For the
+same input digest, effective stage/render config, variant, and seed, this
+headless PNG and the viewer's **Render final** output are pixel-identical
+(the denoised PNG only on the same GPU/driver, per "Reduce Noise with OptiX
+Denoising" above; the raw `.raw.png` sidecar is pixel-identical
+unconditionally).
 
 #### Operations: Staying in Control During Day-to-Day Use
 
