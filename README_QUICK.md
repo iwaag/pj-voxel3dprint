@@ -181,6 +181,57 @@ interface used to add further generation methods.
 
 ---
 
+## Use Case 4d: Export Print Slices for GrabCAD Voxel Printing
+
+Convert a material-label voxel model into an indexed-palette PNG slice stack (plus a
+sidecar manifest) on a GrabCAD-compatible printer grid, then verify the round-trip by
+reading the slices back through `convert-image-stack` and comparing material counts.
+
+```bash
+cd vdbmat-utils
+
+# 1. Generate a small, countable input (any generator works; primitive array is easiest)
+uv run vdbmat-utils generate-primitive-array \
+     --config primarray.json \
+     --out output/input --name demo
+
+# 2. Export to a printer-pitch PNG slice stack
+uv run vdbmat-utils export-print-slices output/input/demo.voxels.json \
+     --config printslices.json \
+     --out output/slices --name demo
+
+# 3. Visual/dimensional check
+uv run vdbmat-utils preview-slices output/input/demo.voxels.json --axis z
+# compare a slice PNG's aspect ratio against printslices.json's grid.physical_mm
+
+# 4. Round-trip verification: derive the read-back config from the sidecar manifest
+#    (output/slices/demo/demo.printslices.json), then read the PNG stack back
+uv run vdbmat-utils convert-image-stack output/slices/demo \
+     --config roundtrip.json \
+     --out output/roundtrip --name demo
+uv run vdbmat-utils preview-slices output/roundtrip/demo.voxels.json --axis z
+uv run vdbmat-utils material-counts output/roundtrip/demo.voxels.json
+```
+
+**Output files:**
+- `output/slices/demo/slice_0000.png` … — indexed-palette PNG slices (one per printer layer)
+- `output/slices/demo/demo.printslices.json` — sidecar manifest (printer profile, palette,
+  physical dimensions, per-file checksums); also the GrabCAD GUI color→material assignment sheet
+- `output/roundtrip/demo.voxels.json` — the printer-grid volume read back from the PNG stack
+
+**Constraints:**
+- `layer_thickness_m` has no default (14 µm High Quality / 27 µm High Speed per GrabCAD's guide)
+- Non-background material count must fit the printer's per-image color limit (6, or 3 for High Speed)
+- Derived slice count must be `>= min_slices` (default 30; relax only for tests/small demos)
+
+The round-trip's `levels` config is derived mechanically from the sidecar manifest's
+`palette` — no hand-written gray/RGB↔material table — via
+`vdbmat_utils.printer.roundtrip.image_stack_config_from_print_manifest()`. See
+`vdbmat-utils/docs/print-slices.md` for the config fields, grid-derivation rules, and the
+full round-trip section (including how to derive `roundtrip.json`).
+
+---
+
 ## Use Case 5: Apply Volume Operation Pipeline
 
 Apply operations such as crop, pad, resample, orient, place, apply-mask, compose, and remap-materials as a pipeline.
@@ -941,6 +992,7 @@ every generated file under `.local/mitsubagui_improve/p5/` — never commit
 | `morph-stack` | SDF interpolation between key slices |
 | `apply-pipeline` | Apply volume operation pipeline |
 | `generate-primitive-array` | Generate transparent block + opaque cube/sphere inclusion array |
+| `export-print-slices` | Export material-label voxels to a GrabCAD-printer PNG slice stack |
 | `generate-formation` | Generate procedural formation |
 | `formation-stats` | Display formation statistics |
 | `sweep-formation` | Run parameter sweep |
