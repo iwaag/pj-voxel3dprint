@@ -183,7 +183,7 @@ interface used to add further generation methods.
 
 ## Use Case 4d: Export Print Slices for GrabCAD Voxel Printing
 
-Convert a material-label voxel model into an indexed-palette PNG slice stack (plus a
+Convert a material-label voxel model into an opaque RGBA (32-bit) PNG slice stack (plus a
 sidecar manifest) on a GrabCAD-compatible printer grid, then verify the round-trip by
 reading the slices back through `convert-image-stack` and comparing material counts.
 
@@ -214,7 +214,7 @@ uv run vdbmat-utils material-counts output/roundtrip/demo.voxels.json
 ```
 
 **Output files:**
-- `output/slices/demo/slice_0000.png` … — indexed-palette PNG slices (one per printer layer)
+- `output/slices/demo/slice_0000.png` … — opaque RGBA (32-bit) PNG slices (one per printer layer)
 - `output/slices/demo/demo.printslices.json` — sidecar manifest (printer profile, palette,
   physical dimensions, per-file checksums); also the GrabCAD GUI color→material assignment sheet
 - `output/roundtrip/demo.voxels.json` — the printer-grid volume read back from the PNG stack
