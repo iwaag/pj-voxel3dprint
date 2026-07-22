@@ -231,6 +231,75 @@ material-labelボクセル → スライスPNG群の変換を、契約テスト�
   報告に記録されている。
 - 実機確認で判明した仕様解釈がドキュメントへ反映されている。
 
+### Phase 3 ex1 — RGBA(32-bit) PNG出力への切り替え
+
+#### 背景
+
+Phase 3の実機検証で、GrabCAD Voxel Print Utilityへ現行出力（インデックス
+パレットPNG、`write_indexed_png()`、PNG color type 3 = 1ピクセル8ビットの
+パレット参照）を読み込ませたところ、「32ビット画像である必要がある」との
+理由で読み込みが失敗した。「32ビット」はPNG color type 6（トゥルーカラー+
+アルファ = RGBA、1ピクセル32ビット）を指すと解される。GrabCAD側はcolor
+typeそのもの（実際の色数ではない）を見て拒否しているとみられ、赤緑2色
+しか使っていない今回のフィクスチャでも通らなかった。この制約は
+roadmap策定時点でもPhase 1 planでも想定されておらず、実機検証で初めて
+判明した。
+
+これはPhase 3 todoの方針どおり「Phase 1実装へのfix」として扱う。ただし
+Phase 3自体（人間による実機確認フェーズ）を汚さないよう、独立の
+sub-phaseとして切り出す。
+
+#### 目的
+
+`export-print-slices` の出力を、現行のインデックスパレットPNGから
+RGBA（32-bit、color type 6）PNGへ切り替える。**材料IDを補間・平均しない
+という契約（サンプリングは最近傍のみ）はエンコード方式の変更であり
+影響を受けない** — パレットのRGB値を各ピクセルへそのまま展開するだけで、
+中間色が構造的に発生しない性質は保たれる。
+
+#### スコープ
+
+- `image/png.py`: RGBA writer（`write_rgba_png()`相当）を追加し、
+  `write_indexed_png()`を置き換える（破壊的変更方針により、
+  インデックスPNGモードを config オプションとして残す互換シムは作らない）。
+- `image/png.py`: `read_png_rgb()`のRGBA拒否（現行、透過チャンネルの
+  暗黙変換を避けるための明示エラー）をRGBA受理へ変更する。
+  `read_indexed_png()`（デコード検証・往復テスト用ヘルパ）もRGBA前提へ
+  更新するか、RGBA版を新設する。
+- `printer/exporter.py`: `_recheck_actual_colors()`（実色数再検査）を
+  RGBA配列の一意色集合チェックへ更新する。
+- Phase 2で確定した往復契約テスト（`convert-image-stack`との一致）を
+  RGBA出力に対して再度固定し直す（`image/stack.py`のrgb levels対応は
+  `read_png_rgb()`経由で"P"/"RGB"両対応済みだったため、RGBA対応も
+  この経路に合流させる）。
+- `docs/print-slices.md`のPNGエンコード節・claims節を更新し、「GrabCAD
+  実機確認済み: RGBA(32-bit)出力が必須、インデックスパレットPNGは
+  Voxel Print Utilityに拒否される」を記録する。
+- 契約テスト（digest pin、double-run、パラメータ感度、色数再検査）を
+  RGBA出力に合わせて更新する。
+
+#### 非ゴール
+
+- ハーフトーン/ディザリング、BMPレガシー、名前付きプリンタプリセット
+  （Phase 4のまま）。
+- インデックスパレットPNGの並行サポート（破壊的変更方針により、
+  必要性が確認されるまで作らない）。
+- Phase 3再実施そのもの（本sub-phaseの成果物をもって、RGBA版の
+  スライスPNGを再生成しGrabCADへ再投入するところまでは含むが、
+  それ以外の実機確認ポイント — 色検出数、背景の扱い、寸法表示、
+  命名規則 — の再確認はPhase 3 todoの再実行として扱う）。
+
+#### 完了条件
+
+- `export-print-slices`がRGBA（32-bit、color type 6）PNGを出力し、
+  既存の「材料IDを補間しない」契約・往復契約テストが無変更の基準で
+  再度通る。
+- 契約テストがRGBA出力のピクセル配列に対して固定し直されている。
+- `docs/print-slices.md`に実機確認済みの解釈として記録されている。
+- RGBA版の出力をGrabCAD Voxel Print Utilityへ再投入し、「32ビット」
+  エラーが解消したことが確認され、`.devdocs/vision/printer_export/p3ex1/`
+  のreportに記録されている。
+
 ### Phase 4（オプション） — 運用性の強化
 
 Phase 1〜3の運用で必要性が確認されたものだけを個別に計画する。候補:
@@ -254,6 +323,8 @@ Phase 1: export-print-slices CLI（契約テスト）
 Phase 2: 往復契約テスト・ドキュメント統合
     ↓
 Phase 3: 実機ソフト検証（GrabCAD Voxel Print Utility）
+    ↓
+Phase 3 ex1: RGBA(32-bit) PNG出力への切り替え（Phase 3実機検証で判明した齟齬のfix）
     ↓
 Phase 4: 必要になった強化だけを選択実装
 ```
