@@ -1,0 +1,70 @@
+{
+  "format": "pj-voxel3dprint.resin-library",
+  "format_version": "1.0.0",
+  "library_id": "vero-j850-provisional-v2",
+  "calibration_status": "provisional-uncalibrated",
+  "printer": "Stratasys J850, High Quality (14 um), glossy; clear slot = Vero UltraClear",
+  "optical_basis": "linear-srgb-effective-v1 (R, G, B), coefficients in 1/m",
+  "phase_function": "g = 0 with reduced scattering sigma_s' = sigma_s (1 - g); equivalent in the diffusive regime and cheaper for volpath than a forward-peaked phase",
+  "ior_note": "One IOR for every resin. Cured Vero resins differ by ~0.01, which reflects < 0.01 % at normal incidence, but every IOR step becomes an internal dielectric surface in prepare_mitsuba_scene (path depth, noise, dark rims). A single IOR removes all internal interfaces.",
+  "source": "Physical priors from .devdocs/episodes/viewer_feedback_improve/p1/plan.md (transmittance exp(-sigma_t d); case1 45 % clear colours are opaque in 5 mm). No measured Vero coefficients were available (Elek et al. 2017 / Brunton et al. 2018 not consulted). Not calibration data.",
+  "resins": [
+    {
+      "id": "white",
+      "names": ["VeroPureWht", "VeroPureWhite", "VeroWhite", "white"],
+      "sigma_a_rgb_per_m": [20.0, 20.0, 25.0],
+      "sigma_s_rgb_per_m": [10000.0, 10000.0, 10000.0],
+      "g": 0.0,
+      "ior": 1.52,
+      "note": "opaque within ~0.3 mm; slight warm tint (more blue absorption)"
+    },
+    {
+      "id": "black",
+      "names": ["VeroBlack_or_VeroFlexBK", "VeroBlack", "black"],
+      "sigma_a_rgb_per_m": [15000.0, 15000.0, 15000.0],
+      "sigma_s_rgb_per_m": [300.0, 300.0, 300.0],
+      "g": 0.0,
+      "ior": 1.52,
+      "note": "effectively opaque"
+    },
+    {
+      "id": "clear",
+      "names": ["VeroClear_or_VeroFlexCLR", "VeroUltraClear", "VeroUltraClr", "VeroClear", "clear"],
+      "sigma_a_rgb_per_m": [5.0, 8.0, 15.0],
+      "sigma_s_rgb_per_m": [10.0, 10.0, 10.0],
+      "g": 0.0,
+      "ior": 1.52,
+      "note": "Vero UltraClear (not VeroClear): faint yellow, truly clear"
+    },
+    {
+      "id": "cyan",
+      "names": ["VeroCyan_or_VeroFlexCY", "VeroCyan", "cyan"],
+      "sigma_a_rgb_per_m": [4000.0, 800.0, 250.0],
+      "sigma_s_rgb_per_m": [1000.0, 1000.0, 1000.0],
+      "g": 0.0,
+      "ior": 1.52,
+      "note": "absorbs red; not transparent"
+    },
+    {
+      "id": "magenta",
+      "names": ["VeroMgnt_or_VeroFlexMGT", "VeroMagenta", "VeroMgnt", "magenta"],
+      "sigma_a_rgb_per_m": [700.0, 4000.0, 1200.0],
+      "sigma_s_rgb_per_m": [1000.0, 1000.0, 1000.0],
+      "g": 0.0,
+      "ior": 1.52,
+      "note": "absorbs green"
+    },
+    {
+      "id": "yellow",
+      "names": ["VeroYellow_or_VeroFlexYL", "VeroYellow", "yellow"],
+      "sigma_a_rgb_per_m": [250.0, 500.0, 5000.0],
+      "sigma_s_rgb_per_m": [1000.0, 1000.0, 1000.0],
+      "g": 0.0,
+      "ior": 1.52,
+      "note": "absorbs blue"
+    }
+  ],
+  "changelog": [
+    "2026-09-25 v2 initial: plan.md prior table, mid-range sigma_s (white 10000, CMY 1000), single IOR 1.52."
+  ]
+}

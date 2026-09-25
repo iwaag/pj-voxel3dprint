@@ -1,5 +1,5 @@
 {
- "title": "batch1 contact sheet v0 - photos | archived art-stage renders + stage-print-photo renders",
+ "title": "batch1 contact sheet v0 - photos | archived art-stage, semantic @print-photo, print-aware v2a @print-photo",
  "tile_height": 360,
  "rows": [
   {
@@ -15,6 +15,10 @@
     {
      "path": ".local/real_print/batch1/renders-p1/step2/agate-semantic-printphoto.png",
      "caption": "agate-semantic @print-photo"
+    },
+    {
+     "path": ".local/real_print/batch1/renders-p1/step3/agate-v2a.png",
+     "caption": "agate print-aware v2a @print-photo"
     }
    ]
   },
@@ -36,6 +40,10 @@
     {
      "path": ".local/real_print/batch1/renders-p1/step2/amber-printaware-v1-printphoto.png",
      "caption": "amber-printaware-v1 @print-photo"
+    },
+    {
+     "path": ".local/real_print/batch1/renders-p1/step3/amber-v2a.png",
+     "caption": "amber print-aware v2a @print-photo"
     }
    ]
   },
@@ -52,6 +60,10 @@
     {
      "path": ".local/real_print/batch1/renders-p1/step2/fur-semantic-printphoto.png",
      "caption": "fur-semantic @print-photo"
+    },
+    {
+     "path": ".local/real_print/batch1/renders-p1/step3/fur-v2a.png",
+     "caption": "fur print-aware v2a @print-photo"
     }
    ]
   }
