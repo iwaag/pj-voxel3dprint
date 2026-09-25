@@ -1,15 +1,59 @@
 {
-  "title": "batch1 contact sheet v0 - photos vs archived renders (J850 HQ, Vero UltraClear)",
-  "tile_height": 360,
-  "rows": [
-    {"label": "case1 agate", "note": "render: semantic\n(weak recipe mix)",
-     "photos": [".local/real_print/batch1/case1/result/Unknown.jpg", ".local/real_print/batch1/case1/result/Unknown-2.jpg", ".local/real_print/batch1/case1/result/Unknown-3.jpg"],
-     "renders": [".local/real_print/batch1/case1/data/outputs/pink-teal-agate-v3-saturated-current-camera-HQ-02.png"]},
-    {"label": "case2 amber", "note": "renders: semantic,\nprint-aware v1 (black80)",
-     "photos": [".local/real_print/batch1/case2/result/Unknown-4.jpg", ".local/real_print/batch1/case2/result/Unknown-5.jpg", ".local/real_print/batch1/case2/result/Unknown-6.jpg"],
-     "renders": [".local/real_print/batch1/case2/data/outputs/amber-branching-current-frame-hq.png", ".local/real_print/batch1/case2/data/outputs/kohaku_tree-print-aware-black-minus20-HQ.png"]},
-    {"label": "case3 fur", "note": "render: semantic\n(weak recipe mix)",
-     "photos": [".local/real_print/batch1/case3/result/Unknown-7.jpg", ".local/real_print/batch1/case3/result/Unknown-8.jpg", ".local/real_print/batch1/case3/result/Unknown-9.jpg"],
-     "renders": [".local/real_print/batch1/case3/data/outputs/floating-fur-current-camera-HQ-depth64.png"]}
-  ]
+ "title": "batch1 contact sheet v0 - photos | archived art-stage renders + stage-print-photo renders",
+ "tile_height": 360,
+ "rows": [
+  {
+   "label": "case1 agate",
+   "note": "render: semantic\n(weak recipe mix)",
+   "photos": [
+    ".local/real_print/batch1/case1/result/Unknown.jpg",
+    ".local/real_print/batch1/case1/result/Unknown-2.jpg",
+    ".local/real_print/batch1/case1/result/Unknown-3.jpg"
+   ],
+   "renders": [
+    ".local/real_print/batch1/case1/data/outputs/pink-teal-agate-v3-saturated-current-camera-HQ-02.png",
+    {
+     "path": ".local/real_print/batch1/renders-p1/step2/agate-semantic-printphoto.png",
+     "caption": "agate-semantic @print-photo"
+    }
+   ]
+  },
+  {
+   "label": "case2 amber",
+   "note": "renders: semantic,\nprint-aware v1 (black80)",
+   "photos": [
+    ".local/real_print/batch1/case2/result/Unknown-4.jpg",
+    ".local/real_print/batch1/case2/result/Unknown-5.jpg",
+    ".local/real_print/batch1/case2/result/Unknown-6.jpg"
+   ],
+   "renders": [
+    ".local/real_print/batch1/case2/data/outputs/amber-branching-current-frame-hq.png",
+    ".local/real_print/batch1/case2/data/outputs/kohaku_tree-print-aware-black-minus20-HQ.png",
+    {
+     "path": ".local/real_print/batch1/renders-p1/step2/amber-semantic-printphoto.png",
+     "caption": "amber-semantic @print-photo"
+    },
+    {
+     "path": ".local/real_print/batch1/renders-p1/step2/amber-printaware-v1-printphoto.png",
+     "caption": "amber-printaware-v1 @print-photo"
+    }
+   ]
+  },
+  {
+   "label": "case3 fur",
+   "note": "render: semantic\n(weak recipe mix)",
+   "photos": [
+    ".local/real_print/batch1/case3/result/Unknown-7.jpg",
+    ".local/real_print/batch1/case3/result/Unknown-8.jpg",
+    ".local/real_print/batch1/case3/result/Unknown-9.jpg"
+   ],
+   "renders": [
+    ".local/real_print/batch1/case3/data/outputs/floating-fur-current-camera-HQ-depth64.png",
+    {
+     "path": ".local/real_print/batch1/renders-p1/step2/fur-semantic-printphoto.png",
+     "caption": "fur-semantic @print-photo"
+    }
+   ]
+  }
+ ]
 }
