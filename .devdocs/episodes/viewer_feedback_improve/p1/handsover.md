@@ -12,9 +12,10 @@ from them.
 - Step 4 was started as a background loop of renders into
   `.local/real_print/batch1/renders-p1/step4/`:
   fur and agate v2a at depth 8/32/64 (`--max-depth D --rr-depth D`), then
-  fur d32 spp512 `--denoise`. At the stop, only `fur-v2a-d8.png` existed
-  (fur d8: 77 s). The rest may still be running or may have finished; check
-  that directory and rerun whatever is missing:
+  fur d32 spp512 `--denoise`. **All renders finished after the stop**
+  (fur d8/32/64: 77/140/154 s, agate d8/32/64: 92/169/260 s, fur spp512
+  denoise: 385 s; also `fur-v2a-d32-spp512-dn.raw.png`). They have not been
+  inspected yet. Next: compare them, write `report4.md`. To regenerate any of them:
   ```
   z=.local/floating-fur/print-aware-v2a/fur-optical.zarr   # or .local/pink-agate-v3/print-aware-v2a/agate-optical.zarr
   work/compare/render_stage.sh $z .local/real_print/batch1/renders-p1/step4/fur-v2a-d32.png --max-depth 32 --rr-depth 32
