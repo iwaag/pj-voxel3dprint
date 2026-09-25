@@ -1,0 +1,294 @@
+{
+ "title": "p2 step 1 - photo | v2 @ print-photo p1 (uniform ambient + key) | v2 @ print-photo p2 (dome) | fur/amber rough 0.05",
+ "tile_height": 380,
+ "rows": [
+  {
+   "label": "case1 agate",
+   "note": "grey box: white patch\nred: top face mean\nblue: salmon/pink band\nyellow: dark teal",
+   "photos": [
+    {
+     "path": ".local/real_print/batch1/case1/result/Unknown-2.jpg",
+     "caption": "photo Unknown-2",
+     "white": [
+      0.27,
+      0.45,
+      0.31,
+      0.65
+     ],
+     "regions": {
+      "top face": [
+       0.38,
+       0.35,
+       0.62,
+       0.78
+      ],
+      "pink band": [
+       0.357,
+       0.572,
+       0.372,
+       0.592
+      ],
+      "dark teal": [
+       0.565,
+       0.425,
+       0.595,
+       0.45
+      ]
+     }
+    },
+    ".local/real_print/batch1/case1/result/Unknown.jpg",
+    ".local/real_print/batch1/case1/result/Unknown-3.jpg"
+   ],
+   "renders": [
+    {
+     "path": ".local/real_print/batch1/renders-p1/step7/agate-v2.png",
+     "caption": "v2 p1 stage",
+     "white": [
+      0.03,
+      0.65,
+      0.13,
+      0.85
+     ],
+     "regions": {
+      "top face": [
+       0.35,
+       0.35,
+       0.6,
+       0.6
+      ],
+      "pink band": [
+       0.29,
+       0.54,
+       0.32,
+       0.57
+      ],
+      "dark teal": [
+       0.255,
+       0.27,
+       0.275,
+       0.29
+      ]
+     }
+    },
+    {
+     "path": ".local/real_print/batch1/renders-p2/step1/agate-v2-dome.png",
+     "caption": "v2 dome stage",
+     "white": [
+      0.03,
+      0.65,
+      0.13,
+      0.85
+     ],
+     "regions": {
+      "top face": [
+       0.35,
+       0.35,
+       0.6,
+       0.6
+      ],
+      "pink band": [
+       0.29,
+       0.54,
+       0.32,
+       0.57
+      ],
+      "dark teal": [
+       0.255,
+       0.27,
+       0.275,
+       0.29
+      ]
+     }
+    }
+   ]
+  },
+  {
+   "label": "case2 amber",
+   "note": "grey box: white patch\nred: top face mean",
+   "photos": [
+    {
+     "path": ".local/real_print/batch1/case2/result/Unknown-5.jpg",
+     "caption": "photo Unknown-5",
+     "white": [
+      0.75,
+      0.2,
+      0.9,
+      0.35
+     ],
+     "regions": {
+      "top face": [
+       0.38,
+       0.4,
+       0.55,
+       0.5
+      ]
+     }
+    },
+    ".local/real_print/batch1/case2/result/Unknown-4.jpg",
+    ".local/real_print/batch1/case2/result/Unknown-6.jpg"
+   ],
+   "renders": [
+    {
+     "path": ".local/real_print/batch1/renders-p1/step7/amber-v2.png",
+     "caption": "v2 p1 stage",
+     "white": [
+      0.03,
+      0.65,
+      0.13,
+      0.85
+     ],
+     "regions": {
+      "top face": [
+       0.35,
+       0.3,
+       0.6,
+       0.5
+      ]
+     }
+    },
+    {
+     "path": ".local/real_print/batch1/renders-p2/step1/amber-v2-dome.png",
+     "caption": "v2 dome stage",
+     "white": [
+      0.03,
+      0.65,
+      0.13,
+      0.85
+     ],
+     "regions": {
+      "top face": [
+       0.35,
+       0.3,
+       0.6,
+       0.5
+      ]
+     }
+    },
+    {
+     "path": ".local/real_print/batch1/renders-p2/step1/amber-v2-dome-rough05.png",
+     "caption": "v2 dome, rough 0.05",
+     "white": [
+      0.03,
+      0.65,
+      0.13,
+      0.85
+     ],
+     "regions": {
+      "top face": [
+       0.35,
+       0.3,
+       0.6,
+       0.5
+      ]
+     }
+    }
+   ]
+  },
+  {
+   "label": "case3 fur",
+   "note": "grey box: white patch\nred: hair field mean\nblue: clear margin",
+   "photos": [
+    {
+     "path": ".local/real_print/batch1/case3/result/Unknown-9.jpg",
+     "caption": "photo Unknown-9",
+     "white": [
+      0.78,
+      0.3,
+      0.9,
+      0.6
+     ],
+     "regions": {
+      "hair field": [
+       0.4,
+       0.3,
+       0.58,
+       0.62
+      ],
+      "clear margin": [
+       0.652,
+       0.33,
+       0.668,
+       0.47
+      ]
+     }
+    },
+    ".local/real_print/batch1/case3/result/Unknown-7.jpg",
+    ".local/real_print/batch1/case3/result/Unknown-8.jpg"
+   ],
+   "renders": [
+    {
+     "path": ".local/real_print/batch1/renders-p1/step7/fur-v2.png",
+     "caption": "v2 p1 stage",
+     "white": [
+      0.03,
+      0.65,
+      0.13,
+      0.85
+     ],
+     "regions": {
+      "hair field": [
+       0.4,
+       0.4,
+       0.6,
+       0.55
+      ],
+      "clear margin": [
+       0.33,
+       0.24,
+       0.38,
+       0.27
+      ]
+     }
+    },
+    {
+     "path": ".local/real_print/batch1/renders-p2/step1/fur-v2-dome.png",
+     "caption": "v2 dome stage",
+     "white": [
+      0.03,
+      0.65,
+      0.13,
+      0.85
+     ],
+     "regions": {
+      "hair field": [
+       0.4,
+       0.4,
+       0.6,
+       0.55
+      ],
+      "clear margin": [
+       0.33,
+       0.24,
+       0.38,
+       0.27
+      ]
+     }
+    },
+    {
+     "path": ".local/real_print/batch1/renders-p2/step1/fur-v2-dome-rough05.png",
+     "caption": "v2 dome, rough 0.05",
+     "white": [
+      0.03,
+      0.65,
+      0.13,
+      0.85
+     ],
+     "regions": {
+      "hair field": [
+       0.4,
+       0.4,
+       0.6,
+       0.55
+      ],
+      "clear margin": [
+       0.33,
+       0.24,
+       0.38,
+       0.27
+      ]
+     }
+    }
+   ]
+  }
+ ]
+}

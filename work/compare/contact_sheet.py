@@ -170,14 +170,23 @@ def build_sheet(spec: dict) -> tuple[Image.Image, list[str]]:
         width = max([width] + [LABEL_W + round(font.getlength(line)) for line in table])
         rows.append((row["label"], row.get("note", ""), photos, renders, width, table))
         if measured:
-            markdown += [f"### {row['label']}", "", "| region | image | sRGB | L | a | b |", "|---|---|---|---:|---:|---:|"]
+            markdown += [
+                f"### {row['label']}",
+                "",
+                "| region | image | sRGB | L | a | b | ΔE76 |",
+                "|---|---|---|---:|---:|---:|---:|",
+            ]
             for name in _region_names(measured):
+                # ΔE76 against the first image of the row that has this region
+                # (the photo, when the photo is measured).
+                reference = next(e.stats[name][1] for e in measured if name in e.stats)
                 for e in measured:
                     if name in e.stats:
                         rgb, lab = e.stats[name]
+                        delta = float(np.linalg.norm(lab - reference))
                         markdown.append(
                             f"| {name} | {e.caption} | {rgb[0]:.0f}, {rgb[1]:.0f}, {rgb[2]:.0f} "
-                            f"| {lab[0]:.0f} | {lab[1]:+.0f} | {lab[2]:+.0f} |"
+                            f"| {lab[0]:.0f} | {lab[1]:+.0f} | {lab[2]:+.0f} | {delta:.1f} |"
                         )
             markdown.append("")
 
