@@ -1,0 +1,6771 @@
+{
+ "agate": {
+  "top": {
+   "regions": {
+    "pale-pink-e6c5e1": {
+     "rect": [
+      21.2,
+      3.0,
+      23.2,
+      5.0
+     ],
+     "purity": 1.0,
+     "composition": {
+      "pale-pink-e6c5e1": 1.0
+     }
+    },
+    "dusty-rose": {
+     "rect": [
+      54.8,
+      25.4,
+      56.8,
+      27.4
+     ],
+     "purity": 0.64,
+     "composition": {
+      "dusty-rose": 0.64,
+      "mauve": 0.17,
+      "lavender": 0.03,
+      "light-tan": 0.1,
+      "clear-band": 0.06
+     }
+    },
+    "mauve": {
+     "rect": [
+      3.0,
+      25.4,
+      5.0,
+      27.4
+     ],
+     "purity": 0.69,
+     "composition": {
+      "dusty-rose": 0.17,
+      "mauve": 0.69,
+      "lavender": 0.04,
+      "deep-teal": 0.03,
+      "white": 0.05,
+      "milky-white": 0.01,
+      "smoky-blue-black": 0.01
+     }
+    },
+    "lavender": {
+     "rect": [
+      40.8,
+      23.2,
+      42.8,
+      25.2
+     ],
+     "purity": 0.92,
+     "composition": {
+      "lavender": 0.92,
+      "blue-grey": 0.08
+     }
+    },
+    "blue-grey": {
+     "rect": [
+      43.0,
+      19.4,
+      45.0,
+      21.4
+     ],
+     "purity": 0.53,
+     "composition": {
+      "lavender": 0.04,
+      "blue-grey": 0.53,
+      "teal-0f6d75": 0.27,
+      "deep-teal": 0.02,
+      "clear-band": 0.14
+     }
+    },
+    "teal-0f6d75": {
+     "rect": [
+      33.8,
+      19.8,
+      35.8,
+      21.8
+     ],
+     "purity": 1.0,
+     "composition": {
+      "teal-0f6d75": 1.0
+     }
+    },
+    "deep-teal": {
+     "rect": [
+      35.8,
+      19.8,
+      37.8,
+      21.8
+     ],
+     "purity": 0.75,
+     "composition": {
+      "teal-0f6d75": 0.25,
+      "deep-teal": 0.75
+     }
+    },
+    "white": {
+     "rect": [
+      4.8,
+      20.2,
+      6.8,
+      22.2
+     ],
+     "purity": 0.64,
+     "composition": {
+      "lavender": 0.05,
+      "blue-grey": 0.16,
+      "teal-0f6d75": 0.03,
+      "white": 0.64,
+      "milky-white": 0.12
+     }
+    },
+    "milky-white": {
+     "rect": [
+      38.4,
+      7.0,
+      40.4,
+      9.0
+     ],
+     "purity": 0.61,
+     "composition": {
+      "blue-grey": 0.03,
+      "teal-0f6d75": 0.17,
+      "deep-teal": 0.02,
+      "white": 0.13,
+      "milky-white": 0.61,
+      "smoky-blue-black": 0.04
+     }
+    },
+    "light-tan": {
+     "rect": [
+      55.4,
+      23.4,
+      57.4,
+      25.4
+     ],
+     "purity": 0.8,
+     "composition": {
+      "light-tan": 0.8,
+      "translucent-black": 0.2
+     }
+    },
+    "translucent-black": {
+     "rect": [
+      55.0,
+      21.8,
+      57.0,
+      23.8
+     ],
+     "purity": 0.87,
+     "composition": {
+      "light-tan": 0.05,
+      "translucent-black": 0.87,
+      "smoky-blue-black": 0.08
+     }
+    },
+    "clear-band": {
+     "rect": [
+      19.0,
+      3.2,
+      21.0,
+      5.2
+     ],
+     "purity": 0.66,
+     "composition": {
+      "pale-pink-e6c5e1": 0.21,
+      "dusty-rose": 0.13,
+      "clear-band": 0.66
+     }
+    }
+   },
+   "tiles": {
+    "tile 0,0": {
+     "rect": [
+      2.4,
+      2.4,
+      7.4,
+      7.4
+     ],
+     "composition": {
+      "dusty-rose": 0.038,
+      "mauve": 0.046,
+      "lavender": 0.072,
+      "blue-grey": 0.171,
+      "teal-0f6d75": 0.107,
+      "deep-teal": 0.056,
+      "white": 0.069,
+      "milky-white": 0.069,
+      "light-tan": 0.139,
+      "translucent-black": 0.067,
+      "clear-band": 0.099,
+      "smoky-blue-black": 0.062
+     }
+    },
+    "tile 1,0": {
+     "rect": [
+      7.4,
+      2.4,
+      12.4,
+      7.4
+     ],
+     "composition": {
+      "dusty-rose": 0.085,
+      "mauve": 0.09,
+      "lavender": 0.128,
+      "teal-0f6d75": 0.091,
+      "deep-teal": 0.166,
+      "white": 0.069,
+      "milky-white": 0.075,
+      "light-tan": 0.088,
+      "translucent-black": 0.075,
+      "clear-band": 0.048,
+      "smoky-blue-black": 0.085
+     }
+    },
+    "tile 2,0": {
+     "rect": [
+      12.4,
+      2.4,
+      17.4,
+      7.4
+     ],
+     "composition": {
+      "pale-pink-e6c5e1": 0.069,
+      "dusty-rose": 0.139,
+      "mauve": 0.048,
+      "lavender": 0.117,
+      "blue-grey": 0.125,
+      "teal-0f6d75": 0.048,
+      "deep-teal": 0.038,
+      "white": 0.082,
+      "milky-white": 0.12,
+      "light-tan": 0.062,
+      "translucent-black": 0.038,
+      "clear-band": 0.069,
+      "smoky-blue-black": 0.045
+     }
+    },
+    "tile 3,0": {
+     "rect": [
+      17.4,
+      2.4,
+      22.4,
+      7.4
+     ],
+     "composition": {
+      "pale-pink-e6c5e1": 0.376,
+      "dusty-rose": 0.085,
+      "mauve": 0.066,
+      "lavender": 0.054,
+      "blue-grey": 0.024,
+      "teal-0f6d75": 0.05,
+      "deep-teal": 0.019,
+      "white": 0.059,
+      "milky-white": 0.066,
+      "clear-band": 0.202
+     }
+    },
+    "tile 4,0": {
+     "rect": [
+      22.4,
+      2.4,
+      27.4,
+      7.4
+     ],
+     "composition": {
+      "pale-pink-e6c5e1": 0.19,
+      "dusty-rose": 0.253,
+      "mauve": 0.062,
+      "lavender": 0.026,
+      "white": 0.051,
+      "milky-white": 0.12,
+      "light-tan": 0.122,
+      "translucent-black": 0.035,
+      "clear-band": 0.133,
+      "smoky-blue-black": 0.008
+     }
+    },
+    "tile 5,0": {
+     "rect": [
+      27.4,
+      2.4,
+      32.4,
+      7.4
+     ],
+     "composition": {
+      "pale-pink-e6c5e1": 0.05,
+      "dusty-rose": 0.106,
+      "mauve": 0.09,
+      "blue-grey": 0.141,
+      "teal-0f6d75": 0.149,
+      "deep-teal": 0.037,
+      "white": 0.072,
+      "milky-white": 0.08,
+      "light-tan": 0.094,
+      "translucent-black": 0.046,
+      "clear-band": 0.093,
+      "smoky-blue-black": 0.038
+     }
+    },
+    "tile 6,0": {
+     "rect": [
+      32.4,
+      2.4,
+      37.4,
+      7.4
+     ],
+     "composition": {
+      "pale-pink-e6c5e1": 0.072,
+      "dusty-rose": 0.099,
+      "mauve": 0.07,
+      "lavender": 0.09,
+      "blue-grey": 0.093,
+      "teal-0f6d75": 0.082,
+      "deep-teal": 0.101,
+      "white": 0.045,
+      "milky-white": 0.062,
+      "light-tan": 0.074,
+      "translucent-black": 0.083,
+      "clear-band": 0.048,
+      "smoky-blue-black": 0.082
+     }
+    },
+    "tile 7,0": {
+     "rect": [
+      37.4,
+      2.4,
+      42.4,
+      7.4
+     ],
+     "composition": {
+      "pale-pink-e6c5e1": 0.131,
+      "dusty-rose": 0.05,
+      "mauve": 0.021,
+      "lavender": 0.034,
+      "blue-grey": 0.101,
+      "teal-0f6d75": 0.08,
+      "deep-teal": 0.042,
+      "white": 0.034,
+      "milky-white": 0.066,
+      "light-tan": 0.23,
+      "translucent-black": 0.08,
+      "clear-band": 0.059,
+      "smoky-blue-black": 0.074
+     }
+    },
+    "tile 8,0": {
+     "rect": [
+      42.4,
+      2.4,
+      47.4,
+      7.4
+     ],
+     "composition": {
+      "pale-pink-e6c5e1": 0.04,
+      "dusty-rose": 0.066,
+      "mauve": 0.126,
+      "lavender": 0.056,
+      "blue-grey": 0.126,
+      "teal-0f6d75": 0.16,
+      "deep-teal": 0.053,
+      "white": 0.11,
+      "milky-white": 0.12,
+      "light-tan": 0.006,
+      "translucent-black": 0.008,
+      "clear-band": 0.117,
+      "smoky-blue-black": 0.011
+     }
+    },
+    "tile 9,0": {
+     "rect": [
+      47.4,
+      2.4,
+      52.4,
+      7.4
+     ],
+     "composition": {
+      "dusty-rose": 0.067,
+      "mauve": 0.085,
+      "lavender": 0.154,
+      "blue-grey": 0.158,
+      "teal-0f6d75": 0.142,
+      "deep-teal": 0.102,
+      "white": 0.058,
+      "milky-white": 0.085,
+      "light-tan": 0.034,
+      "translucent-black": 0.032,
+      "clear-band": 0.058,
+      "smoky-blue-black": 0.026
+     }
+    },
+    "tile 10,0": {
+     "rect": [
+      52.4,
+      2.4,
+      57.4,
+      7.4
+     ],
+     "composition": {
+      "pale-pink-e6c5e1": 0.074,
+      "dusty-rose": 0.067,
+      "mauve": 0.035,
+      "lavender": 0.102,
+      "blue-grey": 0.12,
+      "teal-0f6d75": 0.115,
+      "deep-teal": 0.066,
+      "white": 0.075,
+      "milky-white": 0.125,
+      "light-tan": 0.053,
+      "translucent-black": 0.05,
+      "clear-band": 0.074,
+      "smoky-blue-black": 0.045
+     }
+    },
+    "tile 0,1": {
+     "rect": [
+      2.4,
+      7.4,
+      7.4,
+      12.4
+     ],
+     "composition": {
+      "pale-pink-e6c5e1": 0.01,
+      "dusty-rose": 0.024,
+      "mauve": 0.042,
+      "lavender": 0.144,
+      "blue-grey": 0.163,
+      "teal-0f6d75": 0.08,
+      "deep-teal": 0.072,
+      "white": 0.058,
+      "milky-white": 0.11,
+      "light-tan": 0.131,
+      "translucent-black": 0.07,
+      "clear-band": 0.037,
+      "smoky-blue-black": 0.059
+     }
+    },
+    "tile 1,1": {
+     "rect": [
+      7.4,
+      7.4,
+      12.4,
+      12.4
+     ],
+     "composition": {
+      "pale-pink-e6c5e1": 0.034,
+      "dusty-rose": 0.077,
+      "mauve": 0.163,
+      "lavender": 0.075,
+      "blue-grey": 0.034,
+      "teal-0f6d75": 0.074,
+      "deep-teal": 0.123,
+      "white": 0.07,
+      "milky-white": 0.11,
+      "light-tan": 0.066,
+      "translucent-black": 0.056,
+      "clear-band": 0.067,
+      "smoky-blue-black": 0.051
+     }
+    },
+    "tile 2,1": {
+     "rect": [
+      12.4,
+      7.4,
+      17.4,
+      12.4
+     ],
+     "composition": {
+      "pale-pink-e6c5e1": 0.074,
+      "dusty-rose": 0.146,
+      "mauve": 0.043,
+      "lavender": 0.075,
+      "blue-grey": 0.155,
+      "teal-0f6d75": 0.037,
+      "deep-teal": 0.059,
+      "white": 0.072,
+      "milky-white": 0.098,
+      "light-tan": 0.069,
+      "translucent-black": 0.054,
+      "clear-band": 0.074,
+      "smoky-blue-black": 0.045
+     }
+    },
+    "tile 3,1": {
+     "rect": [
+      17.4,
+      7.4,
+      22.4,
+      12.4
+     ],
+     "composition": {
+      "pale-pink-e6c5e1": 0.083,
+      "dusty-rose": 0.05,
+      "mauve": 0.139,
+      "lavender": 0.128,
+      "blue-grey": 0.064,
+      "teal-0f6d75": 0.096,
+      "deep-teal": 0.054,
+      "white": 0.067,
+      "milky-white": 0.091,
+      "light-tan": 0.078,
+      "translucent-black": 0.035,
+      "clear-band": 0.086,
+      "smoky-blue-black": 0.027
+     }
+    },
+    "tile 4,1": {
+     "rect": [
+      22.4,
+      7.4,
+      27.4,
+      12.4
+     ],
+     "composition": {
+      "mauve": 0.011,
+      "lavender": 0.058,
+      "blue-grey": 0.102,
+      "teal-0f6d75": 0.184,
+      "deep-teal": 0.195,
+      "white": 0.077,
+      "milky-white": 0.146,
+      "light-tan": 0.05,
+      "translucent-black": 0.051,
+      "clear-band": 0.048,
+      "smoky-blue-black": 0.078
+     }
+    },
+    "tile 5,1": {
+     "rect": [
+      27.4,
+      7.4,
+      32.4,
+      12.4
+     ],
+     "composition": {
+      "pale-pink-e6c5e1": 0.061,
+      "dusty-rose": 0.014,
+      "mauve": 0.014,
+      "lavender": 0.07,
+      "blue-grey": 0.186,
+      "teal-0f6d75": 0.147,
+      "deep-teal": 0.11,
+      "white": 0.072,
+      "milky-white": 0.12,
+      "light-tan": 0.08,
+      "translucent-black": 0.048,
+      "clear-band": 0.026,
+      "smoky-blue-black": 0.051
+     }
+    },
+    "tile 6,1": {
+     "rect": [
+      32.4,
+      7.4,
+      37.4,
+      12.4
+     ],
+     "composition": {
+      "dusty-rose": 0.106,
+      "mauve": 0.106,
+      "lavender": 0.104,
+      "blue-grey": 0.114,
+      "teal-0f6d75": 0.093,
+      "deep-teal": 0.112,
+      "white": 0.07,
+      "milky-white": 0.069,
+      "light-tan": 0.048,
+      "translucent-black": 0.053,
+      "clear-band": 0.077,
+      "smoky-blue-black": 0.046
+     }
+    },
+    "tile 7,1": {
+     "rect": [
+      37.4,
+      7.4,
+      42.4,
+      12.4
+     ],
+     "composition": {
+      "pale-pink-e6c5e1": 0.067,
+      "dusty-rose": 0.037,
+      "mauve": 0.05,
+      "lavender": 0.027,
+      "blue-grey": 0.106,
+      "teal-0f6d75": 0.139,
+      "deep-teal": 0.048,
+      "white": 0.083,
+      "milky-white": 0.202,
+      "light-tan": 0.086,
+      "translucent-black": 0.04,
+      "clear-band": 0.08,
+      "smoky-blue-black": 0.035
+     }
+    },
+    "tile 8,1": {
+     "rect": [
+      42.4,
+      7.4,
+      47.4,
+      12.4
+     ],
+     "composition": {
+      "dusty-rose": 0.067,
+      "mauve": 0.134,
+      "lavender": 0.085,
+      "blue-grey": 0.102,
+      "teal-0f6d75": 0.17,
+      "deep-teal": 0.101,
+      "white": 0.054,
+      "milky-white": 0.075,
+      "light-tan": 0.043,
+      "translucent-black": 0.045,
+      "clear-band": 0.075,
+      "smoky-blue-black": 0.048
+     }
+    },
+    "tile 9,1": {
+     "rect": [
+      47.4,
+      7.4,
+      52.4,
+      12.4
+     ],
+     "composition": {
+      "pale-pink-e6c5e1": 0.026,
+      "dusty-rose": 0.07,
+      "mauve": 0.099,
+      "lavender": 0.067,
+      "blue-grey": 0.01,
+      "teal-0f6d75": 0.082,
+      "deep-teal": 0.162,
+      "white": 0.066,
+      "milky-white": 0.106,
+      "light-tan": 0.106,
+      "translucent-black": 0.058,
+      "clear-band": 0.08,
+      "smoky-blue-black": 0.07
+     }
+    },
+    "tile 10,1": {
+     "rect": [
+      52.4,
+      7.4,
+      57.4,
+      12.4
+     ],
+     "composition": {
+      "pale-pink-e6c5e1": 0.011,
+      "dusty-rose": 0.05,
+      "mauve": 0.074,
+      "lavender": 0.072,
+      "blue-grey": 0.032,
+      "teal-0f6d75": 0.133,
+      "deep-teal": 0.142,
+      "white": 0.078,
+      "milky-white": 0.13,
+      "light-tan": 0.099,
+      "translucent-black": 0.067,
+      "clear-band": 0.05,
+      "smoky-blue-black": 0.062
+     }
+    },
+    "tile 0,2": {
+     "rect": [
+      2.4,
+      12.4,
+      7.4,
+      17.4
+     ],
+     "composition": {
+      "pale-pink-e6c5e1": 0.086,
+      "dusty-rose": 0.083,
+      "mauve": 0.038,
+      "lavender": 0.13,
+      "blue-grey": 0.109,
+      "teal-0f6d75": 0.056,
+      "deep-teal": 0.128,
+      "white": 0.069,
+      "milky-white": 0.077,
+      "light-tan": 0.061,
+      "translucent-black": 0.058,
+      "clear-band": 0.04,
+      "smoky-blue-black": 0.066
+     }
+    },
+    "tile 1,2": {
+     "rect": [
+      7.4,
+      12.4,
+      12.4,
+      17.4
+     ],
+     "composition": {
+      "pale-pink-e6c5e1": 0.026,
+      "dusty-rose": 0.102,
+      "mauve": 0.099,
+      "lavender": 0.067,
+      "blue-grey": 0.141,
+      "teal-0f6d75": 0.198,
+      "deep-teal": 0.072,
+      "white": 0.086,
+      "milky-white": 0.086,
+      "light-tan": 0.008,
+      "translucent-black": 0.014,
+      "clear-band": 0.086,
+      "smoky-blue-black": 0.013
+     }
+    },
+    "tile 2,2": {
+     "rect": [
+      12.4,
+      12.4,
+      17.4,
+      17.4
+     ],
+     "composition": {
+      "pale-pink-e6c5e1": 0.053,
+      "dusty-rose": 0.067,
+      "mauve": 0.104,
+      "lavender": 0.086,
+      "blue-grey": 0.051,
+      "teal-0f6d75": 0.059,
+      "deep-teal": 0.074,
+      "white": 0.072,
+      "milky-white": 0.13,
+      "light-tan": 0.101,
+      "translucent-black": 0.064,
+      "clear-band": 0.072,
+      "smoky-blue-black": 0.067
+     }
+    },
+    "tile 3,2": {
+     "rect": [
+      17.4,
+      12.4,
+      22.4,
+      17.4
+     ],
+     "composition": {
+      "pale-pink-e6c5e1": 0.059,
+      "dusty-rose": 0.061,
+      "mauve": 0.061,
+      "lavender": 0.091,
+      "blue-grey": 0.109,
+      "teal-0f6d75": 0.122,
+      "deep-teal": 0.099,
+      "white": 0.067,
+      "milky-white": 0.098,
+      "light-tan": 0.072,
+      "translucent-black": 0.053,
+      "clear-band": 0.062,
+      "smoky-blue-black": 0.046
+     }
+    },
+    "tile 4,2": {
+     "rect": [
+      22.4,
+      12.4,
+      27.4,
+      17.4
+     ],
+     "composition": {
+      "pale-pink-e6c5e1": 0.082,
+      "dusty-rose": 0.174,
+      "mauve": 0.187,
+      "lavender": 0.074,
+      "blue-grey": 0.011,
+      "deep-teal": 0.102,
+      "white": 0.034,
+      "light-tan": 0.091,
+      "translucent-black": 0.107,
+      "clear-band": 0.026,
+      "smoky-blue-black": 0.107
+     }
+    },
+    "tile 5,2": {
+     "rect": [
+      27.4,
+      12.4,
+      32.4,
+      17.4
+     ],
+     "composition": {
+      "pale-pink-e6c5e1": 0.058,
+      "dusty-rose": 0.054,
+      "mauve": 0.042,
+      "lavender": 0.098,
+      "blue-grey": 0.158,
+      "teal-0f6d75": 0.078,
+      "deep-teal": 0.038,
+      "white": 0.043,
+      "milky-white": 0.102,
+      "light-tan": 0.106,
+      "translucent-black": 0.07,
+      "clear-band": 0.098,
+      "smoky-blue-black": 0.054
+     }
+    },
+    "tile 6,2": {
+     "rect": [
+      32.4,
+      12.4,
+      37.4,
+      17.4
+     ],
+     "composition": {
+      "pale-pink-e6c5e1": 0.024,
+      "dusty-rose": 0.07,
+      "mauve": 0.122,
+      "lavender": 0.069,
+      "blue-grey": 0.112,
+      "teal-0f6d75": 0.162,
+      "deep-teal": 0.09,
+      "white": 0.083,
+      "milky-white": 0.12,
+      "light-tan": 0.034,
+      "translucent-black": 0.026,
+      "clear-band": 0.061,
+      "smoky-blue-black": 0.029
+     }
+    },
+    "tile 7,2": {
+     "rect": [
+      37.4,
+      12.4,
+      42.4,
+      17.4
+     ],
+     "composition": {
+      "pale-pink-e6c5e1": 0.072,
+      "dusty-rose": 0.03,
+      "mauve": 0.021,
+      "lavender": 0.106,
+      "blue-grey": 0.162,
+      "teal-0f6d75": 0.094,
+      "deep-teal": 0.085,
+      "white": 0.046,
+      "milky-white": 0.112,
+      "light-tan": 0.077,
+      "translucent-black": 0.064,
+      "clear-band": 0.058,
+      "smoky-blue-black": 0.074
+     }
+    },
+    "tile 8,2": {
+     "rect": [
+      42.4,
+      12.4,
+      47.4,
+      17.4
+     ],
+     "composition": {
+      "pale-pink-e6c5e1": 0.034,
+      "dusty-rose": 0.08,
+      "mauve": 0.059,
+      "lavender": 0.064,
+      "blue-grey": 0.155,
+      "teal-0f6d75": 0.101,
+      "deep-teal": 0.098,
+      "white": 0.056,
+      "milky-white": 0.099,
+      "light-tan": 0.075,
+      "translucent-black": 0.056,
+      "clear-band": 0.08,
+      "smoky-blue-black": 0.043
+     }
+    },
+    "tile 9,2": {
+     "rect": [
+      47.4,
+      12.4,
+      52.4,
+      17.4
+     ],
+     "composition": {
+      "pale-pink-e6c5e1": 0.01,
+      "dusty-rose": 0.082,
+      "mauve": 0.12,
+      "lavender": 0.128,
+      "blue-grey": 0.048,
+      "teal-0f6d75": 0.131,
+      "deep-teal": 0.115,
+      "white": 0.075,
+      "milky-white": 0.085,
+      "light-tan": 0.067,
+      "translucent-black": 0.034,
+      "clear-band": 0.069,
+      "smoky-blue-black": 0.037
+     }
+    },
+    "tile 10,2": {
+     "rect": [
+      52.4,
+      12.4,
+      57.4,
+      17.4
+     ],
+     "composition": {
+      "pale-pink-e6c5e1": 0.022,
+      "dusty-rose": 0.075,
+      "mauve": 0.078,
+      "lavender": 0.093,
+      "blue-grey": 0.13,
+      "teal-0f6d75": 0.131,
+      "deep-teal": 0.139,
+      "white": 0.08,
+      "milky-white": 0.099,
+      "light-tan": 0.018,
+      "translucent-black": 0.027,
+      "clear-band": 0.074,
+      "smoky-blue-black": 0.034
+     }
+    },
+    "tile 0,3": {
+     "rect": [
+      2.4,
+      17.4,
+      7.4,
+      22.4
+     ],
+     "composition": {
+      "mauve": 0.019,
+      "lavender": 0.069,
+      "blue-grey": 0.157,
+      "teal-0f6d75": 0.331,
+      "deep-teal": 0.102,
+      "white": 0.174,
+      "milky-white": 0.074,
+      "clear-band": 0.074
+     }
+    },
+    "tile 1,3": {
+     "rect": [
+      7.4,
+      17.4,
+      12.4,
+      22.4
+     ],
+     "composition": {
+      "pale-pink-e6c5e1": 0.086,
+      "dusty-rose": 0.173,
+      "mauve": 0.106,
+      "lavender": 0.08,
+      "blue-grey": 0.094,
+      "deep-teal": 0.016,
+      "white": 0.054,
+      "milky-white": 0.074,
+      "light-tan": 0.155,
+      "translucent-black": 0.035,
+      "clear-band": 0.104,
+      "smoky-blue-black": 0.018
+     }
+    },
+    "tile 2,3": {
+     "rect": [
+      12.4,
+      17.4,
+      17.4,
+      22.4
+     ],
+     "composition": {
+      "dusty-rose": 0.07,
+      "mauve": 0.102,
+      "lavender": 0.072,
+      "blue-grey": 0.102,
+      "teal-0f6d75": 0.101,
+      "deep-teal": 0.101,
+      "white": 0.075,
+      "milky-white": 0.134,
+      "light-tan": 0.053,
+      "translucent-black": 0.056,
+      "clear-band": 0.05,
+      "smoky-blue-black": 0.082
+     }
+    },
+    "tile 3,3": {
+     "rect": [
+      17.4,
+      17.4,
+      22.4,
+      22.4
+     ],
+     "composition": {
+      "pale-pink-e6c5e1": 0.069,
+      "dusty-rose": 0.072,
+      "mauve": 0.066,
+      "lavender": 0.075,
+      "blue-grey": 0.12,
+      "teal-0f6d75": 0.114,
+      "deep-teal": 0.086,
+      "white": 0.066,
+      "milky-white": 0.075,
+      "light-tan": 0.077,
+      "translucent-black": 0.056,
+      "clear-band": 0.061,
+      "smoky-blue-black": 0.064
+     }
+    },
+    "tile 4,3": {
+     "rect": [
+      22.4,
+      17.4,
+      27.4,
+      22.4
+     ],
+     "composition": {
+      "pale-pink-e6c5e1": 0.05,
+      "dusty-rose": 0.174,
+      "mauve": 0.075,
+      "lavender": 0.078,
+      "blue-grey": 0.094,
+      "teal-0f6d75": 0.109,
+      "deep-teal": 0.078,
+      "white": 0.066,
+      "milky-white": 0.069,
+      "light-tan": 0.058,
+      "translucent-black": 0.035,
+      "clear-band": 0.048,
+      "smoky-blue-black": 0.066
+     }
+    },
+    "tile 5,3": {
+     "rect": [
+      27.4,
+      17.4,
+      32.4,
+      22.4
+     ],
+     "composition": {
+      "pale-pink-e6c5e1": 0.046,
+      "dusty-rose": 0.126,
+      "mauve": 0.035,
+      "lavender": 0.066,
+      "blue-grey": 0.123,
+      "teal-0f6d75": 0.114,
+      "deep-teal": 0.05,
+      "white": 0.074,
+      "milky-white": 0.122,
+      "light-tan": 0.09,
+      "translucent-black": 0.046,
+      "clear-band": 0.066,
+      "smoky-blue-black": 0.043
+     }
+    },
+    "tile 6,3": {
+     "rect": [
+      32.4,
+      17.4,
+      37.4,
+      22.4
+     ],
+     "composition": {
+      "mauve": 0.011,
+      "lavender": 0.011,
+      "blue-grey": 0.155,
+      "teal-0f6d75": 0.459,
+      "deep-teal": 0.173,
+      "white": 0.056,
+      "milky-white": 0.054,
+      "clear-band": 0.08
+     }
+    },
+    "tile 7,3": {
+     "rect": [
+      37.4,
+      17.4,
+      42.4,
+      22.4
+     ],
+     "composition": {
+      "pale-pink-e6c5e1": 0.008,
+      "dusty-rose": 0.067,
+      "mauve": 0.034,
+      "lavender": 0.074,
+      "blue-grey": 0.146,
+      "teal-0f6d75": 0.234,
+      "deep-teal": 0.138,
+      "white": 0.142,
+      "milky-white": 0.11,
+      "clear-band": 0.048
+     }
+    },
+    "tile 8,3": {
+     "rect": [
+      42.4,
+      17.4,
+      47.4,
+      22.4
+     ],
+     "composition": {
+      "pale-pink-e6c5e1": 0.062,
+      "dusty-rose": 0.061,
+      "mauve": 0.197,
+      "lavender": 0.074,
+      "blue-grey": 0.136,
+      "teal-0f6d75": 0.099,
+      "deep-teal": 0.053,
+      "white": 0.104,
+      "milky-white": 0.101,
+      "light-tan": 0.006,
+      "translucent-black": 0.01,
+      "clear-band": 0.083,
+      "smoky-blue-black": 0.014
+     }
+    },
+    "tile 9,3": {
+     "rect": [
+      47.4,
+      17.4,
+      52.4,
+      22.4
+     ],
+     "composition": {
+      "dusty-rose": 0.051,
+      "mauve": 0.133,
+      "lavender": 0.085,
+      "teal-0f6d75": 0.178,
+      "deep-teal": 0.109,
+      "white": 0.066,
+      "milky-white": 0.139,
+      "light-tan": 0.062,
+      "translucent-black": 0.056,
+      "clear-band": 0.061,
+      "smoky-blue-black": 0.061
+     }
+    },
+    "tile 10,3": {
+     "rect": [
+      52.4,
+      17.4,
+      57.4,
+      22.4
+     ],
+     "composition": {
+      "dusty-rose": 0.03,
+      "mauve": 0.219,
+      "lavender": 0.144,
+      "deep-teal": 0.144,
+      "white": 0.021,
+      "milky-white": 0.022,
+      "light-tan": 0.114,
+      "translucent-black": 0.15,
+      "clear-band": 0.03,
+      "smoky-blue-black": 0.125
+     }
+    },
+    "tile 0,4": {
+     "rect": [
+      2.4,
+      22.4,
+      7.4,
+      27.4
+     ],
+     "composition": {
+      "dusty-rose": 0.078,
+      "mauve": 0.314,
+      "lavender": 0.134,
+      "blue-grey": 0.018,
+      "deep-teal": 0.056,
+      "white": 0.037,
+      "milky-white": 0.059,
+      "light-tan": 0.11,
+      "translucent-black": 0.064,
+      "clear-band": 0.067,
+      "smoky-blue-black": 0.061
+     }
+    },
+    "tile 1,4": {
+     "rect": [
+      7.4,
+      22.4,
+      12.4,
+      27.4
+     ],
+     "composition": {
+      "pale-pink-e6c5e1": 0.01,
+      "dusty-rose": 0.058,
+      "mauve": 0.096,
+      "lavender": 0.179,
+      "blue-grey": 0.04,
+      "teal-0f6d75": 0.029,
+      "deep-teal": 0.077,
+      "white": 0.067,
+      "milky-white": 0.123,
+      "light-tan": 0.094,
+      "translucent-black": 0.099,
+      "clear-band": 0.042,
+      "smoky-blue-black": 0.086
+     }
+    },
+    "tile 2,4": {
+     "rect": [
+      12.4,
+      22.4,
+      17.4,
+      27.4
+     ],
+     "composition": {
+      "pale-pink-e6c5e1": 0.027,
+      "dusty-rose": 0.062,
+      "mauve": 0.058,
+      "lavender": 0.059,
+      "blue-grey": 0.171,
+      "teal-0f6d75": 0.166,
+      "deep-teal": 0.056,
+      "white": 0.093,
+      "milky-white": 0.109,
+      "light-tan": 0.054,
+      "translucent-black": 0.016,
+      "clear-band": 0.099,
+      "smoky-blue-black": 0.029
+     }
+    },
+    "tile 3,4": {
+     "rect": [
+      17.4,
+      22.4,
+      22.4,
+      27.4
+     ],
+     "composition": {
+      "pale-pink-e6c5e1": 0.029,
+      "dusty-rose": 0.046,
+      "mauve": 0.115,
+      "lavender": 0.109,
+      "blue-grey": 0.126,
+      "teal-0f6d75": 0.078,
+      "deep-teal": 0.123,
+      "white": 0.08,
+      "milky-white": 0.106,
+      "light-tan": 0.056,
+      "translucent-black": 0.024,
+      "clear-band": 0.09,
+      "smoky-blue-black": 0.018
+     }
+    },
+    "tile 4,4": {
+     "rect": [
+      22.4,
+      22.4,
+      27.4,
+      27.4
+     ],
+     "composition": {
+      "pale-pink-e6c5e1": 0.027,
+      "dusty-rose": 0.082,
+      "mauve": 0.125,
+      "lavender": 0.086,
+      "blue-grey": 0.064,
+      "teal-0f6d75": 0.128,
+      "deep-teal": 0.117,
+      "white": 0.093,
+      "milky-white": 0.104,
+      "light-tan": 0.043,
+      "translucent-black": 0.045,
+      "clear-band": 0.058,
+      "smoky-blue-black": 0.029
+     }
+    },
+    "tile 5,4": {
+     "rect": [
+      27.4,
+      22.4,
+      32.4,
+      27.4
+     ],
+     "composition": {
+      "pale-pink-e6c5e1": 0.008,
+      "dusty-rose": 0.122,
+      "mauve": 0.094,
+      "lavender": 0.101,
+      "blue-grey": 0.035,
+      "teal-0f6d75": 0.086,
+      "deep-teal": 0.128,
+      "white": 0.07,
+      "milky-white": 0.118,
+      "light-tan": 0.075,
+      "translucent-black": 0.043,
+      "clear-band": 0.069,
+      "smoky-blue-black": 0.05
+     }
+    },
+    "tile 6,4": {
+     "rect": [
+      32.4,
+      22.4,
+      37.4,
+      27.4
+     ],
+     "composition": {
+      "dusty-rose": 0.048,
+      "mauve": 0.088,
+      "lavender": 0.083,
+      "blue-grey": 0.008,
+      "teal-0f6d75": 0.181,
+      "deep-teal": 0.211,
+      "white": 0.054,
+      "milky-white": 0.072,
+      "light-tan": 0.04,
+      "translucent-black": 0.034,
+      "clear-band": 0.147,
+      "smoky-blue-black": 0.034
+     }
+    },
+    "tile 7,4": {
+     "rect": [
+      37.4,
+      22.4,
+      42.4,
+      27.4
+     ],
+     "composition": {
+      "lavender": 0.202,
+      "blue-grey": 0.216,
+      "teal-0f6d75": 0.214,
+      "deep-teal": 0.112,
+      "white": 0.104,
+      "milky-white": 0.112,
+      "clear-band": 0.038
+     }
+    },
+    "tile 8,4": {
+     "rect": [
+      42.4,
+      22.4,
+      47.4,
+      27.4
+     ],
+     "composition": {
+      "pale-pink-e6c5e1": 0.04,
+      "dusty-rose": 0.03,
+      "mauve": 0.074,
+      "lavender": 0.08,
+      "blue-grey": 0.179,
+      "teal-0f6d75": 0.16,
+      "deep-teal": 0.115,
+      "white": 0.125,
+      "milky-white": 0.15,
+      "clear-band": 0.045
+     }
+    },
+    "tile 9,4": {
+     "rect": [
+      47.4,
+      22.4,
+      52.4,
+      27.4
+     ],
+     "composition": {
+      "pale-pink-e6c5e1": 0.029,
+      "dusty-rose": 0.053,
+      "mauve": 0.09,
+      "lavender": 0.128,
+      "blue-grey": 0.086,
+      "teal-0f6d75": 0.082,
+      "deep-teal": 0.075,
+      "white": 0.09,
+      "milky-white": 0.173,
+      "light-tan": 0.05,
+      "translucent-black": 0.046,
+      "clear-band": 0.054,
+      "smoky-blue-black": 0.045
+     }
+    },
+    "tile 10,4": {
+     "rect": [
+      52.4,
+      22.4,
+      57.4,
+      27.4
+     ],
+     "composition": {
+      "dusty-rose": 0.123,
+      "mauve": 0.12,
+      "lavender": 0.018,
+      "deep-teal": 0.112,
+      "light-tan": 0.248,
+      "translucent-black": 0.253,
+      "clear-band": 0.018,
+      "smoky-blue-black": 0.107
+     }
+    }
+   }
+  },
+  "bottom": {
+   "regions": {
+    "pale-pink-e6c5e1": {
+     "rect": [
+      21.2,
+      3.0,
+      23.2,
+      5.0
+     ],
+     "purity": 1.0,
+     "composition": {
+      "pale-pink-e6c5e1": 1.0
+     }
+    },
+    "dusty-rose": {
+     "rect": [
+      54.8,
+      25.4,
+      56.8,
+      27.4
+     ],
+     "purity": 0.64,
+     "composition": {
+      "dusty-rose": 0.64,
+      "mauve": 0.17,
+      "lavender": 0.03,
+      "light-tan": 0.1,
+      "clear-band": 0.06
+     }
+    },
+    "mauve": {
+     "rect": [
+      3.0,
+      25.4,
+      5.0,
+      27.4
+     ],
+     "purity": 0.69,
+     "composition": {
+      "dusty-rose": 0.17,
+      "mauve": 0.69,
+      "lavender": 0.04,
+      "deep-teal": 0.03,
+      "white": 0.05,
+      "milky-white": 0.01,
+      "smoky-blue-black": 0.01
+     }
+    },
+    "lavender": {
+     "rect": [
+      40.8,
+      23.2,
+      42.8,
+      25.2
+     ],
+     "purity": 0.92,
+     "composition": {
+      "lavender": 0.92,
+      "blue-grey": 0.08
+     }
+    },
+    "blue-grey": {
+     "rect": [
+      43.0,
+      19.4,
+      45.0,
+      21.4
+     ],
+     "purity": 0.53,
+     "composition": {
+      "lavender": 0.04,
+      "blue-grey": 0.53,
+      "teal-0f6d75": 0.27,
+      "deep-teal": 0.02,
+      "clear-band": 0.14
+     }
+    },
+    "teal-0f6d75": {
+     "rect": [
+      33.8,
+      19.8,
+      35.8,
+      21.8
+     ],
+     "purity": 1.0,
+     "composition": {
+      "teal-0f6d75": 1.0
+     }
+    },
+    "deep-teal": {
+     "rect": [
+      35.8,
+      19.8,
+      37.8,
+      21.8
+     ],
+     "purity": 0.75,
+     "composition": {
+      "teal-0f6d75": 0.25,
+      "deep-teal": 0.75
+     }
+    },
+    "white": {
+     "rect": [
+      4.8,
+      20.2,
+      6.8,
+      22.2
+     ],
+     "purity": 0.64,
+     "composition": {
+      "lavender": 0.05,
+      "blue-grey": 0.16,
+      "teal-0f6d75": 0.03,
+      "white": 0.64,
+      "milky-white": 0.12
+     }
+    },
+    "milky-white": {
+     "rect": [
+      38.4,
+      7.0,
+      40.4,
+      9.0
+     ],
+     "purity": 0.61,
+     "composition": {
+      "blue-grey": 0.03,
+      "teal-0f6d75": 0.17,
+      "deep-teal": 0.02,
+      "white": 0.13,
+      "milky-white": 0.61,
+      "smoky-blue-black": 0.04
+     }
+    },
+    "light-tan": {
+     "rect": [
+      55.4,
+      23.4,
+      57.4,
+      25.4
+     ],
+     "purity": 0.8,
+     "composition": {
+      "light-tan": 0.8,
+      "translucent-black": 0.2
+     }
+    },
+    "translucent-black": {
+     "rect": [
+      55.0,
+      21.8,
+      57.0,
+      23.8
+     ],
+     "purity": 0.87,
+     "composition": {
+      "light-tan": 0.05,
+      "translucent-black": 0.87,
+      "smoky-blue-black": 0.08
+     }
+    },
+    "clear-band": {
+     "rect": [
+      19.0,
+      3.2,
+      21.0,
+      5.2
+     ],
+     "purity": 0.66,
+     "composition": {
+      "pale-pink-e6c5e1": 0.21,
+      "dusty-rose": 0.13,
+      "clear-band": 0.66
+     }
+    }
+   },
+   "tiles": {
+    "tile 0,0": {
+     "rect": [
+      2.4,
+      2.4,
+      7.4,
+      7.4
+     ],
+     "composition": {
+      "dusty-rose": 0.038,
+      "mauve": 0.046,
+      "lavender": 0.072,
+      "blue-grey": 0.171,
+      "teal-0f6d75": 0.107,
+      "deep-teal": 0.056,
+      "white": 0.069,
+      "milky-white": 0.069,
+      "light-tan": 0.139,
+      "translucent-black": 0.067,
+      "clear-band": 0.099,
+      "smoky-blue-black": 0.062
+     }
+    },
+    "tile 1,0": {
+     "rect": [
+      7.4,
+      2.4,
+      12.4,
+      7.4
+     ],
+     "composition": {
+      "dusty-rose": 0.085,
+      "mauve": 0.09,
+      "lavender": 0.128,
+      "teal-0f6d75": 0.091,
+      "deep-teal": 0.166,
+      "white": 0.069,
+      "milky-white": 0.075,
+      "light-tan": 0.088,
+      "translucent-black": 0.075,
+      "clear-band": 0.048,
+      "smoky-blue-black": 0.085
+     }
+    },
+    "tile 2,0": {
+     "rect": [
+      12.4,
+      2.4,
+      17.4,
+      7.4
+     ],
+     "composition": {
+      "pale-pink-e6c5e1": 0.069,
+      "dusty-rose": 0.139,
+      "mauve": 0.048,
+      "lavender": 0.117,
+      "blue-grey": 0.125,
+      "teal-0f6d75": 0.048,
+      "deep-teal": 0.038,
+      "white": 0.082,
+      "milky-white": 0.12,
+      "light-tan": 0.062,
+      "translucent-black": 0.038,
+      "clear-band": 0.069,
+      "smoky-blue-black": 0.045
+     }
+    },
+    "tile 3,0": {
+     "rect": [
+      17.4,
+      2.4,
+      22.4,
+      7.4
+     ],
+     "composition": {
+      "pale-pink-e6c5e1": 0.376,
+      "dusty-rose": 0.085,
+      "mauve": 0.066,
+      "lavender": 0.054,
+      "blue-grey": 0.024,
+      "teal-0f6d75": 0.05,
+      "deep-teal": 0.019,
+      "white": 0.059,
+      "milky-white": 0.066,
+      "clear-band": 0.202
+     }
+    },
+    "tile 4,0": {
+     "rect": [
+      22.4,
+      2.4,
+      27.4,
+      7.4
+     ],
+     "composition": {
+      "pale-pink-e6c5e1": 0.19,
+      "dusty-rose": 0.253,
+      "mauve": 0.062,
+      "lavender": 0.026,
+      "white": 0.051,
+      "milky-white": 0.12,
+      "light-tan": 0.122,
+      "translucent-black": 0.035,
+      "clear-band": 0.133,
+      "smoky-blue-black": 0.008
+     }
+    },
+    "tile 5,0": {
+     "rect": [
+      27.4,
+      2.4,
+      32.4,
+      7.4
+     ],
+     "composition": {
+      "pale-pink-e6c5e1": 0.05,
+      "dusty-rose": 0.106,
+      "mauve": 0.09,
+      "blue-grey": 0.141,
+      "teal-0f6d75": 0.149,
+      "deep-teal": 0.037,
+      "white": 0.072,
+      "milky-white": 0.08,
+      "light-tan": 0.094,
+      "translucent-black": 0.046,
+      "clear-band": 0.093,
+      "smoky-blue-black": 0.038
+     }
+    },
+    "tile 6,0": {
+     "rect": [
+      32.4,
+      2.4,
+      37.4,
+      7.4
+     ],
+     "composition": {
+      "pale-pink-e6c5e1": 0.072,
+      "dusty-rose": 0.099,
+      "mauve": 0.07,
+      "lavender": 0.09,
+      "blue-grey": 0.093,
+      "teal-0f6d75": 0.082,
+      "deep-teal": 0.101,
+      "white": 0.045,
+      "milky-white": 0.062,
+      "light-tan": 0.074,
+      "translucent-black": 0.083,
+      "clear-band": 0.048,
+      "smoky-blue-black": 0.082
+     }
+    },
+    "tile 7,0": {
+     "rect": [
+      37.4,
+      2.4,
+      42.4,
+      7.4
+     ],
+     "composition": {
+      "pale-pink-e6c5e1": 0.131,
+      "dusty-rose": 0.05,
+      "mauve": 0.021,
+      "lavender": 0.034,
+      "blue-grey": 0.101,
+      "teal-0f6d75": 0.08,
+      "deep-teal": 0.042,
+      "white": 0.034,
+      "milky-white": 0.066,
+      "light-tan": 0.23,
+      "translucent-black": 0.08,
+      "clear-band": 0.059,
+      "smoky-blue-black": 0.074
+     }
+    },
+    "tile 8,0": {
+     "rect": [
+      42.4,
+      2.4,
+      47.4,
+      7.4
+     ],
+     "composition": {
+      "pale-pink-e6c5e1": 0.04,
+      "dusty-rose": 0.066,
+      "mauve": 0.126,
+      "lavender": 0.056,
+      "blue-grey": 0.126,
+      "teal-0f6d75": 0.16,
+      "deep-teal": 0.053,
+      "white": 0.11,
+      "milky-white": 0.12,
+      "light-tan": 0.006,
+      "translucent-black": 0.008,
+      "clear-band": 0.117,
+      "smoky-blue-black": 0.011
+     }
+    },
+    "tile 9,0": {
+     "rect": [
+      47.4,
+      2.4,
+      52.4,
+      7.4
+     ],
+     "composition": {
+      "dusty-rose": 0.067,
+      "mauve": 0.085,
+      "lavender": 0.154,
+      "blue-grey": 0.158,
+      "teal-0f6d75": 0.142,
+      "deep-teal": 0.102,
+      "white": 0.058,
+      "milky-white": 0.085,
+      "light-tan": 0.034,
+      "translucent-black": 0.032,
+      "clear-band": 0.058,
+      "smoky-blue-black": 0.026
+     }
+    },
+    "tile 10,0": {
+     "rect": [
+      52.4,
+      2.4,
+      57.4,
+      7.4
+     ],
+     "composition": {
+      "pale-pink-e6c5e1": 0.074,
+      "dusty-rose": 0.067,
+      "mauve": 0.035,
+      "lavender": 0.102,
+      "blue-grey": 0.12,
+      "teal-0f6d75": 0.115,
+      "deep-teal": 0.066,
+      "white": 0.075,
+      "milky-white": 0.125,
+      "light-tan": 0.053,
+      "translucent-black": 0.05,
+      "clear-band": 0.074,
+      "smoky-blue-black": 0.045
+     }
+    },
+    "tile 0,1": {
+     "rect": [
+      2.4,
+      7.4,
+      7.4,
+      12.4
+     ],
+     "composition": {
+      "pale-pink-e6c5e1": 0.01,
+      "dusty-rose": 0.024,
+      "mauve": 0.042,
+      "lavender": 0.144,
+      "blue-grey": 0.163,
+      "teal-0f6d75": 0.08,
+      "deep-teal": 0.072,
+      "white": 0.058,
+      "milky-white": 0.11,
+      "light-tan": 0.131,
+      "translucent-black": 0.07,
+      "clear-band": 0.037,
+      "smoky-blue-black": 0.059
+     }
+    },
+    "tile 1,1": {
+     "rect": [
+      7.4,
+      7.4,
+      12.4,
+      12.4
+     ],
+     "composition": {
+      "pale-pink-e6c5e1": 0.034,
+      "dusty-rose": 0.077,
+      "mauve": 0.163,
+      "lavender": 0.075,
+      "blue-grey": 0.034,
+      "teal-0f6d75": 0.074,
+      "deep-teal": 0.123,
+      "white": 0.07,
+      "milky-white": 0.11,
+      "light-tan": 0.066,
+      "translucent-black": 0.056,
+      "clear-band": 0.067,
+      "smoky-blue-black": 0.051
+     }
+    },
+    "tile 2,1": {
+     "rect": [
+      12.4,
+      7.4,
+      17.4,
+      12.4
+     ],
+     "composition": {
+      "pale-pink-e6c5e1": 0.074,
+      "dusty-rose": 0.146,
+      "mauve": 0.043,
+      "lavender": 0.075,
+      "blue-grey": 0.155,
+      "teal-0f6d75": 0.037,
+      "deep-teal": 0.059,
+      "white": 0.072,
+      "milky-white": 0.098,
+      "light-tan": 0.069,
+      "translucent-black": 0.054,
+      "clear-band": 0.074,
+      "smoky-blue-black": 0.045
+     }
+    },
+    "tile 3,1": {
+     "rect": [
+      17.4,
+      7.4,
+      22.4,
+      12.4
+     ],
+     "composition": {
+      "pale-pink-e6c5e1": 0.083,
+      "dusty-rose": 0.05,
+      "mauve": 0.139,
+      "lavender": 0.128,
+      "blue-grey": 0.064,
+      "teal-0f6d75": 0.096,
+      "deep-teal": 0.054,
+      "white": 0.067,
+      "milky-white": 0.091,
+      "light-tan": 0.078,
+      "translucent-black": 0.035,
+      "clear-band": 0.086,
+      "smoky-blue-black": 0.027
+     }
+    },
+    "tile 4,1": {
+     "rect": [
+      22.4,
+      7.4,
+      27.4,
+      12.4
+     ],
+     "composition": {
+      "mauve": 0.011,
+      "lavender": 0.058,
+      "blue-grey": 0.102,
+      "teal-0f6d75": 0.184,
+      "deep-teal": 0.195,
+      "white": 0.077,
+      "milky-white": 0.146,
+      "light-tan": 0.05,
+      "translucent-black": 0.051,
+      "clear-band": 0.048,
+      "smoky-blue-black": 0.078
+     }
+    },
+    "tile 5,1": {
+     "rect": [
+      27.4,
+      7.4,
+      32.4,
+      12.4
+     ],
+     "composition": {
+      "pale-pink-e6c5e1": 0.061,
+      "dusty-rose": 0.014,
+      "mauve": 0.014,
+      "lavender": 0.07,
+      "blue-grey": 0.186,
+      "teal-0f6d75": 0.147,
+      "deep-teal": 0.11,
+      "white": 0.072,
+      "milky-white": 0.12,
+      "light-tan": 0.08,
+      "translucent-black": 0.048,
+      "clear-band": 0.026,
+      "smoky-blue-black": 0.051
+     }
+    },
+    "tile 6,1": {
+     "rect": [
+      32.4,
+      7.4,
+      37.4,
+      12.4
+     ],
+     "composition": {
+      "dusty-rose": 0.106,
+      "mauve": 0.106,
+      "lavender": 0.104,
+      "blue-grey": 0.114,
+      "teal-0f6d75": 0.093,
+      "deep-teal": 0.112,
+      "white": 0.07,
+      "milky-white": 0.069,
+      "light-tan": 0.048,
+      "translucent-black": 0.053,
+      "clear-band": 0.077,
+      "smoky-blue-black": 0.046
+     }
+    },
+    "tile 7,1": {
+     "rect": [
+      37.4,
+      7.4,
+      42.4,
+      12.4
+     ],
+     "composition": {
+      "pale-pink-e6c5e1": 0.067,
+      "dusty-rose": 0.037,
+      "mauve": 0.05,
+      "lavender": 0.027,
+      "blue-grey": 0.106,
+      "teal-0f6d75": 0.139,
+      "deep-teal": 0.048,
+      "white": 0.083,
+      "milky-white": 0.202,
+      "light-tan": 0.086,
+      "translucent-black": 0.04,
+      "clear-band": 0.08,
+      "smoky-blue-black": 0.035
+     }
+    },
+    "tile 8,1": {
+     "rect": [
+      42.4,
+      7.4,
+      47.4,
+      12.4
+     ],
+     "composition": {
+      "dusty-rose": 0.067,
+      "mauve": 0.134,
+      "lavender": 0.085,
+      "blue-grey": 0.102,
+      "teal-0f6d75": 0.17,
+      "deep-teal": 0.101,
+      "white": 0.054,
+      "milky-white": 0.075,
+      "light-tan": 0.043,
+      "translucent-black": 0.045,
+      "clear-band": 0.075,
+      "smoky-blue-black": 0.048
+     }
+    },
+    "tile 9,1": {
+     "rect": [
+      47.4,
+      7.4,
+      52.4,
+      12.4
+     ],
+     "composition": {
+      "pale-pink-e6c5e1": 0.026,
+      "dusty-rose": 0.07,
+      "mauve": 0.099,
+      "lavender": 0.067,
+      "blue-grey": 0.01,
+      "teal-0f6d75": 0.082,
+      "deep-teal": 0.162,
+      "white": 0.066,
+      "milky-white": 0.106,
+      "light-tan": 0.106,
+      "translucent-black": 0.058,
+      "clear-band": 0.08,
+      "smoky-blue-black": 0.07
+     }
+    },
+    "tile 10,1": {
+     "rect": [
+      52.4,
+      7.4,
+      57.4,
+      12.4
+     ],
+     "composition": {
+      "pale-pink-e6c5e1": 0.011,
+      "dusty-rose": 0.05,
+      "mauve": 0.074,
+      "lavender": 0.072,
+      "blue-grey": 0.032,
+      "teal-0f6d75": 0.133,
+      "deep-teal": 0.142,
+      "white": 0.078,
+      "milky-white": 0.13,
+      "light-tan": 0.099,
+      "translucent-black": 0.067,
+      "clear-band": 0.05,
+      "smoky-blue-black": 0.062
+     }
+    },
+    "tile 0,2": {
+     "rect": [
+      2.4,
+      12.4,
+      7.4,
+      17.4
+     ],
+     "composition": {
+      "pale-pink-e6c5e1": 0.086,
+      "dusty-rose": 0.083,
+      "mauve": 0.038,
+      "lavender": 0.13,
+      "blue-grey": 0.109,
+      "teal-0f6d75": 0.056,
+      "deep-teal": 0.128,
+      "white": 0.069,
+      "milky-white": 0.077,
+      "light-tan": 0.061,
+      "translucent-black": 0.058,
+      "clear-band": 0.04,
+      "smoky-blue-black": 0.066
+     }
+    },
+    "tile 1,2": {
+     "rect": [
+      7.4,
+      12.4,
+      12.4,
+      17.4
+     ],
+     "composition": {
+      "pale-pink-e6c5e1": 0.026,
+      "dusty-rose": 0.102,
+      "mauve": 0.099,
+      "lavender": 0.067,
+      "blue-grey": 0.141,
+      "teal-0f6d75": 0.198,
+      "deep-teal": 0.072,
+      "white": 0.086,
+      "milky-white": 0.086,
+      "light-tan": 0.008,
+      "translucent-black": 0.014,
+      "clear-band": 0.086,
+      "smoky-blue-black": 0.013
+     }
+    },
+    "tile 2,2": {
+     "rect": [
+      12.4,
+      12.4,
+      17.4,
+      17.4
+     ],
+     "composition": {
+      "pale-pink-e6c5e1": 0.053,
+      "dusty-rose": 0.067,
+      "mauve": 0.104,
+      "lavender": 0.086,
+      "blue-grey": 0.051,
+      "teal-0f6d75": 0.059,
+      "deep-teal": 0.074,
+      "white": 0.072,
+      "milky-white": 0.13,
+      "light-tan": 0.101,
+      "translucent-black": 0.064,
+      "clear-band": 0.072,
+      "smoky-blue-black": 0.067
+     }
+    },
+    "tile 3,2": {
+     "rect": [
+      17.4,
+      12.4,
+      22.4,
+      17.4
+     ],
+     "composition": {
+      "pale-pink-e6c5e1": 0.059,
+      "dusty-rose": 0.061,
+      "mauve": 0.061,
+      "lavender": 0.091,
+      "blue-grey": 0.109,
+      "teal-0f6d75": 0.122,
+      "deep-teal": 0.099,
+      "white": 0.067,
+      "milky-white": 0.098,
+      "light-tan": 0.072,
+      "translucent-black": 0.053,
+      "clear-band": 0.062,
+      "smoky-blue-black": 0.046
+     }
+    },
+    "tile 4,2": {
+     "rect": [
+      22.4,
+      12.4,
+      27.4,
+      17.4
+     ],
+     "composition": {
+      "pale-pink-e6c5e1": 0.082,
+      "dusty-rose": 0.174,
+      "mauve": 0.187,
+      "lavender": 0.074,
+      "blue-grey": 0.011,
+      "deep-teal": 0.102,
+      "white": 0.034,
+      "light-tan": 0.091,
+      "translucent-black": 0.107,
+      "clear-band": 0.026,
+      "smoky-blue-black": 0.107
+     }
+    },
+    "tile 5,2": {
+     "rect": [
+      27.4,
+      12.4,
+      32.4,
+      17.4
+     ],
+     "composition": {
+      "pale-pink-e6c5e1": 0.058,
+      "dusty-rose": 0.054,
+      "mauve": 0.042,
+      "lavender": 0.098,
+      "blue-grey": 0.158,
+      "teal-0f6d75": 0.078,
+      "deep-teal": 0.038,
+      "white": 0.043,
+      "milky-white": 0.102,
+      "light-tan": 0.106,
+      "translucent-black": 0.07,
+      "clear-band": 0.098,
+      "smoky-blue-black": 0.054
+     }
+    },
+    "tile 6,2": {
+     "rect": [
+      32.4,
+      12.4,
+      37.4,
+      17.4
+     ],
+     "composition": {
+      "pale-pink-e6c5e1": 0.024,
+      "dusty-rose": 0.07,
+      "mauve": 0.122,
+      "lavender": 0.069,
+      "blue-grey": 0.112,
+      "teal-0f6d75": 0.162,
+      "deep-teal": 0.09,
+      "white": 0.083,
+      "milky-white": 0.12,
+      "light-tan": 0.034,
+      "translucent-black": 0.026,
+      "clear-band": 0.061,
+      "smoky-blue-black": 0.029
+     }
+    },
+    "tile 7,2": {
+     "rect": [
+      37.4,
+      12.4,
+      42.4,
+      17.4
+     ],
+     "composition": {
+      "pale-pink-e6c5e1": 0.072,
+      "dusty-rose": 0.03,
+      "mauve": 0.021,
+      "lavender": 0.106,
+      "blue-grey": 0.162,
+      "teal-0f6d75": 0.094,
+      "deep-teal": 0.085,
+      "white": 0.046,
+      "milky-white": 0.112,
+      "light-tan": 0.077,
+      "translucent-black": 0.064,
+      "clear-band": 0.058,
+      "smoky-blue-black": 0.074
+     }
+    },
+    "tile 8,2": {
+     "rect": [
+      42.4,
+      12.4,
+      47.4,
+      17.4
+     ],
+     "composition": {
+      "pale-pink-e6c5e1": 0.034,
+      "dusty-rose": 0.08,
+      "mauve": 0.059,
+      "lavender": 0.064,
+      "blue-grey": 0.155,
+      "teal-0f6d75": 0.101,
+      "deep-teal": 0.098,
+      "white": 0.056,
+      "milky-white": 0.099,
+      "light-tan": 0.075,
+      "translucent-black": 0.056,
+      "clear-band": 0.08,
+      "smoky-blue-black": 0.043
+     }
+    },
+    "tile 9,2": {
+     "rect": [
+      47.4,
+      12.4,
+      52.4,
+      17.4
+     ],
+     "composition": {
+      "pale-pink-e6c5e1": 0.01,
+      "dusty-rose": 0.082,
+      "mauve": 0.12,
+      "lavender": 0.128,
+      "blue-grey": 0.048,
+      "teal-0f6d75": 0.131,
+      "deep-teal": 0.115,
+      "white": 0.075,
+      "milky-white": 0.085,
+      "light-tan": 0.067,
+      "translucent-black": 0.034,
+      "clear-band": 0.069,
+      "smoky-blue-black": 0.037
+     }
+    },
+    "tile 10,2": {
+     "rect": [
+      52.4,
+      12.4,
+      57.4,
+      17.4
+     ],
+     "composition": {
+      "pale-pink-e6c5e1": 0.022,
+      "dusty-rose": 0.075,
+      "mauve": 0.078,
+      "lavender": 0.093,
+      "blue-grey": 0.13,
+      "teal-0f6d75": 0.131,
+      "deep-teal": 0.139,
+      "white": 0.08,
+      "milky-white": 0.099,
+      "light-tan": 0.018,
+      "translucent-black": 0.027,
+      "clear-band": 0.074,
+      "smoky-blue-black": 0.034
+     }
+    },
+    "tile 0,3": {
+     "rect": [
+      2.4,
+      17.4,
+      7.4,
+      22.4
+     ],
+     "composition": {
+      "mauve": 0.019,
+      "lavender": 0.069,
+      "blue-grey": 0.157,
+      "teal-0f6d75": 0.331,
+      "deep-teal": 0.102,
+      "white": 0.174,
+      "milky-white": 0.074,
+      "clear-band": 0.074
+     }
+    },
+    "tile 1,3": {
+     "rect": [
+      7.4,
+      17.4,
+      12.4,
+      22.4
+     ],
+     "composition": {
+      "pale-pink-e6c5e1": 0.086,
+      "dusty-rose": 0.173,
+      "mauve": 0.106,
+      "lavender": 0.08,
+      "blue-grey": 0.094,
+      "deep-teal": 0.016,
+      "white": 0.054,
+      "milky-white": 0.074,
+      "light-tan": 0.155,
+      "translucent-black": 0.035,
+      "clear-band": 0.104,
+      "smoky-blue-black": 0.018
+     }
+    },
+    "tile 2,3": {
+     "rect": [
+      12.4,
+      17.4,
+      17.4,
+      22.4
+     ],
+     "composition": {
+      "dusty-rose": 0.07,
+      "mauve": 0.102,
+      "lavender": 0.072,
+      "blue-grey": 0.102,
+      "teal-0f6d75": 0.101,
+      "deep-teal": 0.101,
+      "white": 0.075,
+      "milky-white": 0.134,
+      "light-tan": 0.053,
+      "translucent-black": 0.056,
+      "clear-band": 0.05,
+      "smoky-blue-black": 0.082
+     }
+    },
+    "tile 3,3": {
+     "rect": [
+      17.4,
+      17.4,
+      22.4,
+      22.4
+     ],
+     "composition": {
+      "pale-pink-e6c5e1": 0.069,
+      "dusty-rose": 0.072,
+      "mauve": 0.066,
+      "lavender": 0.075,
+      "blue-grey": 0.12,
+      "teal-0f6d75": 0.114,
+      "deep-teal": 0.086,
+      "white": 0.066,
+      "milky-white": 0.075,
+      "light-tan": 0.077,
+      "translucent-black": 0.056,
+      "clear-band": 0.061,
+      "smoky-blue-black": 0.064
+     }
+    },
+    "tile 4,3": {
+     "rect": [
+      22.4,
+      17.4,
+      27.4,
+      22.4
+     ],
+     "composition": {
+      "pale-pink-e6c5e1": 0.05,
+      "dusty-rose": 0.174,
+      "mauve": 0.075,
+      "lavender": 0.078,
+      "blue-grey": 0.094,
+      "teal-0f6d75": 0.109,
+      "deep-teal": 0.078,
+      "white": 0.066,
+      "milky-white": 0.069,
+      "light-tan": 0.058,
+      "translucent-black": 0.035,
+      "clear-band": 0.048,
+      "smoky-blue-black": 0.066
+     }
+    },
+    "tile 5,3": {
+     "rect": [
+      27.4,
+      17.4,
+      32.4,
+      22.4
+     ],
+     "composition": {
+      "pale-pink-e6c5e1": 0.046,
+      "dusty-rose": 0.126,
+      "mauve": 0.035,
+      "lavender": 0.066,
+      "blue-grey": 0.123,
+      "teal-0f6d75": 0.114,
+      "deep-teal": 0.05,
+      "white": 0.074,
+      "milky-white": 0.122,
+      "light-tan": 0.09,
+      "translucent-black": 0.046,
+      "clear-band": 0.066,
+      "smoky-blue-black": 0.043
+     }
+    },
+    "tile 6,3": {
+     "rect": [
+      32.4,
+      17.4,
+      37.4,
+      22.4
+     ],
+     "composition": {
+      "mauve": 0.011,
+      "lavender": 0.011,
+      "blue-grey": 0.155,
+      "teal-0f6d75": 0.459,
+      "deep-teal": 0.173,
+      "white": 0.056,
+      "milky-white": 0.054,
+      "clear-band": 0.08
+     }
+    },
+    "tile 7,3": {
+     "rect": [
+      37.4,
+      17.4,
+      42.4,
+      22.4
+     ],
+     "composition": {
+      "pale-pink-e6c5e1": 0.008,
+      "dusty-rose": 0.067,
+      "mauve": 0.034,
+      "lavender": 0.074,
+      "blue-grey": 0.146,
+      "teal-0f6d75": 0.234,
+      "deep-teal": 0.138,
+      "white": 0.142,
+      "milky-white": 0.11,
+      "clear-band": 0.048
+     }
+    },
+    "tile 8,3": {
+     "rect": [
+      42.4,
+      17.4,
+      47.4,
+      22.4
+     ],
+     "composition": {
+      "pale-pink-e6c5e1": 0.062,
+      "dusty-rose": 0.061,
+      "mauve": 0.197,
+      "lavender": 0.074,
+      "blue-grey": 0.136,
+      "teal-0f6d75": 0.099,
+      "deep-teal": 0.053,
+      "white": 0.104,
+      "milky-white": 0.101,
+      "light-tan": 0.006,
+      "translucent-black": 0.01,
+      "clear-band": 0.083,
+      "smoky-blue-black": 0.014
+     }
+    },
+    "tile 9,3": {
+     "rect": [
+      47.4,
+      17.4,
+      52.4,
+      22.4
+     ],
+     "composition": {
+      "dusty-rose": 0.051,
+      "mauve": 0.133,
+      "lavender": 0.085,
+      "teal-0f6d75": 0.178,
+      "deep-teal": 0.109,
+      "white": 0.066,
+      "milky-white": 0.139,
+      "light-tan": 0.062,
+      "translucent-black": 0.056,
+      "clear-band": 0.061,
+      "smoky-blue-black": 0.061
+     }
+    },
+    "tile 10,3": {
+     "rect": [
+      52.4,
+      17.4,
+      57.4,
+      22.4
+     ],
+     "composition": {
+      "dusty-rose": 0.03,
+      "mauve": 0.219,
+      "lavender": 0.144,
+      "deep-teal": 0.144,
+      "white": 0.021,
+      "milky-white": 0.022,
+      "light-tan": 0.114,
+      "translucent-black": 0.15,
+      "clear-band": 0.03,
+      "smoky-blue-black": 0.125
+     }
+    },
+    "tile 0,4": {
+     "rect": [
+      2.4,
+      22.4,
+      7.4,
+      27.4
+     ],
+     "composition": {
+      "dusty-rose": 0.078,
+      "mauve": 0.314,
+      "lavender": 0.134,
+      "blue-grey": 0.018,
+      "deep-teal": 0.056,
+      "white": 0.037,
+      "milky-white": 0.059,
+      "light-tan": 0.11,
+      "translucent-black": 0.064,
+      "clear-band": 0.067,
+      "smoky-blue-black": 0.061
+     }
+    },
+    "tile 1,4": {
+     "rect": [
+      7.4,
+      22.4,
+      12.4,
+      27.4
+     ],
+     "composition": {
+      "pale-pink-e6c5e1": 0.01,
+      "dusty-rose": 0.058,
+      "mauve": 0.096,
+      "lavender": 0.179,
+      "blue-grey": 0.04,
+      "teal-0f6d75": 0.029,
+      "deep-teal": 0.077,
+      "white": 0.067,
+      "milky-white": 0.123,
+      "light-tan": 0.094,
+      "translucent-black": 0.099,
+      "clear-band": 0.042,
+      "smoky-blue-black": 0.086
+     }
+    },
+    "tile 2,4": {
+     "rect": [
+      12.4,
+      22.4,
+      17.4,
+      27.4
+     ],
+     "composition": {
+      "pale-pink-e6c5e1": 0.027,
+      "dusty-rose": 0.062,
+      "mauve": 0.058,
+      "lavender": 0.059,
+      "blue-grey": 0.171,
+      "teal-0f6d75": 0.166,
+      "deep-teal": 0.056,
+      "white": 0.093,
+      "milky-white": 0.109,
+      "light-tan": 0.054,
+      "translucent-black": 0.016,
+      "clear-band": 0.099,
+      "smoky-blue-black": 0.029
+     }
+    },
+    "tile 3,4": {
+     "rect": [
+      17.4,
+      22.4,
+      22.4,
+      27.4
+     ],
+     "composition": {
+      "pale-pink-e6c5e1": 0.029,
+      "dusty-rose": 0.046,
+      "mauve": 0.115,
+      "lavender": 0.109,
+      "blue-grey": 0.126,
+      "teal-0f6d75": 0.078,
+      "deep-teal": 0.123,
+      "white": 0.08,
+      "milky-white": 0.106,
+      "light-tan": 0.056,
+      "translucent-black": 0.024,
+      "clear-band": 0.09,
+      "smoky-blue-black": 0.018
+     }
+    },
+    "tile 4,4": {
+     "rect": [
+      22.4,
+      22.4,
+      27.4,
+      27.4
+     ],
+     "composition": {
+      "pale-pink-e6c5e1": 0.027,
+      "dusty-rose": 0.082,
+      "mauve": 0.125,
+      "lavender": 0.086,
+      "blue-grey": 0.064,
+      "teal-0f6d75": 0.128,
+      "deep-teal": 0.117,
+      "white": 0.093,
+      "milky-white": 0.104,
+      "light-tan": 0.043,
+      "translucent-black": 0.045,
+      "clear-band": 0.058,
+      "smoky-blue-black": 0.029
+     }
+    },
+    "tile 5,4": {
+     "rect": [
+      27.4,
+      22.4,
+      32.4,
+      27.4
+     ],
+     "composition": {
+      "pale-pink-e6c5e1": 0.008,
+      "dusty-rose": 0.122,
+      "mauve": 0.094,
+      "lavender": 0.101,
+      "blue-grey": 0.035,
+      "teal-0f6d75": 0.086,
+      "deep-teal": 0.128,
+      "white": 0.07,
+      "milky-white": 0.118,
+      "light-tan": 0.075,
+      "translucent-black": 0.043,
+      "clear-band": 0.069,
+      "smoky-blue-black": 0.05
+     }
+    },
+    "tile 6,4": {
+     "rect": [
+      32.4,
+      22.4,
+      37.4,
+      27.4
+     ],
+     "composition": {
+      "dusty-rose": 0.048,
+      "mauve": 0.088,
+      "lavender": 0.083,
+      "blue-grey": 0.008,
+      "teal-0f6d75": 0.181,
+      "deep-teal": 0.211,
+      "white": 0.054,
+      "milky-white": 0.072,
+      "light-tan": 0.04,
+      "translucent-black": 0.034,
+      "clear-band": 0.147,
+      "smoky-blue-black": 0.034
+     }
+    },
+    "tile 7,4": {
+     "rect": [
+      37.4,
+      22.4,
+      42.4,
+      27.4
+     ],
+     "composition": {
+      "lavender": 0.202,
+      "blue-grey": 0.216,
+      "teal-0f6d75": 0.214,
+      "deep-teal": 0.112,
+      "white": 0.104,
+      "milky-white": 0.112,
+      "clear-band": 0.038
+     }
+    },
+    "tile 8,4": {
+     "rect": [
+      42.4,
+      22.4,
+      47.4,
+      27.4
+     ],
+     "composition": {
+      "pale-pink-e6c5e1": 0.04,
+      "dusty-rose": 0.03,
+      "mauve": 0.074,
+      "lavender": 0.08,
+      "blue-grey": 0.179,
+      "teal-0f6d75": 0.16,
+      "deep-teal": 0.115,
+      "white": 0.125,
+      "milky-white": 0.15,
+      "clear-band": 0.045
+     }
+    },
+    "tile 9,4": {
+     "rect": [
+      47.4,
+      22.4,
+      52.4,
+      27.4
+     ],
+     "composition": {
+      "pale-pink-e6c5e1": 0.029,
+      "dusty-rose": 0.053,
+      "mauve": 0.09,
+      "lavender": 0.128,
+      "blue-grey": 0.086,
+      "teal-0f6d75": 0.082,
+      "deep-teal": 0.075,
+      "white": 0.09,
+      "milky-white": 0.173,
+      "light-tan": 0.05,
+      "translucent-black": 0.046,
+      "clear-band": 0.054,
+      "smoky-blue-black": 0.045
+     }
+    },
+    "tile 10,4": {
+     "rect": [
+      52.4,
+      22.4,
+      57.4,
+      27.4
+     ],
+     "composition": {
+      "dusty-rose": 0.123,
+      "mauve": 0.12,
+      "lavender": 0.018,
+      "deep-teal": 0.112,
+      "light-tan": 0.248,
+      "translucent-black": 0.253,
+      "clear-band": 0.018,
+      "smoky-blue-black": 0.107
+     }
+    }
+   }
+  }
+ },
+ "amber": {
+  "top": {
+   "regions": {
+    "host-80": {
+     "rect": [
+      48.2,
+      19.6,
+      50.2,
+      21.6
+     ],
+     "purity": 0.88,
+     "composition": {
+      "host-80": 0.88,
+      "host-85": 0.096,
+      "clear-bubble": 0.024
+     }
+    },
+    "host-85": {
+     "rect": [
+      40.4,
+      20.0,
+      42.4,
+      22.0
+     ],
+     "purity": 0.948,
+     "composition": {
+      "host-85": 0.948,
+      "host-90": 0.028,
+      "clear-bubble": 0.024
+     }
+    },
+    "host-90": {
+     "rect": [
+      21.8,
+      12.6,
+      23.8,
+      14.6
+     ],
+     "purity": 0.904,
+     "composition": {
+      "host-85": 0.01,
+      "host-90": 0.904,
+      "host-95": 0.03,
+      "clear-bubble": 0.022,
+      "vein-deep-brown": 0.01,
+      "vein-warm-brown": 0.01,
+      "vein-golden-brown": 0.014
+     }
+    },
+    "host-95": {
+     "rect": [
+      4.8,
+      15.6,
+      6.8,
+      17.6
+     ],
+     "purity": 0.98,
+     "composition": {
+      "host-95": 0.98,
+      "clear-bubble": 0.018
+     }
+    },
+    "host-100": {
+     "rect": [
+      14.0,
+      13.6,
+      16.0,
+      15.6
+     ],
+     "purity": 0.878,
+     "composition": {
+      "host-100": 0.878,
+      "clear-bubble": 0.024,
+      "vein-deep-brown": 0.038,
+      "vein-warm-brown": 0.02,
+      "vein-golden-brown": 0.04
+     }
+    }
+   },
+   "tiles": {
+    "tile 0,0": {
+     "rect": [
+      2.4,
+      2.4,
+      7.4,
+      7.4
+     ],
+     "composition": {
+      "host-85": 0.188,
+      "host-90": 0.33,
+      "host-95": 0.25,
+      "dark-vein": 0.042,
+      "clear-bubble": 0.032,
+      "vein-deep-brown": 0.05,
+      "vein-warm-brown": 0.076,
+      "vein-golden-brown": 0.03
+     }
+    },
+    "tile 1,0": {
+     "rect": [
+      7.4,
+      2.4,
+      12.4,
+      7.4
+     ],
+     "composition": {
+      "host-85": 0.072,
+      "host-90": 0.476,
+      "host-95": 0.208,
+      "dark-vein": 0.006,
+      "clear-bubble": 0.034,
+      "vein-deep-brown": 0.059,
+      "vein-warm-brown": 0.094,
+      "vein-golden-brown": 0.044
+     }
+    },
+    "tile 2,0": {
+     "rect": [
+      12.4,
+      2.4,
+      17.4,
+      7.4
+     ],
+     "composition": {
+      "host-85": 0.502,
+      "host-90": 0.276,
+      "dark-vein": 0.011,
+      "clear-bubble": 0.028,
+      "vein-deep-brown": 0.103,
+      "vein-warm-brown": 0.032,
+      "vein-golden-brown": 0.041
+     }
+    },
+    "tile 3,0": {
+     "rect": [
+      17.4,
+      2.4,
+      22.4,
+      7.4
+     ],
+     "composition": {
+      "host-80": 0.104,
+      "host-85": 0.644,
+      "host-90": 0.066,
+      "host-95": 0.005,
+      "dark-vein": 0.032,
+      "clear-bubble": 0.029,
+      "vein-deep-brown": 0.094,
+      "vein-warm-brown": 0.024
+     }
+    },
+    "tile 4,0": {
+     "rect": [
+      22.4,
+      2.4,
+      27.4,
+      7.4
+     ],
+     "composition": {
+      "host-85": 0.393,
+      "host-90": 0.393,
+      "dark-vein": 0.007,
+      "clear-bubble": 0.035,
+      "vein-deep-brown": 0.098,
+      "vein-warm-brown": 0.02,
+      "vein-golden-brown": 0.048
+     }
+    },
+    "tile 5,0": {
+     "rect": [
+      27.4,
+      2.4,
+      32.4,
+      7.4
+     ],
+     "composition": {
+      "host-85": 0.131,
+      "host-90": 0.344,
+      "host-95": 0.268,
+      "host-100": 0.028,
+      "dark-vein": 0.057,
+      "clear-bubble": 0.029,
+      "vein-deep-brown": 0.061,
+      "vein-warm-brown": 0.036,
+      "vein-golden-brown": 0.044
+     }
+    },
+    "tile 6,0": {
+     "rect": [
+      32.4,
+      2.4,
+      37.4,
+      7.4
+     ],
+     "composition": {
+      "host-85": 0.024,
+      "host-90": 0.433,
+      "host-95": 0.328,
+      "host-100": 0.008,
+      "dark-vein": 0.013,
+      "clear-bubble": 0.031,
+      "vein-deep-brown": 0.037,
+      "vein-warm-brown": 0.047,
+      "vein-golden-brown": 0.079
+     }
+    },
+    "tile 7,0": {
+     "rect": [
+      37.4,
+      2.4,
+      42.4,
+      7.4
+     ],
+     "composition": {
+      "host-85": 0.169,
+      "host-90": 0.516,
+      "host-95": 0.155,
+      "dark-vein": 0.022,
+      "clear-bubble": 0.028,
+      "vein-deep-brown": 0.034,
+      "vein-warm-brown": 0.035,
+      "vein-golden-brown": 0.037
+     }
+    },
+    "tile 8,0": {
+     "rect": [
+      42.4,
+      2.4,
+      47.4,
+      7.4
+     ],
+     "composition": {
+      "host-85": 0.441,
+      "host-90": 0.209,
+      "host-95": 0.15,
+      "host-100": 0.028,
+      "dark-vein": 0.016,
+      "clear-bubble": 0.028,
+      "vein-deep-brown": 0.039,
+      "vein-warm-brown": 0.048,
+      "vein-golden-brown": 0.037
+     }
+    },
+    "tile 9,0": {
+     "rect": [
+      47.4,
+      2.4,
+      52.4,
+      7.4
+     ],
+     "composition": {
+      "host-85": 0.041,
+      "host-90": 0.324,
+      "host-95": 0.374,
+      "host-100": 0.102,
+      "dark-vein": 0.029,
+      "clear-bubble": 0.036,
+      "vein-deep-brown": 0.033,
+      "vein-warm-brown": 0.027,
+      "vein-golden-brown": 0.033
+     }
+    },
+    "tile 10,0": {
+     "rect": [
+      52.4,
+      2.4,
+      57.4,
+      7.4
+     ],
+     "composition": {
+      "host-85": 0.337,
+      "host-90": 0.365,
+      "host-95": 0.089,
+      "host-100": 0.009,
+      "dark-vein": 0.066,
+      "clear-bubble": 0.036,
+      "vein-deep-brown": 0.056,
+      "vein-warm-brown": 0.013,
+      "vein-golden-brown": 0.028
+     }
+    },
+    "tile 0,1": {
+     "rect": [
+      2.4,
+      7.4,
+      7.4,
+      12.4
+     ],
+     "composition": {
+      "host-80": 0.046,
+      "host-85": 0.22,
+      "host-90": 0.286,
+      "host-95": 0.236,
+      "host-100": 0.011,
+      "dark-vein": 0.048,
+      "clear-bubble": 0.023,
+      "vein-deep-brown": 0.043,
+      "vein-warm-brown": 0.029,
+      "vein-golden-brown": 0.057
+     }
+    },
+    "tile 1,1": {
+     "rect": [
+      7.4,
+      7.4,
+      12.4,
+      12.4
+     ],
+     "composition": {
+      "host-80": 0.089,
+      "host-85": 0.516,
+      "host-90": 0.171,
+      "host-95": 0.028,
+      "clear-bubble": 0.031,
+      "vein-deep-brown": 0.025,
+      "vein-warm-brown": 0.05,
+      "vein-golden-brown": 0.086
+     }
+    },
+    "tile 2,1": {
+     "rect": [
+      12.4,
+      7.4,
+      17.4,
+      12.4
+     ],
+     "composition": {
+      "host-85": 0.215,
+      "host-90": 0.332,
+      "host-95": 0.19,
+      "host-100": 0.007,
+      "dark-vein": 0.034,
+      "clear-bubble": 0.024,
+      "vein-deep-brown": 0.05,
+      "vein-warm-brown": 0.053,
+      "vein-golden-brown": 0.091
+     }
+    },
+    "tile 3,1": {
+     "rect": [
+      17.4,
+      7.4,
+      22.4,
+      12.4
+     ],
+     "composition": {
+      "host-80": 0.061,
+      "host-85": 0.449,
+      "host-90": 0.259,
+      "host-95": 0.02,
+      "dark-vein": 0.036,
+      "clear-bubble": 0.029,
+      "vein-deep-brown": 0.049,
+      "vein-warm-brown": 0.052,
+      "vein-golden-brown": 0.041
+     }
+    },
+    "tile 4,1": {
+     "rect": [
+      22.4,
+      7.4,
+      27.4,
+      12.4
+     ],
+     "composition": {
+      "host-80": 0.067,
+      "host-85": 0.557,
+      "host-90": 0.162,
+      "host-95": 0.018,
+      "dark-vein": 0.012,
+      "clear-bubble": 0.023,
+      "vein-deep-brown": 0.038,
+      "vein-warm-brown": 0.034,
+      "vein-golden-brown": 0.085
+     }
+    },
+    "tile 5,1": {
+     "rect": [
+      27.4,
+      7.4,
+      32.4,
+      12.4
+     ],
+     "composition": {
+      "host-80": 0.083,
+      "host-85": 0.197,
+      "host-90": 0.326,
+      "host-95": 0.18,
+      "host-100": 0.014,
+      "dark-vein": 0.008,
+      "clear-bubble": 0.036,
+      "vein-deep-brown": 0.083,
+      "vein-warm-brown": 0.036,
+      "vein-golden-brown": 0.037
+     }
+    },
+    "tile 6,1": {
+     "rect": [
+      32.4,
+      7.4,
+      37.4,
+      12.4
+     ],
+     "composition": {
+      "host-85": 0.035,
+      "host-90": 0.232,
+      "host-95": 0.44,
+      "host-100": 0.053,
+      "dark-vein": 0.018,
+      "clear-bubble": 0.032,
+      "vein-deep-brown": 0.088,
+      "vein-warm-brown": 0.076,
+      "vein-golden-brown": 0.023
+     }
+    },
+    "tile 7,1": {
+     "rect": [
+      37.4,
+      7.4,
+      42.4,
+      12.4
+     ],
+     "composition": {
+      "host-85": 0.09,
+      "host-90": 0.333,
+      "host-95": 0.349,
+      "host-100": 0.017,
+      "dark-vein": 0.037,
+      "clear-bubble": 0.022,
+      "vein-deep-brown": 0.042,
+      "vein-warm-brown": 0.05,
+      "vein-golden-brown": 0.056
+     }
+    },
+    "tile 8,1": {
+     "rect": [
+      42.4,
+      7.4,
+      47.4,
+      12.4
+     ],
+     "composition": {
+      "host-85": 0.324,
+      "host-90": 0.329,
+      "host-95": 0.167,
+      "host-100": 0.007,
+      "dark-vein": 0.018,
+      "clear-bubble": 0.034,
+      "vein-deep-brown": 0.044,
+      "vein-warm-brown": 0.016,
+      "vein-golden-brown": 0.061
+     }
+    },
+    "tile 9,1": {
+     "rect": [
+      47.4,
+      7.4,
+      52.4,
+      12.4
+     ],
+     "composition": {
+      "host-85": 0.548,
+      "host-90": 0.268,
+      "host-95": 0.026,
+      "host-100": 0.006,
+      "dark-vein": 0.039,
+      "clear-bubble": 0.031,
+      "vein-deep-brown": 0.052,
+      "vein-warm-brown": 0.02,
+      "vein-golden-brown": 0.005
+     }
+    },
+    "tile 10,1": {
+     "rect": [
+      52.4,
+      7.4,
+      57.4,
+      12.4
+     ],
+     "composition": {
+      "host-85": 0.399,
+      "host-90": 0.394,
+      "host-95": 0.047,
+      "dark-vein": 0.024,
+      "clear-bubble": 0.028,
+      "vein-deep-brown": 0.047,
+      "vein-warm-brown": 0.013,
+      "vein-golden-brown": 0.039
+     }
+    },
+    "tile 0,2": {
+     "rect": [
+      2.4,
+      12.4,
+      7.4,
+      17.4
+     ],
+     "composition": {
+      "host-90": 0.159,
+      "host-95": 0.632,
+      "host-100": 0.041,
+      "dark-vein": 0.006,
+      "clear-bubble": 0.026,
+      "vein-deep-brown": 0.059,
+      "vein-warm-brown": 0.041,
+      "vein-golden-brown": 0.036
+     }
+    },
+    "tile 1,2": {
+     "rect": [
+      7.4,
+      12.4,
+      12.4,
+      17.4
+     ],
+     "composition": {
+      "host-90": 0.1,
+      "host-95": 0.601,
+      "host-100": 0.068,
+      "dark-vein": 0.014,
+      "clear-bubble": 0.032,
+      "vein-deep-brown": 0.082,
+      "vein-warm-brown": 0.056,
+      "vein-golden-brown": 0.044
+     }
+    },
+    "tile 2,2": {
+     "rect": [
+      12.4,
+      12.4,
+      17.4,
+      17.4
+     ],
+     "composition": {
+      "host-90": 0.044,
+      "host-95": 0.316,
+      "host-100": 0.448,
+      "dark-vein": 0.007,
+      "clear-bubble": 0.032,
+      "vein-deep-brown": 0.045,
+      "vein-warm-brown": 0.047,
+      "vein-golden-brown": 0.061
+     }
+    },
+    "tile 3,2": {
+     "rect": [
+      17.4,
+      12.4,
+      22.4,
+      17.4
+     ],
+     "composition": {
+      "host-85": 0.049,
+      "host-90": 0.613,
+      "host-95": 0.132,
+      "dark-vein": 0.017,
+      "clear-bubble": 0.029,
+      "vein-deep-brown": 0.035,
+      "vein-warm-brown": 0.047,
+      "vein-golden-brown": 0.078
+     }
+    },
+    "tile 4,2": {
+     "rect": [
+      22.4,
+      12.4,
+      27.4,
+      17.4
+     ],
+     "composition": {
+      "host-80": 0.051,
+      "host-85": 0.219,
+      "host-90": 0.506,
+      "host-95": 0.036,
+      "dark-vein": 0.037,
+      "clear-bubble": 0.023,
+      "vein-deep-brown": 0.031,
+      "vein-warm-brown": 0.036,
+      "vein-golden-brown": 0.061
+     }
+    },
+    "tile 5,2": {
+     "rect": [
+      27.4,
+      12.4,
+      32.4,
+      17.4
+     ],
+     "composition": {
+      "host-80": 0.387,
+      "host-85": 0.353,
+      "host-90": 0.043,
+      "dark-vein": 0.033,
+      "clear-bubble": 0.028,
+      "vein-deep-brown": 0.041,
+      "vein-warm-brown": 0.036,
+      "vein-golden-brown": 0.076
+     }
+    },
+    "tile 6,2": {
+     "rect": [
+      32.4,
+      12.4,
+      37.4,
+      17.4
+     ],
+     "composition": {
+      "host-80": 0.037,
+      "host-85": 0.444,
+      "host-90": 0.242,
+      "host-95": 0.034,
+      "dark-vein": 0.038,
+      "clear-bubble": 0.033,
+      "vein-deep-brown": 0.064,
+      "vein-warm-brown": 0.041,
+      "vein-golden-brown": 0.067
+     }
+    },
+    "tile 7,2": {
+     "rect": [
+      37.4,
+      12.4,
+      42.4,
+      17.4
+     ],
+     "composition": {
+      "host-80": 0.017,
+      "host-85": 0.463,
+      "host-90": 0.286,
+      "host-95": 0.009,
+      "dark-vein": 0.01,
+      "clear-bubble": 0.025,
+      "vein-deep-brown": 0.027,
+      "vein-warm-brown": 0.024,
+      "vein-golden-brown": 0.139
+     }
+    },
+    "tile 8,2": {
+     "rect": [
+      42.4,
+      12.4,
+      47.4,
+      17.4
+     ],
+     "composition": {
+      "host-85": 0.043,
+      "host-90": 0.534,
+      "host-95": 0.224,
+      "clear-bubble": 0.034,
+      "vein-deep-brown": 0.02,
+      "vein-warm-brown": 0.033,
+      "vein-golden-brown": 0.113
+     }
+    },
+    "tile 9,2": {
+     "rect": [
+      47.4,
+      12.4,
+      52.4,
+      17.4
+     ],
+     "composition": {
+      "host-80": 0.14,
+      "host-85": 0.553,
+      "host-90": 0.1,
+      "dark-vein": 0.032,
+      "clear-bubble": 0.031,
+      "vein-deep-brown": 0.021,
+      "vein-warm-brown": 0.024,
+      "vein-golden-brown": 0.1
+     }
+    },
+    "tile 10,2": {
+     "rect": [
+      52.4,
+      12.4,
+      57.4,
+      17.4
+     ],
+     "composition": {
+      "host-80": 0.019,
+      "host-85": 0.734,
+      "host-90": 0.028,
+      "dark-vein": 0.012,
+      "clear-bubble": 0.027,
+      "vein-deep-brown": 0.051,
+      "vein-warm-brown": 0.056,
+      "vein-golden-brown": 0.073
+     }
+    },
+    "tile 0,3": {
+     "rect": [
+      2.4,
+      17.4,
+      7.4,
+      22.4
+     ],
+     "composition": {
+      "host-80": 0.011,
+      "host-85": 0.335,
+      "host-90": 0.24,
+      "host-95": 0.215,
+      "host-100": 0.008,
+      "dark-vein": 0.013,
+      "clear-bubble": 0.024,
+      "vein-deep-brown": 0.043,
+      "vein-warm-brown": 0.06,
+      "vein-golden-brown": 0.05
+     }
+    },
+    "tile 1,3": {
+     "rect": [
+      7.4,
+      17.4,
+      12.4,
+      22.4
+     ],
+     "composition": {
+      "host-80": 0.028,
+      "host-85": 0.432,
+      "host-90": 0.273,
+      "host-95": 0.069,
+      "host-100": 0.007,
+      "dark-vein": 0.024,
+      "clear-bubble": 0.031,
+      "vein-deep-brown": 0.041,
+      "vein-warm-brown": 0.054,
+      "vein-golden-brown": 0.041
+     }
+    },
+    "tile 2,3": {
+     "rect": [
+      12.4,
+      17.4,
+      17.4,
+      22.4
+     ],
+     "composition": {
+      "host-85": 0.154,
+      "host-90": 0.549,
+      "host-95": 0.113,
+      "host-100": 0.007,
+      "dark-vein": 0.011,
+      "clear-bubble": 0.027,
+      "vein-deep-brown": 0.021,
+      "vein-warm-brown": 0.072,
+      "vein-golden-brown": 0.04
+     }
+    },
+    "tile 3,3": {
+     "rect": [
+      17.4,
+      17.4,
+      22.4,
+      22.4
+     ],
+     "composition": {
+      "host-85": 0.19,
+      "host-90": 0.451,
+      "host-95": 0.187,
+      "dark-vein": 0.013,
+      "clear-bubble": 0.03,
+      "vein-deep-brown": 0.048,
+      "vein-warm-brown": 0.034,
+      "vein-golden-brown": 0.042
+     }
+    },
+    "tile 4,3": {
+     "rect": [
+      22.4,
+      17.4,
+      27.4,
+      22.4
+     ],
+     "composition": {
+      "host-80": 0.044,
+      "host-85": 0.164,
+      "host-90": 0.32,
+      "host-95": 0.271,
+      "host-100": 0.007,
+      "dark-vein": 0.012,
+      "clear-bubble": 0.029,
+      "vein-deep-brown": 0.028,
+      "vein-warm-brown": 0.072,
+      "vein-golden-brown": 0.055
+     }
+    },
+    "tile 5,3": {
+     "rect": [
+      27.4,
+      17.4,
+      32.4,
+      22.4
+     ],
+     "composition": {
+      "host-80": 0.018,
+      "host-85": 0.202,
+      "host-90": 0.499,
+      "host-95": 0.092,
+      "host-100": 0.007,
+      "dark-vein": 0.03,
+      "clear-bubble": 0.03,
+      "vein-deep-brown": 0.046,
+      "vein-warm-brown": 0.034,
+      "vein-golden-brown": 0.042
+     }
+    },
+    "tile 6,3": {
+     "rect": [
+      32.4,
+      17.4,
+      37.4,
+      22.4
+     ],
+     "composition": {
+      "host-80": 0.006,
+      "host-85": 0.281,
+      "host-90": 0.402,
+      "host-95": 0.153,
+      "dark-vein": 0.016,
+      "clear-bubble": 0.022,
+      "vein-deep-brown": 0.02,
+      "vein-warm-brown": 0.047,
+      "vein-golden-brown": 0.05
+     }
+    },
+    "tile 7,3": {
+     "rect": [
+      37.4,
+      17.4,
+      42.4,
+      22.4
+     ],
+     "composition": {
+      "host-85": 0.612,
+      "host-90": 0.148,
+      "host-95": 0.029,
+      "host-100": 0.01,
+      "dark-vein": 0.033,
+      "clear-bubble": 0.027,
+      "vein-deep-brown": 0.061,
+      "vein-warm-brown": 0.036,
+      "vein-golden-brown": 0.041
+     }
+    },
+    "tile 8,3": {
+     "rect": [
+      42.4,
+      17.4,
+      47.4,
+      22.4
+     ],
+     "composition": {
+      "host-80": 0.009,
+      "host-85": 0.432,
+      "host-90": 0.247,
+      "host-95": 0.087,
+      "host-100": 0.008,
+      "dark-vein": 0.021,
+      "clear-bubble": 0.028,
+      "vein-deep-brown": 0.03,
+      "vein-warm-brown": 0.072,
+      "vein-golden-brown": 0.065
+     }
+    },
+    "tile 9,3": {
+     "rect": [
+      47.4,
+      17.4,
+      52.4,
+      22.4
+     ],
+     "composition": {
+      "host-80": 0.439,
+      "host-85": 0.263,
+      "host-90": 0.043,
+      "host-95": 0.035,
+      "host-100": 0.008,
+      "clear-bubble": 0.028,
+      "vein-deep-brown": 0.007,
+      "vein-warm-brown": 0.06,
+      "vein-golden-brown": 0.117
+     }
+    },
+    "tile 10,3": {
+     "rect": [
+      52.4,
+      17.4,
+      57.4,
+      22.4
+     ],
+     "composition": {
+      "host-80": 0.117,
+      "host-85": 0.226,
+      "host-90": 0.176,
+      "host-95": 0.232,
+      "host-100": 0.085,
+      "dark-vein": 0.01,
+      "clear-bubble": 0.028,
+      "vein-deep-brown": 0.03,
+      "vein-warm-brown": 0.009,
+      "vein-golden-brown": 0.088
+     }
+    },
+    "tile 0,4": {
+     "rect": [
+      2.4,
+      22.4,
+      7.4,
+      27.4
+     ],
+     "composition": {
+      "host-80": 0.02,
+      "host-85": 0.5,
+      "host-90": 0.264,
+      "host-95": 0.02,
+      "clear-bubble": 0.033,
+      "vein-deep-brown": 0.037,
+      "vein-warm-brown": 0.068,
+      "vein-golden-brown": 0.055
+     }
+    },
+    "tile 1,4": {
+     "rect": [
+      7.4,
+      22.4,
+      12.4,
+      27.4
+     ],
+     "composition": {
+      "host-80": 0.014,
+      "host-85": 0.115,
+      "host-90": 0.214,
+      "host-95": 0.452,
+      "dark-vein": 0.009,
+      "clear-bubble": 0.027,
+      "vein-deep-brown": 0.028,
+      "vein-warm-brown": 0.061,
+      "vein-golden-brown": 0.077
+     }
+    },
+    "tile 2,4": {
+     "rect": [
+      12.4,
+      22.4,
+      17.4,
+      27.4
+     ],
+     "composition": {
+      "host-85": 0.012,
+      "host-90": 0.275,
+      "host-95": 0.487,
+      "dark-vein": 0.026,
+      "clear-bubble": 0.032,
+      "vein-deep-brown": 0.025,
+      "vein-warm-brown": 0.056,
+      "vein-golden-brown": 0.083
+     }
+    },
+    "tile 3,4": {
+     "rect": [
+      17.4,
+      22.4,
+      22.4,
+      27.4
+     ],
+     "composition": {
+      "host-85": 0.044,
+      "host-90": 0.208,
+      "host-95": 0.526,
+      "host-100": 0.051,
+      "dark-vein": 0.025,
+      "clear-bubble": 0.026,
+      "vein-deep-brown": 0.035,
+      "vein-warm-brown": 0.042,
+      "vein-golden-brown": 0.038
+     }
+    },
+    "tile 4,4": {
+     "rect": [
+      22.4,
+      22.4,
+      27.4,
+      27.4
+     ],
+     "composition": {
+      "host-80": 0.145,
+      "host-85": 0.31,
+      "host-90": 0.329,
+      "host-95": 0.048,
+      "clear-bubble": 0.028,
+      "vein-deep-brown": 0.024,
+      "vein-warm-brown": 0.059,
+      "vein-golden-brown": 0.053
+     }
+    },
+    "tile 5,4": {
+     "rect": [
+      27.4,
+      22.4,
+      32.4,
+      27.4
+     ],
+     "composition": {
+      "host-85": 0.212,
+      "host-90": 0.267,
+      "host-95": 0.373,
+      "host-100": 0.005,
+      "dark-vein": 0.024,
+      "clear-bubble": 0.029,
+      "vein-deep-brown": 0.029,
+      "vein-warm-brown": 0.013,
+      "vein-golden-brown": 0.045
+     }
+    },
+    "tile 6,4": {
+     "rect": [
+      32.4,
+      22.4,
+      37.4,
+      27.4
+     ],
+     "composition": {
+      "host-85": 0.242,
+      "host-90": 0.275,
+      "host-95": 0.283,
+      "dark-vein": 0.013,
+      "clear-bubble": 0.022,
+      "vein-deep-brown": 0.045,
+      "vein-warm-brown": 0.045,
+      "vein-golden-brown": 0.073
+     }
+    },
+    "tile 7,4": {
+     "rect": [
+      37.4,
+      22.4,
+      42.4,
+      27.4
+     ],
+     "composition": {
+      "host-85": 0.277,
+      "host-90": 0.449,
+      "host-95": 0.011,
+      "dark-vein": 0.005,
+      "clear-bubble": 0.034,
+      "vein-deep-brown": 0.038,
+      "vein-warm-brown": 0.067,
+      "vein-golden-brown": 0.114
+     }
+    },
+    "tile 8,4": {
+     "rect": [
+      42.4,
+      22.4,
+      47.4,
+      27.4
+     ],
+     "composition": {
+      "host-85": 0.048,
+      "host-90": 0.241,
+      "host-95": 0.492,
+      "host-100": 0.011,
+      "dark-vein": 0.01,
+      "clear-bubble": 0.036,
+      "vein-deep-brown": 0.028,
+      "vein-warm-brown": 0.085,
+      "vein-golden-brown": 0.049
+     }
+    },
+    "tile 9,4": {
+     "rect": [
+      47.4,
+      22.4,
+      52.4,
+      27.4
+     ],
+     "composition": {
+      "host-80": 0.006,
+      "host-85": 0.257,
+      "host-90": 0.29,
+      "host-95": 0.28,
+      "dark-vein": 0.011,
+      "clear-bubble": 0.029,
+      "vein-deep-brown": 0.027,
+      "vein-warm-brown": 0.045,
+      "vein-golden-brown": 0.052
+     }
+    },
+    "tile 10,4": {
+     "rect": [
+      52.4,
+      22.4,
+      57.4,
+      27.4
+     ],
+     "composition": {
+      "host-85": 0.148,
+      "host-90": 0.329,
+      "host-95": 0.359,
+      "dark-vein": 0.028,
+      "clear-bubble": 0.03,
+      "vein-deep-brown": 0.031,
+      "vein-warm-brown": 0.027,
+      "vein-golden-brown": 0.042
+     }
+    }
+   }
+  },
+  "bottom": {
+   "regions": {
+    "host-80": {
+     "rect": [
+      18.0,
+      19.6,
+      20.0,
+      21.6
+     ],
+     "purity": 0.86,
+     "composition": {
+      "host-80": 0.86,
+      "host-85": 0.01,
+      "dark-vein": 0.036,
+      "clear-bubble": 0.02,
+      "vein-deep-brown": 0.064,
+      "vein-golden-brown": 0.01
+     }
+    },
+    "host-85": {
+     "rect": [
+      18.4,
+      5.2,
+      20.4,
+      7.2
+     ],
+     "purity": 0.97,
+     "composition": {
+      "host-85": 0.97,
+      "clear-bubble": 0.022,
+      "vein-deep-brown": 0.008
+     }
+    },
+    "host-90": {
+     "rect": [
+      46.4,
+      13.8,
+      48.4,
+      15.8
+     ],
+     "purity": 0.968,
+     "composition": {
+      "host-90": 0.968,
+      "clear-bubble": 0.032
+     }
+    },
+    "host-95": {
+     "rect": [
+      10.6,
+      14.2,
+      12.6,
+      16.2
+     ],
+     "purity": 0.906,
+     "composition": {
+      "host-90": 0.058,
+      "host-95": 0.906,
+      "clear-bubble": 0.026,
+      "vein-warm-brown": 0.01
+     }
+    },
+    "host-100": {
+     "rect": [
+      55.4,
+      20.4,
+      57.4,
+      22.4
+     ],
+     "purity": 0.776,
+     "composition": {
+      "host-95": 0.036,
+      "host-100": 0.776,
+      "dark-vein": 0.03,
+      "clear-bubble": 0.024,
+      "vein-deep-brown": 0.03,
+      "vein-warm-brown": 0.054,
+      "vein-golden-brown": 0.05
+     }
+    }
+   },
+   "tiles": {
+    "tile 0,0": {
+     "rect": [
+      2.4,
+      2.4,
+      7.4,
+      7.4
+     ],
+     "composition": {
+      "host-85": 0.371,
+      "host-90": 0.356,
+      "host-95": 0.049,
+      "dark-vein": 0.045,
+      "clear-bubble": 0.036,
+      "vein-deep-brown": 0.05,
+      "vein-warm-brown": 0.059,
+      "vein-golden-brown": 0.028
+     }
+    },
+    "tile 1,0": {
+     "rect": [
+      7.4,
+      2.4,
+      12.4,
+      7.4
+     ],
+     "composition": {
+      "host-85": 0.056,
+      "host-90": 0.484,
+      "host-95": 0.266,
+      "clear-bubble": 0.031,
+      "vein-deep-brown": 0.056,
+      "vein-warm-brown": 0.069,
+      "vein-golden-brown": 0.036
+     }
+    },
+    "tile 2,0": {
+     "rect": [
+      12.4,
+      2.4,
+      17.4,
+      7.4
+     ],
+     "composition": {
+      "host-85": 0.273,
+      "host-90": 0.379,
+      "host-95": 0.158,
+      "dark-vein": 0.012,
+      "clear-bubble": 0.033,
+      "vein-deep-brown": 0.052,
+      "vein-warm-brown": 0.047,
+      "vein-golden-brown": 0.039
+     }
+    },
+    "tile 3,0": {
+     "rect": [
+      17.4,
+      2.4,
+      22.4,
+      7.4
+     ],
+     "composition": {
+      "host-80": 0.288,
+      "host-85": 0.487,
+      "host-90": 0.088,
+      "dark-vein": 0.04,
+      "clear-bubble": 0.023,
+      "vein-deep-brown": 0.047,
+      "vein-warm-brown": 0.021
+     }
+    },
+    "tile 4,0": {
+     "rect": [
+      22.4,
+      2.4,
+      27.4,
+      7.4
+     ],
+     "composition": {
+      "host-80": 0.091,
+      "host-85": 0.368,
+      "host-90": 0.384,
+      "host-95": 0.006,
+      "dark-vein": 0.018,
+      "clear-bubble": 0.029,
+      "vein-deep-brown": 0.029,
+      "vein-warm-brown": 0.031,
+      "vein-golden-brown": 0.042
+     }
+    },
+    "tile 5,0": {
+     "rect": [
+      27.4,
+      2.4,
+      32.4,
+      7.4
+     ],
+     "composition": {
+      "host-85": 0.01,
+      "host-90": 0.298,
+      "host-95": 0.388,
+      "host-100": 0.08,
+      "dark-vein": 0.061,
+      "clear-bubble": 0.031,
+      "vein-deep-brown": 0.052,
+      "vein-warm-brown": 0.026,
+      "vein-golden-brown": 0.051
+     }
+    },
+    "tile 6,0": {
+     "rect": [
+      32.4,
+      2.4,
+      37.4,
+      7.4
+     ],
+     "composition": {
+      "host-85": 0.01,
+      "host-90": 0.137,
+      "host-95": 0.466,
+      "host-100": 0.14,
+      "dark-vein": 0.023,
+      "clear-bubble": 0.033,
+      "vein-deep-brown": 0.025,
+      "vein-warm-brown": 0.04,
+      "vein-golden-brown": 0.125
+     }
+    },
+    "tile 7,0": {
+     "rect": [
+      37.4,
+      2.4,
+      42.4,
+      7.4
+     ],
+     "composition": {
+      "host-85": 0.012,
+      "host-90": 0.159,
+      "host-95": 0.526,
+      "host-100": 0.095,
+      "dark-vein": 0.018,
+      "clear-bubble": 0.034,
+      "vein-deep-brown": 0.071,
+      "vein-warm-brown": 0.038,
+      "vein-golden-brown": 0.044
+     }
+    },
+    "tile 8,0": {
+     "rect": [
+      42.4,
+      2.4,
+      47.4,
+      7.4
+     ],
+     "composition": {
+      "host-85": 0.07,
+      "host-90": 0.23,
+      "host-95": 0.505,
+      "dark-vein": 0.015,
+      "clear-bubble": 0.031,
+      "vein-deep-brown": 0.067,
+      "vein-warm-brown": 0.041,
+      "vein-golden-brown": 0.035
+     }
+    },
+    "tile 9,0": {
+     "rect": [
+      47.4,
+      2.4,
+      52.4,
+      7.4
+     ],
+     "composition": {
+      "host-85": 0.015,
+      "host-90": 0.229,
+      "host-95": 0.489,
+      "host-100": 0.108,
+      "dark-vein": 0.024,
+      "clear-bubble": 0.027,
+      "vein-deep-brown": 0.038,
+      "vein-warm-brown": 0.031,
+      "vein-golden-brown": 0.037
+     }
+    },
+    "tile 10,0": {
+     "rect": [
+      52.4,
+      2.4,
+      57.4,
+      7.4
+     ],
+     "composition": {
+      "host-85": 0.131,
+      "host-90": 0.421,
+      "host-95": 0.26,
+      "dark-vein": 0.068,
+      "clear-bubble": 0.026,
+      "vein-deep-brown": 0.053,
+      "vein-warm-brown": 0.011,
+      "vein-golden-brown": 0.026
+     }
+    },
+    "tile 0,1": {
+     "rect": [
+      2.4,
+      7.4,
+      7.4,
+      12.4
+     ],
+     "composition": {
+      "host-85": 0.326,
+      "host-90": 0.423,
+      "host-95": 0.033,
+      "host-100": 0.006,
+      "dark-vein": 0.037,
+      "clear-bubble": 0.034,
+      "vein-deep-brown": 0.06,
+      "vein-warm-brown": 0.018,
+      "vein-golden-brown": 0.06
+     }
+    },
+    "tile 1,1": {
+     "rect": [
+      7.4,
+      7.4,
+      12.4,
+      12.4
+     ],
+     "composition": {
+      "host-80": 0.006,
+      "host-85": 0.375,
+      "host-90": 0.371,
+      "host-95": 0.04,
+      "clear-bubble": 0.029,
+      "vein-deep-brown": 0.024,
+      "vein-warm-brown": 0.059,
+      "vein-golden-brown": 0.091
+     }
+    },
+    "tile 2,1": {
+     "rect": [
+      12.4,
+      7.4,
+      17.4,
+      12.4
+     ],
+     "composition": {
+      "host-85": 0.1,
+      "host-90": 0.392,
+      "host-95": 0.277,
+      "dark-vein": 0.037,
+      "clear-bubble": 0.034,
+      "vein-deep-brown": 0.048,
+      "vein-warm-brown": 0.043,
+      "vein-golden-brown": 0.061
+     }
+    },
+    "tile 3,1": {
+     "rect": [
+      17.4,
+      7.4,
+      22.4,
+      12.4
+     ],
+     "composition": {
+      "host-85": 0.28,
+      "host-90": 0.425,
+      "host-95": 0.09,
+      "dark-vein": 0.035,
+      "clear-bubble": 0.028,
+      "vein-deep-brown": 0.04,
+      "vein-warm-brown": 0.041,
+      "vein-golden-brown": 0.054
+     }
+    },
+    "tile 4,1": {
+     "rect": [
+      22.4,
+      7.4,
+      27.4,
+      12.4
+     ],
+     "composition": {
+      "host-85": 0.015,
+      "host-90": 0.654,
+      "host-95": 0.126,
+      "dark-vein": 0.012,
+      "clear-bubble": 0.03,
+      "vein-deep-brown": 0.039,
+      "vein-warm-brown": 0.03,
+      "vein-golden-brown": 0.089
+     }
+    },
+    "tile 5,1": {
+     "rect": [
+      27.4,
+      7.4,
+      32.4,
+      12.4
+     ],
+     "composition": {
+      "host-80": 0.07,
+      "host-85": 0.257,
+      "host-90": 0.397,
+      "host-95": 0.078,
+      "dark-vein": 0.007,
+      "clear-bubble": 0.031,
+      "vein-deep-brown": 0.052,
+      "vein-warm-brown": 0.04,
+      "vein-golden-brown": 0.065
+     }
+    },
+    "tile 6,1": {
+     "rect": [
+      32.4,
+      7.4,
+      37.4,
+      12.4
+     ],
+     "composition": {
+      "host-80": 0.048,
+      "host-85": 0.329,
+      "host-90": 0.313,
+      "host-95": 0.111,
+      "host-100": 0.005,
+      "dark-vein": 0.017,
+      "clear-bubble": 0.032,
+      "vein-deep-brown": 0.036,
+      "vein-warm-brown": 0.075,
+      "vein-golden-brown": 0.034
+     }
+    },
+    "tile 7,1": {
+     "rect": [
+      37.4,
+      7.4,
+      42.4,
+      12.4
+     ],
+     "composition": {
+      "host-85": 0.203,
+      "host-90": 0.556,
+      "host-95": 0.031,
+      "dark-vein": 0.032,
+      "clear-bubble": 0.035,
+      "vein-deep-brown": 0.045,
+      "vein-warm-brown": 0.038,
+      "vein-golden-brown": 0.052
+     }
+    },
+    "tile 8,1": {
+     "rect": [
+      42.4,
+      7.4,
+      47.4,
+      12.4
+     ],
+     "composition": {
+      "host-80": 0.058,
+      "host-85": 0.551,
+      "host-90": 0.19,
+      "host-95": 0.022,
+      "dark-vein": 0.017,
+      "clear-bubble": 0.03,
+      "vein-deep-brown": 0.041,
+      "vein-warm-brown": 0.026,
+      "vein-golden-brown": 0.062
+     }
+    },
+    "tile 9,1": {
+     "rect": [
+      47.4,
+      7.4,
+      52.4,
+      12.4
+     ],
+     "composition": {
+      "host-85": 0.091,
+      "host-90": 0.489,
+      "host-95": 0.228,
+      "host-100": 0.007,
+      "dark-vein": 0.029,
+      "clear-bubble": 0.028,
+      "vein-deep-brown": 0.094,
+      "vein-warm-brown": 0.024,
+      "vein-golden-brown": 0.005
+     }
+    },
+    "tile 10,1": {
+     "rect": [
+      52.4,
+      7.4,
+      57.4,
+      12.4
+     ],
+     "composition": {
+      "host-80": 0.099,
+      "host-85": 0.295,
+      "host-90": 0.385,
+      "host-95": 0.063,
+      "dark-vein": 0.028,
+      "clear-bubble": 0.031,
+      "vein-deep-brown": 0.053,
+      "vein-warm-brown": 0.015,
+      "vein-golden-brown": 0.027
+     }
+    },
+    "tile 0,2": {
+     "rect": [
+      2.4,
+      12.4,
+      7.4,
+      17.4
+     ],
+     "composition": {
+      "host-85": 0.005,
+      "host-90": 0.415,
+      "host-95": 0.415,
+      "dark-vein": 0.019,
+      "clear-bubble": 0.024,
+      "vein-deep-brown": 0.032,
+      "vein-warm-brown": 0.029,
+      "vein-golden-brown": 0.06
+     }
+    },
+    "tile 1,2": {
+     "rect": [
+      7.4,
+      12.4,
+      12.4,
+      17.4
+     ],
+     "composition": {
+      "host-85": 0.012,
+      "host-90": 0.447,
+      "host-95": 0.348,
+      "dark-vein": 0.02,
+      "clear-bubble": 0.029,
+      "vein-deep-brown": 0.041,
+      "vein-warm-brown": 0.062,
+      "vein-golden-brown": 0.04
+     }
+    },
+    "tile 2,2": {
+     "rect": [
+      12.4,
+      12.4,
+      17.4,
+      17.4
+     ],
+     "composition": {
+      "host-85": 0.021,
+      "host-90": 0.191,
+      "host-95": 0.536,
+      "host-100": 0.038,
+      "clear-bubble": 0.03,
+      "vein-deep-brown": 0.044,
+      "vein-warm-brown": 0.081,
+      "vein-golden-brown": 0.057
+     }
+    },
+    "tile 3,2": {
+     "rect": [
+      17.4,
+      12.4,
+      22.4,
+      17.4
+     ],
+     "composition": {
+      "host-80": 0.065,
+      "host-85": 0.289,
+      "host-90": 0.393,
+      "host-95": 0.016,
+      "dark-vein": 0.02,
+      "clear-bubble": 0.033,
+      "vein-deep-brown": 0.034,
+      "vein-warm-brown": 0.063,
+      "vein-golden-brown": 0.088
+     }
+    },
+    "tile 4,2": {
+     "rect": [
+      22.4,
+      12.4,
+      27.4,
+      17.4
+     ],
+     "composition": {
+      "host-85": 0.336,
+      "host-90": 0.411,
+      "host-95": 0.059,
+      "dark-vein": 0.033,
+      "clear-bubble": 0.028,
+      "vein-deep-brown": 0.037,
+      "vein-warm-brown": 0.037,
+      "vein-golden-brown": 0.055
+     }
+    },
+    "tile 5,2": {
+     "rect": [
+      27.4,
+      12.4,
+      32.4,
+      17.4
+     ],
+     "composition": {
+      "host-80": 0.172,
+      "host-85": 0.178,
+      "host-90": 0.405,
+      "host-95": 0.027,
+      "dark-vein": 0.031,
+      "clear-bubble": 0.028,
+      "vein-deep-brown": 0.064,
+      "vein-warm-brown": 0.028,
+      "vein-golden-brown": 0.066
+     }
+    },
+    "tile 6,2": {
+     "rect": [
+      32.4,
+      12.4,
+      37.4,
+      17.4
+     ],
+     "composition": {
+      "host-80": 0.067,
+      "host-85": 0.33,
+      "host-90": 0.233,
+      "host-95": 0.134,
+      "dark-vein": 0.046,
+      "clear-bubble": 0.032,
+      "vein-deep-brown": 0.058,
+      "vein-warm-brown": 0.049,
+      "vein-golden-brown": 0.051
+     }
+    },
+    "tile 7,2": {
+     "rect": [
+      37.4,
+      12.4,
+      42.4,
+      17.4
+     ],
+     "composition": {
+      "host-85": 0.687,
+      "host-90": 0.135,
+      "dark-vein": 0.01,
+      "clear-bubble": 0.03,
+      "vein-deep-brown": 0.023,
+      "vein-warm-brown": 0.031,
+      "vein-golden-brown": 0.084
+     }
+    },
+    "tile 8,2": {
+     "rect": [
+      42.4,
+      12.4,
+      47.4,
+      17.4
+     ],
+     "composition": {
+      "host-85": 0.095,
+      "host-90": 0.422,
+      "host-95": 0.291,
+      "host-100": 0.008,
+      "clear-bubble": 0.032,
+      "vein-deep-brown": 0.023,
+      "vein-warm-brown": 0.046,
+      "vein-golden-brown": 0.083
+     }
+    },
+    "tile 9,2": {
+     "rect": [
+      47.4,
+      12.4,
+      52.4,
+      17.4
+     ],
+     "composition": {
+      "host-85": 0.27,
+      "host-90": 0.545,
+      "dark-vein": 0.031,
+      "clear-bubble": 0.026,
+      "vein-deep-brown": 0.036,
+      "vein-warm-brown": 0.029,
+      "vein-golden-brown": 0.062
+     }
+    },
+    "tile 10,2": {
+     "rect": [
+      52.4,
+      12.4,
+      57.4,
+      17.4
+     ],
+     "composition": {
+      "host-80": 0.02,
+      "host-85": 0.269,
+      "host-90": 0.478,
+      "host-95": 0.027,
+      "dark-vein": 0.011,
+      "clear-bubble": 0.038,
+      "vein-deep-brown": 0.046,
+      "vein-warm-brown": 0.065,
+      "vein-golden-brown": 0.047
+     }
+    },
+    "tile 0,3": {
+     "rect": [
+      2.4,
+      17.4,
+      7.4,
+      22.4
+     ],
+     "composition": {
+      "host-80": 0.04,
+      "host-85": 0.561,
+      "host-90": 0.168,
+      "host-95": 0.03,
+      "host-100": 0.005,
+      "dark-vein": 0.012,
+      "clear-bubble": 0.029,
+      "vein-deep-brown": 0.045,
+      "vein-warm-brown": 0.066,
+      "vein-golden-brown": 0.042
+     }
+    },
+    "tile 1,3": {
+     "rect": [
+      7.4,
+      17.4,
+      12.4,
+      22.4
+     ],
+     "composition": {
+      "host-80": 0.036,
+      "host-85": 0.606,
+      "host-90": 0.133,
+      "host-95": 0.031,
+      "host-100": 0.006,
+      "dark-vein": 0.023,
+      "clear-bubble": 0.03,
+      "vein-deep-brown": 0.039,
+      "vein-warm-brown": 0.058,
+      "vein-golden-brown": 0.037
+     }
+    },
+    "tile 2,3": {
+     "rect": [
+      12.4,
+      17.4,
+      17.4,
+      22.4
+     ],
+     "composition": {
+      "host-80": 0.014,
+      "host-85": 0.546,
+      "host-90": 0.224,
+      "host-95": 0.037,
+      "host-100": 0.006,
+      "dark-vein": 0.01,
+      "clear-bubble": 0.026,
+      "vein-deep-brown": 0.028,
+      "vein-warm-brown": 0.059,
+      "vein-golden-brown": 0.05
+     }
+    },
+    "tile 3,3": {
+     "rect": [
+      17.4,
+      17.4,
+      22.4,
+      22.4
+     ],
+     "composition": {
+      "host-80": 0.315,
+      "host-85": 0.386,
+      "host-90": 0.08,
+      "host-95": 0.021,
+      "host-100": 0.005,
+      "dark-vein": 0.018,
+      "clear-bubble": 0.031,
+      "vein-deep-brown": 0.042,
+      "vein-warm-brown": 0.046,
+      "vein-golden-brown": 0.055
+     }
+    },
+    "tile 4,3": {
+     "rect": [
+      22.4,
+      17.4,
+      27.4,
+      22.4
+     ],
+     "composition": {
+      "host-80": 0.008,
+      "host-85": 0.078,
+      "host-90": 0.61,
+      "host-95": 0.129,
+      "host-100": 0.011,
+      "clear-bubble": 0.028,
+      "vein-deep-brown": 0.024,
+      "vein-warm-brown": 0.053,
+      "vein-golden-brown": 0.056
+     }
+    },
+    "tile 5,3": {
+     "rect": [
+      27.4,
+      17.4,
+      32.4,
+      22.4
+     ],
+     "composition": {
+      "host-85": 0.034,
+      "host-90": 0.533,
+      "host-95": 0.26,
+      "host-100": 0.007,
+      "dark-vein": 0.006,
+      "clear-bubble": 0.035,
+      "vein-deep-brown": 0.05,
+      "vein-warm-brown": 0.025,
+      "vein-golden-brown": 0.048
+     }
+    },
+    "tile 6,3": {
+     "rect": [
+      32.4,
+      17.4,
+      37.4,
+      22.4
+     ],
+     "composition": {
+      "host-85": 0.039,
+      "host-90": 0.196,
+      "host-95": 0.547,
+      "host-100": 0.046,
+      "dark-vein": 0.018,
+      "clear-bubble": 0.033,
+      "vein-deep-brown": 0.017,
+      "vein-warm-brown": 0.045,
+      "vein-golden-brown": 0.053
+     }
+    },
+    "tile 7,3": {
+     "rect": [
+      37.4,
+      17.4,
+      42.4,
+      22.4
+     ],
+     "composition": {
+      "host-80": 0.015,
+      "host-85": 0.512,
+      "host-90": 0.25,
+      "host-95": 0.025,
+      "host-100": 0.007,
+      "dark-vein": 0.029,
+      "clear-bubble": 0.027,
+      "vein-deep-brown": 0.059,
+      "vein-warm-brown": 0.049,
+      "vein-golden-brown": 0.028
+     }
+    },
+    "tile 8,3": {
+     "rect": [
+      42.4,
+      17.4,
+      47.4,
+      22.4
+     ],
+     "composition": {
+      "host-85": 0.341,
+      "host-90": 0.288,
+      "host-95": 0.133,
+      "host-100": 0.016,
+      "dark-vein": 0.024,
+      "clear-bubble": 0.028,
+      "vein-deep-brown": 0.03,
+      "vein-warm-brown": 0.091,
+      "vein-golden-brown": 0.043
+     }
+    },
+    "tile 9,3": {
+     "rect": [
+      47.4,
+      17.4,
+      52.4,
+      22.4
+     ],
+     "composition": {
+      "host-80": 0.203,
+      "host-85": 0.441,
+      "host-90": 0.121,
+      "host-95": 0.033,
+      "host-100": 0.009,
+      "clear-bubble": 0.028,
+      "vein-deep-brown": 0.005,
+      "vein-warm-brown": 0.061,
+      "vein-golden-brown": 0.098
+     }
+    },
+    "tile 10,3": {
+     "rect": [
+      52.4,
+      17.4,
+      57.4,
+      22.4
+     ],
+     "composition": {
+      "host-80": 0.01,
+      "host-85": 0.207,
+      "host-90": 0.19,
+      "host-95": 0.236,
+      "host-100": 0.196,
+      "dark-vein": 0.009,
+      "clear-bubble": 0.029,
+      "vein-deep-brown": 0.019,
+      "vein-warm-brown": 0.017,
+      "vein-golden-brown": 0.089
+     }
+    },
+    "tile 0,4": {
+     "rect": [
+      2.4,
+      22.4,
+      7.4,
+      27.4
+     ],
+     "composition": {
+      "host-80": 0.148,
+      "host-85": 0.567,
+      "host-90": 0.094,
+      "host-95": 0.006,
+      "clear-bubble": 0.031,
+      "vein-deep-brown": 0.038,
+      "vein-warm-brown": 0.058,
+      "vein-golden-brown": 0.055
+     }
+    },
+    "tile 1,4": {
+     "rect": [
+      7.4,
+      22.4,
+      12.4,
+      27.4
+     ],
+     "composition": {
+      "host-85": 0.084,
+      "host-90": 0.303,
+      "host-95": 0.401,
+      "dark-vein": 0.007,
+      "clear-bubble": 0.032,
+      "vein-deep-brown": 0.02,
+      "vein-warm-brown": 0.052,
+      "vein-golden-brown": 0.096
+     }
+    },
+    "tile 2,4": {
+     "rect": [
+      12.4,
+      22.4,
+      17.4,
+      27.4
+     ],
+     "composition": {
+      "host-85": 0.074,
+      "host-90": 0.368,
+      "host-95": 0.339,
+      "dark-vein": 0.025,
+      "clear-bubble": 0.022,
+      "vein-deep-brown": 0.024,
+      "vein-warm-brown": 0.069,
+      "vein-golden-brown": 0.073
+     }
+    },
+    "tile 3,4": {
+     "rect": [
+      17.4,
+      22.4,
+      22.4,
+      27.4
+     ],
+     "composition": {
+      "host-85": 0.238,
+      "host-90": 0.312,
+      "host-95": 0.274,
+      "host-100": 0.006,
+      "dark-vein": 0.033,
+      "clear-bubble": 0.028,
+      "vein-deep-brown": 0.028,
+      "vein-warm-brown": 0.035,
+      "vein-golden-brown": 0.043
+     }
+    },
+    "tile 4,4": {
+     "rect": [
+      22.4,
+      22.4,
+      27.4,
+      27.4
+     ],
+     "composition": {
+      "host-85": 0.187,
+      "host-90": 0.477,
+      "host-95": 0.165,
+      "host-100": 0.005,
+      "clear-bubble": 0.031,
+      "vein-deep-brown": 0.027,
+      "vein-warm-brown": 0.064,
+      "vein-golden-brown": 0.041
+     }
+    },
+    "tile 5,4": {
+     "rect": [
+      27.4,
+      22.4,
+      32.4,
+      27.4
+     ],
+     "composition": {
+      "host-85": 0.032,
+      "host-90": 0.331,
+      "host-95": 0.458,
+      "host-100": 0.013,
+      "dark-vein": 0.02,
+      "clear-bubble": 0.03,
+      "vein-deep-brown": 0.042,
+      "vein-warm-brown": 0.025,
+      "vein-golden-brown": 0.046
+     }
+    },
+    "tile 6,4": {
+     "rect": [
+      32.4,
+      22.4,
+      37.4,
+      27.4
+     ],
+     "composition": {
+      "host-85": 0.192,
+      "host-90": 0.509,
+      "host-95": 0.104,
+      "dark-vein": 0.015,
+      "clear-bubble": 0.022,
+      "vein-deep-brown": 0.048,
+      "vein-warm-brown": 0.045,
+      "vein-golden-brown": 0.063
+     }
+    },
+    "tile 7,4": {
+     "rect": [
+      37.4,
+      22.4,
+      42.4,
+      27.4
+     ],
+     "composition": {
+      "host-80": 0.01,
+      "host-85": 0.375,
+      "host-90": 0.234,
+      "host-95": 0.158,
+      "dark-vein": 0.006,
+      "clear-bubble": 0.029,
+      "vein-deep-brown": 0.043,
+      "vein-warm-brown": 0.051,
+      "vein-golden-brown": 0.091
+     }
+    },
+    "tile 8,4": {
+     "rect": [
+      42.4,
+      22.4,
+      47.4,
+      27.4
+     ],
+     "composition": {
+      "host-85": 0.06,
+      "host-90": 0.19,
+      "host-95": 0.444,
+      "host-100": 0.106,
+      "dark-vein": 0.025,
+      "clear-bubble": 0.028,
+      "vein-deep-brown": 0.021,
+      "vein-warm-brown": 0.087,
+      "vein-golden-brown": 0.036
+     }
+    },
+    "tile 9,4": {
+     "rect": [
+      47.4,
+      22.4,
+      52.4,
+      27.4
+     ],
+     "composition": {
+      "host-80": 0.068,
+      "host-85": 0.207,
+      "host-90": 0.257,
+      "host-95": 0.269,
+      "host-100": 0.038,
+      "dark-vein": 0.02,
+      "clear-bubble": 0.031,
+      "vein-deep-brown": 0.037,
+      "vein-warm-brown": 0.031,
+      "vein-golden-brown": 0.041
+     }
+    },
+    "tile 10,4": {
+     "rect": [
+      52.4,
+      22.4,
+      57.4,
+      27.4
+     ],
+     "composition": {
+      "host-85": 0.081,
+      "host-90": 0.288,
+      "host-95": 0.448,
+      "host-100": 0.015,
+      "dark-vein": 0.033,
+      "clear-bubble": 0.033,
+      "vein-deep-brown": 0.031,
+      "vein-warm-brown": 0.035,
+      "vein-golden-brown": 0.035
+     }
+    }
+   }
+  }
+ },
+ "fur": {
+  "top": {
+   "regions": {
+    "margin": {
+     "rect": [
+      55.4,
+      25.2,
+      57.4,
+      27.2
+     ],
+     "purity": 1.0,
+     "composition": {
+      "margin": 1.0
+     }
+    },
+    "undercoat": {
+     "rect": [
+      22.4,
+      10.6,
+      24.4,
+      12.6
+     ],
+     "purity": 0.75,
+     "composition": {
+      "margin": 0.23,
+      "undercoat": 0.75,
+      "tuft": 0.02
+     }
+    },
+    "tuft": {
+     "rect": [
+      10.0,
+      24.4,
+      12.0,
+      26.4
+     ],
+     "purity": 0.7,
+     "composition": {
+      "-": 0.01,
+      "margin": 0.18,
+      "tuft": 0.7,
+      "dark": 0.11
+     }
+    },
+    "dark": {
+     "rect": [
+      50.6,
+      4.8,
+      52.6,
+      6.8
+     ],
+     "purity": 0.87,
+     "composition": {
+      "tuft": 0.13,
+      "dark": 0.87
+     }
+    }
+   },
+   "tiles": {
+    "tile 0,0": {
+     "rect": [
+      2.4,
+      2.4,
+      7.4,
+      7.4
+     ],
+     "composition": {
+      "-": 0.034,
+      "margin": 0.525,
+      "undercoat": 0.05,
+      "tuft": 0.208,
+      "dark": 0.184
+     }
+    },
+    "tile 1,0": {
+     "rect": [
+      7.4,
+      2.4,
+      12.4,
+      7.4
+     ],
+     "composition": {
+      "-": 0.026,
+      "margin": 0.309,
+      "tuft": 0.298,
+      "dark": 0.363
+     }
+    },
+    "tile 2,0": {
+     "rect": [
+      12.4,
+      2.4,
+      17.4,
+      7.4
+     ],
+     "composition": {
+      "-": 0.046,
+      "margin": 0.296,
+      "undercoat": 0.037,
+      "tuft": 0.206,
+      "dark": 0.414
+     }
+    },
+    "tile 3,0": {
+     "rect": [
+      17.4,
+      2.4,
+      22.4,
+      7.4
+     ],
+     "composition": {
+      "-": 0.066,
+      "margin": 0.35,
+      "undercoat": 0.014,
+      "tuft": 0.214,
+      "dark": 0.355
+     }
+    },
+    "tile 4,0": {
+     "rect": [
+      22.4,
+      2.4,
+      27.4,
+      7.4
+     ],
+     "composition": {
+      "-": 0.059,
+      "margin": 0.339,
+      "undercoat": 0.024,
+      "tuft": 0.261,
+      "dark": 0.317
+     }
+    },
+    "tile 5,0": {
+     "rect": [
+      27.4,
+      2.4,
+      32.4,
+      7.4
+     ],
+     "composition": {
+      "-": 0.048,
+      "margin": 0.309,
+      "undercoat": 0.013,
+      "tuft": 0.222,
+      "dark": 0.408
+     }
+    },
+    "tile 6,0": {
+     "rect": [
+      32.4,
+      2.4,
+      37.4,
+      7.4
+     ],
+     "composition": {
+      "-": 0.08,
+      "margin": 0.334,
+      "undercoat": 0.008,
+      "tuft": 0.224,
+      "dark": 0.354
+     }
+    },
+    "tile 7,0": {
+     "rect": [
+      37.4,
+      2.4,
+      42.4,
+      7.4
+     ],
+     "composition": {
+      "-": 0.042,
+      "margin": 0.341,
+      "tuft": 0.325,
+      "dark": 0.29
+     }
+    },
+    "tile 8,0": {
+     "rect": [
+      42.4,
+      2.4,
+      47.4,
+      7.4
+     ],
+     "composition": {
+      "-": 0.062,
+      "margin": 0.312,
+      "undercoat": 0.029,
+      "tuft": 0.261,
+      "dark": 0.336
+     }
+    },
+    "tile 9,0": {
+     "rect": [
+      47.4,
+      2.4,
+      52.4,
+      7.4
+     ],
+     "composition": {
+      "-": 0.058,
+      "margin": 0.29,
+      "undercoat": 0.021,
+      "tuft": 0.296,
+      "dark": 0.336
+     }
+    },
+    "tile 10,0": {
+     "rect": [
+      52.4,
+      2.4,
+      57.4,
+      7.4
+     ],
+     "composition": {
+      "-": 0.011,
+      "margin": 0.669,
+      "undercoat": 0.016,
+      "tuft": 0.128,
+      "dark": 0.176
+     }
+    },
+    "tile 0,1": {
+     "rect": [
+      2.4,
+      7.4,
+      7.4,
+      12.4
+     ],
+     "composition": {
+      "-": 0.099,
+      "margin": 0.366,
+      "undercoat": 0.032,
+      "tuft": 0.226,
+      "dark": 0.277
+     }
+    },
+    "tile 1,1": {
+     "rect": [
+      7.4,
+      7.4,
+      12.4,
+      12.4
+     ],
+     "composition": {
+      "-": 0.198,
+      "margin": 0.182,
+      "undercoat": 0.218,
+      "tuft": 0.147,
+      "dark": 0.254
+     }
+    },
+    "tile 2,1": {
+     "rect": [
+      12.4,
+      7.4,
+      17.4,
+      12.4
+     ],
+     "composition": {
+      "-": 0.122,
+      "margin": 0.285,
+      "undercoat": 0.262,
+      "tuft": 0.254,
+      "dark": 0.077
+     }
+    },
+    "tile 3,1": {
+     "rect": [
+      17.4,
+      7.4,
+      22.4,
+      12.4
+     ],
+     "composition": {
+      "-": 0.141,
+      "margin": 0.258,
+      "undercoat": 0.266,
+      "tuft": 0.229,
+      "dark": 0.107
+     }
+    },
+    "tile 4,1": {
+     "rect": [
+      22.4,
+      7.4,
+      27.4,
+      12.4
+     ],
+     "composition": {
+      "-": 0.117,
+      "margin": 0.323,
+      "undercoat": 0.368,
+      "tuft": 0.158,
+      "dark": 0.034
+     }
+    },
+    "tile 5,1": {
+     "rect": [
+      27.4,
+      7.4,
+      32.4,
+      12.4
+     ],
+     "composition": {
+      "-": 0.115,
+      "margin": 0.421,
+      "undercoat": 0.229,
+      "tuft": 0.178,
+      "dark": 0.058
+     }
+    },
+    "tile 6,1": {
+     "rect": [
+      32.4,
+      7.4,
+      37.4,
+      12.4
+     ],
+     "composition": {
+      "-": 0.173,
+      "margin": 0.293,
+      "undercoat": 0.266,
+      "tuft": 0.184,
+      "dark": 0.085
+     }
+    },
+    "tile 7,1": {
+     "rect": [
+      37.4,
+      7.4,
+      42.4,
+      12.4
+     ],
+     "composition": {
+      "-": 0.144,
+      "margin": 0.264,
+      "undercoat": 0.378,
+      "tuft": 0.149,
+      "dark": 0.066
+     }
+    },
+    "tile 8,1": {
+     "rect": [
+      42.4,
+      7.4,
+      47.4,
+      12.4
+     ],
+     "composition": {
+      "-": 0.101,
+      "margin": 0.325,
+      "undercoat": 0.206,
+      "tuft": 0.246,
+      "dark": 0.122
+     }
+    },
+    "tile 9,1": {
+     "rect": [
+      47.4,
+      7.4,
+      52.4,
+      12.4
+     ],
+     "composition": {
+      "-": 0.21,
+      "margin": 0.104,
+      "undercoat": 0.157,
+      "tuft": 0.275,
+      "dark": 0.254
+     }
+    },
+    "tile 10,1": {
+     "rect": [
+      52.4,
+      7.4,
+      57.4,
+      12.4
+     ],
+     "composition": {
+      "-": 0.082,
+      "margin": 0.518,
+      "undercoat": 0.035,
+      "tuft": 0.162,
+      "dark": 0.203
+     }
+    },
+    "tile 0,2": {
+     "rect": [
+      2.4,
+      12.4,
+      7.4,
+      17.4
+     ],
+     "composition": {
+      "-": 0.056,
+      "margin": 0.341,
+      "undercoat": 0.051,
+      "tuft": 0.246,
+      "dark": 0.306
+     }
+    },
+    "tile 1,2": {
+     "rect": [
+      7.4,
+      12.4,
+      12.4,
+      17.4
+     ],
+     "composition": {
+      "-": 0.158,
+      "margin": 0.213,
+      "undercoat": 0.182,
+      "tuft": 0.278,
+      "dark": 0.168
+     }
+    },
+    "tile 2,2": {
+     "rect": [
+      12.4,
+      12.4,
+      17.4,
+      17.4
+     ],
+     "composition": {
+      "-": 0.162,
+      "margin": 0.307,
+      "undercoat": 0.382,
+      "tuft": 0.094,
+      "dark": 0.054
+     }
+    },
+    "tile 3,2": {
+     "rect": [
+      17.4,
+      12.4,
+      22.4,
+      17.4
+     ],
+     "composition": {
+      "-": 0.107,
+      "margin": 0.374,
+      "undercoat": 0.274,
+      "tuft": 0.149,
+      "dark": 0.096
+     }
+    },
+    "tile 4,2": {
+     "rect": [
+      22.4,
+      12.4,
+      27.4,
+      17.4
+     ],
+     "composition": {
+      "-": 0.094,
+      "margin": 0.39,
+      "undercoat": 0.261,
+      "tuft": 0.142,
+      "dark": 0.112
+     }
+    },
+    "tile 5,2": {
+     "rect": [
+      27.4,
+      12.4,
+      32.4,
+      17.4
+     ],
+     "composition": {
+      "-": 0.165,
+      "margin": 0.331,
+      "undercoat": 0.352,
+      "tuft": 0.12,
+      "dark": 0.032
+     }
+    },
+    "tile 6,2": {
+     "rect": [
+      32.4,
+      12.4,
+      37.4,
+      17.4
+     ],
+     "composition": {
+      "-": 0.157,
+      "margin": 0.381,
+      "undercoat": 0.238,
+      "tuft": 0.174,
+      "dark": 0.05
+     }
+    },
+    "tile 7,2": {
+     "rect": [
+      37.4,
+      12.4,
+      42.4,
+      17.4
+     ],
+     "composition": {
+      "-": 0.109,
+      "margin": 0.429,
+      "undercoat": 0.277,
+      "tuft": 0.157,
+      "dark": 0.029
+     }
+    },
+    "tile 8,2": {
+     "rect": [
+      42.4,
+      12.4,
+      47.4,
+      17.4
+     ],
+     "composition": {
+      "-": 0.154,
+      "margin": 0.298,
+      "undercoat": 0.357,
+      "tuft": 0.114,
+      "dark": 0.078
+     }
+    },
+    "tile 9,2": {
+     "rect": [
+      47.4,
+      12.4,
+      52.4,
+      17.4
+     ],
+     "composition": {
+      "-": 0.107,
+      "margin": 0.219,
+      "undercoat": 0.136,
+      "tuft": 0.309,
+      "dark": 0.229
+     }
+    },
+    "tile 10,2": {
+     "rect": [
+      52.4,
+      12.4,
+      57.4,
+      17.4
+     ],
+     "composition": {
+      "-": 0.058,
+      "margin": 0.538,
+      "undercoat": 0.026,
+      "tuft": 0.187,
+      "dark": 0.192
+     }
+    },
+    "tile 0,3": {
+     "rect": [
+      2.4,
+      17.4,
+      7.4,
+      22.4
+     ],
+     "composition": {
+      "-": 0.141,
+      "margin": 0.298,
+      "undercoat": 0.053,
+      "tuft": 0.285,
+      "dark": 0.224
+     }
+    },
+    "tile 1,3": {
+     "rect": [
+      7.4,
+      17.4,
+      12.4,
+      22.4
+     ],
+     "composition": {
+      "-": 0.154,
+      "margin": 0.2,
+      "undercoat": 0.208,
+      "tuft": 0.214,
+      "dark": 0.224
+     }
+    },
+    "tile 2,3": {
+     "rect": [
+      12.4,
+      17.4,
+      17.4,
+      22.4
+     ],
+     "composition": {
+      "-": 0.118,
+      "margin": 0.403,
+      "undercoat": 0.24,
+      "tuft": 0.131,
+      "dark": 0.107
+     }
+    },
+    "tile 3,3": {
+     "rect": [
+      17.4,
+      17.4,
+      22.4,
+      22.4
+     ],
+     "composition": {
+      "-": 0.166,
+      "margin": 0.264,
+      "undercoat": 0.318,
+      "tuft": 0.178,
+      "dark": 0.074
+     }
+    },
+    "tile 4,3": {
+     "rect": [
+      22.4,
+      17.4,
+      27.4,
+      22.4
+     ],
+     "composition": {
+      "-": 0.144,
+      "margin": 0.395,
+      "undercoat": 0.224,
+      "tuft": 0.123,
+      "dark": 0.114
+     }
+    },
+    "tile 5,3": {
+     "rect": [
+      27.4,
+      17.4,
+      32.4,
+      22.4
+     ],
+     "composition": {
+      "-": 0.107,
+      "margin": 0.373,
+      "undercoat": 0.222,
+      "tuft": 0.208,
+      "dark": 0.09
+     }
+    },
+    "tile 6,3": {
+     "rect": [
+      32.4,
+      17.4,
+      37.4,
+      22.4
+     ],
+     "composition": {
+      "-": 0.214,
+      "margin": 0.23,
+      "undercoat": 0.322,
+      "tuft": 0.187,
+      "dark": 0.046
+     }
+    },
+    "tile 7,3": {
+     "rect": [
+      37.4,
+      17.4,
+      42.4,
+      22.4
+     ],
+     "composition": {
+      "-": 0.123,
+      "margin": 0.315,
+      "undercoat": 0.288,
+      "tuft": 0.21,
+      "dark": 0.064
+     }
+    },
+    "tile 8,3": {
+     "rect": [
+      42.4,
+      17.4,
+      47.4,
+      22.4
+     ],
+     "composition": {
+      "-": 0.126,
+      "margin": 0.347,
+      "undercoat": 0.256,
+      "tuft": 0.234,
+      "dark": 0.037
+     }
+    },
+    "tile 9,3": {
+     "rect": [
+      47.4,
+      17.4,
+      52.4,
+      22.4
+     ],
+     "composition": {
+      "-": 0.197,
+      "margin": 0.136,
+      "undercoat": 0.165,
+      "tuft": 0.256,
+      "dark": 0.246
+     }
+    },
+    "tile 10,3": {
+     "rect": [
+      52.4,
+      17.4,
+      57.4,
+      22.4
+     ],
+     "composition": {
+      "-": 0.066,
+      "margin": 0.533,
+      "undercoat": 0.01,
+      "tuft": 0.245,
+      "dark": 0.147
+     }
+    },
+    "tile 0,4": {
+     "rect": [
+      2.4,
+      22.4,
+      7.4,
+      27.4
+     ],
+     "composition": {
+      "-": 0.027,
+      "margin": 0.515,
+      "undercoat": 0.029,
+      "tuft": 0.213,
+      "dark": 0.216
+     }
+    },
+    "tile 1,4": {
+     "rect": [
+      7.4,
+      22.4,
+      12.4,
+      27.4
+     ],
+     "composition": {
+      "-": 0.094,
+      "margin": 0.272,
+      "undercoat": 0.013,
+      "tuft": 0.347,
+      "dark": 0.274
+     }
+    },
+    "tile 2,4": {
+     "rect": [
+      12.4,
+      22.4,
+      17.4,
+      27.4
+     ],
+     "composition": {
+      "-": 0.077,
+      "margin": 0.28,
+      "undercoat": 0.026,
+      "tuft": 0.365,
+      "dark": 0.253
+     }
+    },
+    "tile 3,4": {
+     "rect": [
+      17.4,
+      22.4,
+      22.4,
+      27.4
+     ],
+     "composition": {
+      "-": 0.034,
+      "margin": 0.293,
+      "tuft": 0.312,
+      "dark": 0.358
+     }
+    },
+    "tile 4,4": {
+     "rect": [
+      22.4,
+      22.4,
+      27.4,
+      27.4
+     ],
+     "composition": {
+      "-": 0.074,
+      "margin": 0.274,
+      "undercoat": 0.029,
+      "tuft": 0.269,
+      "dark": 0.355
+     }
+    },
+    "tile 5,4": {
+     "rect": [
+      27.4,
+      22.4,
+      32.4,
+      27.4
+     ],
+     "composition": {
+      "-": 0.078,
+      "margin": 0.266,
+      "undercoat": 0.027,
+      "tuft": 0.28,
+      "dark": 0.349
+     }
+    },
+    "tile 6,4": {
+     "rect": [
+      32.4,
+      22.4,
+      37.4,
+      27.4
+     ],
+     "composition": {
+      "-": 0.045,
+      "margin": 0.288,
+      "undercoat": 0.021,
+      "tuft": 0.267,
+      "dark": 0.379
+     }
+    },
+    "tile 7,4": {
+     "rect": [
+      37.4,
+      22.4,
+      42.4,
+      27.4
+     ],
+     "composition": {
+      "-": 0.082,
+      "margin": 0.264,
+      "undercoat": 0.043,
+      "tuft": 0.166,
+      "dark": 0.445
+     }
+    },
+    "tile 8,4": {
+     "rect": [
+      42.4,
+      22.4,
+      47.4,
+      27.4
+     ],
+     "composition": {
+      "-": 0.059,
+      "margin": 0.31,
+      "undercoat": 0.011,
+      "tuft": 0.304,
+      "dark": 0.315
+     }
+    },
+    "tile 9,4": {
+     "rect": [
+      47.4,
+      22.4,
+      52.4,
+      27.4
+     ],
+     "composition": {
+      "-": 0.03,
+      "margin": 0.256,
+      "undercoat": 0.011,
+      "tuft": 0.246,
+      "dark": 0.456
+     }
+    },
+    "tile 10,4": {
+     "rect": [
+      52.4,
+      22.4,
+      57.4,
+      27.4
+     ],
+     "composition": {
+      "-": 0.029,
+      "margin": 0.622,
+      "undercoat": 0.011,
+      "tuft": 0.168,
+      "dark": 0.17
+     }
+    }
+   }
+  },
+  "bottom": {
+   "regions": {
+    "margin": {
+     "rect": [
+      55.4,
+      25.2,
+      57.4,
+      27.2
+     ],
+     "purity": 1.0,
+     "composition": {
+      "margin": 1.0
+     }
+    },
+    "undercoat": {
+     "rect": [
+      22.4,
+      10.6,
+      24.4,
+      12.6
+     ],
+     "purity": 0.75,
+     "composition": {
+      "margin": 0.23,
+      "undercoat": 0.75,
+      "tuft": 0.02
+     }
+    },
+    "tuft": {
+     "rect": [
+      10.0,
+      24.4,
+      12.0,
+      26.4
+     ],
+     "purity": 0.7,
+     "composition": {
+      "-": 0.01,
+      "margin": 0.18,
+      "tuft": 0.7,
+      "dark": 0.11
+     }
+    },
+    "dark": {
+     "rect": [
+      50.6,
+      4.8,
+      52.6,
+      6.8
+     ],
+     "purity": 0.87,
+     "composition": {
+      "tuft": 0.13,
+      "dark": 0.87
+     }
+    }
+   },
+   "tiles": {
+    "tile 0,0": {
+     "rect": [
+      2.4,
+      2.4,
+      7.4,
+      7.4
+     ],
+     "composition": {
+      "-": 0.034,
+      "margin": 0.525,
+      "undercoat": 0.05,
+      "tuft": 0.208,
+      "dark": 0.184
+     }
+    },
+    "tile 1,0": {
+     "rect": [
+      7.4,
+      2.4,
+      12.4,
+      7.4
+     ],
+     "composition": {
+      "-": 0.026,
+      "margin": 0.309,
+      "tuft": 0.298,
+      "dark": 0.363
+     }
+    },
+    "tile 2,0": {
+     "rect": [
+      12.4,
+      2.4,
+      17.4,
+      7.4
+     ],
+     "composition": {
+      "-": 0.046,
+      "margin": 0.296,
+      "undercoat": 0.037,
+      "tuft": 0.206,
+      "dark": 0.414
+     }
+    },
+    "tile 3,0": {
+     "rect": [
+      17.4,
+      2.4,
+      22.4,
+      7.4
+     ],
+     "composition": {
+      "-": 0.066,
+      "margin": 0.35,
+      "undercoat": 0.014,
+      "tuft": 0.214,
+      "dark": 0.355
+     }
+    },
+    "tile 4,0": {
+     "rect": [
+      22.4,
+      2.4,
+      27.4,
+      7.4
+     ],
+     "composition": {
+      "-": 0.059,
+      "margin": 0.339,
+      "undercoat": 0.024,
+      "tuft": 0.261,
+      "dark": 0.317
+     }
+    },
+    "tile 5,0": {
+     "rect": [
+      27.4,
+      2.4,
+      32.4,
+      7.4
+     ],
+     "composition": {
+      "-": 0.048,
+      "margin": 0.309,
+      "undercoat": 0.013,
+      "tuft": 0.222,
+      "dark": 0.408
+     }
+    },
+    "tile 6,0": {
+     "rect": [
+      32.4,
+      2.4,
+      37.4,
+      7.4
+     ],
+     "composition": {
+      "-": 0.08,
+      "margin": 0.334,
+      "undercoat": 0.008,
+      "tuft": 0.224,
+      "dark": 0.354
+     }
+    },
+    "tile 7,0": {
+     "rect": [
+      37.4,
+      2.4,
+      42.4,
+      7.4
+     ],
+     "composition": {
+      "-": 0.042,
+      "margin": 0.341,
+      "tuft": 0.325,
+      "dark": 0.29
+     }
+    },
+    "tile 8,0": {
+     "rect": [
+      42.4,
+      2.4,
+      47.4,
+      7.4
+     ],
+     "composition": {
+      "-": 0.062,
+      "margin": 0.312,
+      "undercoat": 0.029,
+      "tuft": 0.261,
+      "dark": 0.336
+     }
+    },
+    "tile 9,0": {
+     "rect": [
+      47.4,
+      2.4,
+      52.4,
+      7.4
+     ],
+     "composition": {
+      "-": 0.058,
+      "margin": 0.29,
+      "undercoat": 0.021,
+      "tuft": 0.296,
+      "dark": 0.336
+     }
+    },
+    "tile 10,0": {
+     "rect": [
+      52.4,
+      2.4,
+      57.4,
+      7.4
+     ],
+     "composition": {
+      "-": 0.011,
+      "margin": 0.669,
+      "undercoat": 0.016,
+      "tuft": 0.128,
+      "dark": 0.176
+     }
+    },
+    "tile 0,1": {
+     "rect": [
+      2.4,
+      7.4,
+      7.4,
+      12.4
+     ],
+     "composition": {
+      "-": 0.099,
+      "margin": 0.366,
+      "undercoat": 0.032,
+      "tuft": 0.226,
+      "dark": 0.277
+     }
+    },
+    "tile 1,1": {
+     "rect": [
+      7.4,
+      7.4,
+      12.4,
+      12.4
+     ],
+     "composition": {
+      "-": 0.198,
+      "margin": 0.182,
+      "undercoat": 0.218,
+      "tuft": 0.147,
+      "dark": 0.254
+     }
+    },
+    "tile 2,1": {
+     "rect": [
+      12.4,
+      7.4,
+      17.4,
+      12.4
+     ],
+     "composition": {
+      "-": 0.122,
+      "margin": 0.285,
+      "undercoat": 0.262,
+      "tuft": 0.254,
+      "dark": 0.077
+     }
+    },
+    "tile 3,1": {
+     "rect": [
+      17.4,
+      7.4,
+      22.4,
+      12.4
+     ],
+     "composition": {
+      "-": 0.141,
+      "margin": 0.258,
+      "undercoat": 0.266,
+      "tuft": 0.229,
+      "dark": 0.107
+     }
+    },
+    "tile 4,1": {
+     "rect": [
+      22.4,
+      7.4,
+      27.4,
+      12.4
+     ],
+     "composition": {
+      "-": 0.117,
+      "margin": 0.323,
+      "undercoat": 0.368,
+      "tuft": 0.158,
+      "dark": 0.034
+     }
+    },
+    "tile 5,1": {
+     "rect": [
+      27.4,
+      7.4,
+      32.4,
+      12.4
+     ],
+     "composition": {
+      "-": 0.115,
+      "margin": 0.421,
+      "undercoat": 0.229,
+      "tuft": 0.178,
+      "dark": 0.058
+     }
+    },
+    "tile 6,1": {
+     "rect": [
+      32.4,
+      7.4,
+      37.4,
+      12.4
+     ],
+     "composition": {
+      "-": 0.173,
+      "margin": 0.293,
+      "undercoat": 0.266,
+      "tuft": 0.184,
+      "dark": 0.085
+     }
+    },
+    "tile 7,1": {
+     "rect": [
+      37.4,
+      7.4,
+      42.4,
+      12.4
+     ],
+     "composition": {
+      "-": 0.144,
+      "margin": 0.264,
+      "undercoat": 0.378,
+      "tuft": 0.149,
+      "dark": 0.066
+     }
+    },
+    "tile 8,1": {
+     "rect": [
+      42.4,
+      7.4,
+      47.4,
+      12.4
+     ],
+     "composition": {
+      "-": 0.101,
+      "margin": 0.325,
+      "undercoat": 0.206,
+      "tuft": 0.246,
+      "dark": 0.122
+     }
+    },
+    "tile 9,1": {
+     "rect": [
+      47.4,
+      7.4,
+      52.4,
+      12.4
+     ],
+     "composition": {
+      "-": 0.21,
+      "margin": 0.104,
+      "undercoat": 0.157,
+      "tuft": 0.275,
+      "dark": 0.254
+     }
+    },
+    "tile 10,1": {
+     "rect": [
+      52.4,
+      7.4,
+      57.4,
+      12.4
+     ],
+     "composition": {
+      "-": 0.082,
+      "margin": 0.518,
+      "undercoat": 0.035,
+      "tuft": 0.162,
+      "dark": 0.203
+     }
+    },
+    "tile 0,2": {
+     "rect": [
+      2.4,
+      12.4,
+      7.4,
+      17.4
+     ],
+     "composition": {
+      "-": 0.056,
+      "margin": 0.341,
+      "undercoat": 0.051,
+      "tuft": 0.246,
+      "dark": 0.306
+     }
+    },
+    "tile 1,2": {
+     "rect": [
+      7.4,
+      12.4,
+      12.4,
+      17.4
+     ],
+     "composition": {
+      "-": 0.158,
+      "margin": 0.213,
+      "undercoat": 0.182,
+      "tuft": 0.278,
+      "dark": 0.168
+     }
+    },
+    "tile 2,2": {
+     "rect": [
+      12.4,
+      12.4,
+      17.4,
+      17.4
+     ],
+     "composition": {
+      "-": 0.162,
+      "margin": 0.307,
+      "undercoat": 0.382,
+      "tuft": 0.094,
+      "dark": 0.054
+     }
+    },
+    "tile 3,2": {
+     "rect": [
+      17.4,
+      12.4,
+      22.4,
+      17.4
+     ],
+     "composition": {
+      "-": 0.107,
+      "margin": 0.374,
+      "undercoat": 0.274,
+      "tuft": 0.149,
+      "dark": 0.096
+     }
+    },
+    "tile 4,2": {
+     "rect": [
+      22.4,
+      12.4,
+      27.4,
+      17.4
+     ],
+     "composition": {
+      "-": 0.094,
+      "margin": 0.39,
+      "undercoat": 0.261,
+      "tuft": 0.142,
+      "dark": 0.112
+     }
+    },
+    "tile 5,2": {
+     "rect": [
+      27.4,
+      12.4,
+      32.4,
+      17.4
+     ],
+     "composition": {
+      "-": 0.165,
+      "margin": 0.331,
+      "undercoat": 0.352,
+      "tuft": 0.12,
+      "dark": 0.032
+     }
+    },
+    "tile 6,2": {
+     "rect": [
+      32.4,
+      12.4,
+      37.4,
+      17.4
+     ],
+     "composition": {
+      "-": 0.157,
+      "margin": 0.381,
+      "undercoat": 0.238,
+      "tuft": 0.174,
+      "dark": 0.05
+     }
+    },
+    "tile 7,2": {
+     "rect": [
+      37.4,
+      12.4,
+      42.4,
+      17.4
+     ],
+     "composition": {
+      "-": 0.109,
+      "margin": 0.429,
+      "undercoat": 0.277,
+      "tuft": 0.157,
+      "dark": 0.029
+     }
+    },
+    "tile 8,2": {
+     "rect": [
+      42.4,
+      12.4,
+      47.4,
+      17.4
+     ],
+     "composition": {
+      "-": 0.154,
+      "margin": 0.298,
+      "undercoat": 0.357,
+      "tuft": 0.114,
+      "dark": 0.078
+     }
+    },
+    "tile 9,2": {
+     "rect": [
+      47.4,
+      12.4,
+      52.4,
+      17.4
+     ],
+     "composition": {
+      "-": 0.107,
+      "margin": 0.219,
+      "undercoat": 0.136,
+      "tuft": 0.309,
+      "dark": 0.229
+     }
+    },
+    "tile 10,2": {
+     "rect": [
+      52.4,
+      12.4,
+      57.4,
+      17.4
+     ],
+     "composition": {
+      "-": 0.058,
+      "margin": 0.538,
+      "undercoat": 0.026,
+      "tuft": 0.187,
+      "dark": 0.192
+     }
+    },
+    "tile 0,3": {
+     "rect": [
+      2.4,
+      17.4,
+      7.4,
+      22.4
+     ],
+     "composition": {
+      "-": 0.141,
+      "margin": 0.298,
+      "undercoat": 0.053,
+      "tuft": 0.285,
+      "dark": 0.224
+     }
+    },
+    "tile 1,3": {
+     "rect": [
+      7.4,
+      17.4,
+      12.4,
+      22.4
+     ],
+     "composition": {
+      "-": 0.154,
+      "margin": 0.2,
+      "undercoat": 0.208,
+      "tuft": 0.214,
+      "dark": 0.224
+     }
+    },
+    "tile 2,3": {
+     "rect": [
+      12.4,
+      17.4,
+      17.4,
+      22.4
+     ],
+     "composition": {
+      "-": 0.118,
+      "margin": 0.403,
+      "undercoat": 0.24,
+      "tuft": 0.131,
+      "dark": 0.107
+     }
+    },
+    "tile 3,3": {
+     "rect": [
+      17.4,
+      17.4,
+      22.4,
+      22.4
+     ],
+     "composition": {
+      "-": 0.166,
+      "margin": 0.264,
+      "undercoat": 0.318,
+      "tuft": 0.178,
+      "dark": 0.074
+     }
+    },
+    "tile 4,3": {
+     "rect": [
+      22.4,
+      17.4,
+      27.4,
+      22.4
+     ],
+     "composition": {
+      "-": 0.144,
+      "margin": 0.395,
+      "undercoat": 0.224,
+      "tuft": 0.123,
+      "dark": 0.114
+     }
+    },
+    "tile 5,3": {
+     "rect": [
+      27.4,
+      17.4,
+      32.4,
+      22.4
+     ],
+     "composition": {
+      "-": 0.107,
+      "margin": 0.373,
+      "undercoat": 0.222,
+      "tuft": 0.208,
+      "dark": 0.09
+     }
+    },
+    "tile 6,3": {
+     "rect": [
+      32.4,
+      17.4,
+      37.4,
+      22.4
+     ],
+     "composition": {
+      "-": 0.214,
+      "margin": 0.23,
+      "undercoat": 0.322,
+      "tuft": 0.187,
+      "dark": 0.046
+     }
+    },
+    "tile 7,3": {
+     "rect": [
+      37.4,
+      17.4,
+      42.4,
+      22.4
+     ],
+     "composition": {
+      "-": 0.123,
+      "margin": 0.315,
+      "undercoat": 0.288,
+      "tuft": 0.21,
+      "dark": 0.064
+     }
+    },
+    "tile 8,3": {
+     "rect": [
+      42.4,
+      17.4,
+      47.4,
+      22.4
+     ],
+     "composition": {
+      "-": 0.126,
+      "margin": 0.347,
+      "undercoat": 0.256,
+      "tuft": 0.234,
+      "dark": 0.037
+     }
+    },
+    "tile 9,3": {
+     "rect": [
+      47.4,
+      17.4,
+      52.4,
+      22.4
+     ],
+     "composition": {
+      "-": 0.197,
+      "margin": 0.136,
+      "undercoat": 0.165,
+      "tuft": 0.256,
+      "dark": 0.246
+     }
+    },
+    "tile 10,3": {
+     "rect": [
+      52.4,
+      17.4,
+      57.4,
+      22.4
+     ],
+     "composition": {
+      "-": 0.066,
+      "margin": 0.533,
+      "undercoat": 0.01,
+      "tuft": 0.245,
+      "dark": 0.147
+     }
+    },
+    "tile 0,4": {
+     "rect": [
+      2.4,
+      22.4,
+      7.4,
+      27.4
+     ],
+     "composition": {
+      "-": 0.027,
+      "margin": 0.515,
+      "undercoat": 0.029,
+      "tuft": 0.213,
+      "dark": 0.216
+     }
+    },
+    "tile 1,4": {
+     "rect": [
+      7.4,
+      22.4,
+      12.4,
+      27.4
+     ],
+     "composition": {
+      "-": 0.094,
+      "margin": 0.272,
+      "undercoat": 0.013,
+      "tuft": 0.347,
+      "dark": 0.274
+     }
+    },
+    "tile 2,4": {
+     "rect": [
+      12.4,
+      22.4,
+      17.4,
+      27.4
+     ],
+     "composition": {
+      "-": 0.077,
+      "margin": 0.28,
+      "undercoat": 0.026,
+      "tuft": 0.365,
+      "dark": 0.253
+     }
+    },
+    "tile 3,4": {
+     "rect": [
+      17.4,
+      22.4,
+      22.4,
+      27.4
+     ],
+     "composition": {
+      "-": 0.034,
+      "margin": 0.293,
+      "tuft": 0.312,
+      "dark": 0.358
+     }
+    },
+    "tile 4,4": {
+     "rect": [
+      22.4,
+      22.4,
+      27.4,
+      27.4
+     ],
+     "composition": {
+      "-": 0.074,
+      "margin": 0.274,
+      "undercoat": 0.029,
+      "tuft": 0.269,
+      "dark": 0.355
+     }
+    },
+    "tile 5,4": {
+     "rect": [
+      27.4,
+      22.4,
+      32.4,
+      27.4
+     ],
+     "composition": {
+      "-": 0.078,
+      "margin": 0.266,
+      "undercoat": 0.027,
+      "tuft": 0.28,
+      "dark": 0.349
+     }
+    },
+    "tile 6,4": {
+     "rect": [
+      32.4,
+      22.4,
+      37.4,
+      27.4
+     ],
+     "composition": {
+      "-": 0.045,
+      "margin": 0.288,
+      "undercoat": 0.021,
+      "tuft": 0.267,
+      "dark": 0.379
+     }
+    },
+    "tile 7,4": {
+     "rect": [
+      37.4,
+      22.4,
+      42.4,
+      27.4
+     ],
+     "composition": {
+      "-": 0.082,
+      "margin": 0.264,
+      "undercoat": 0.043,
+      "tuft": 0.166,
+      "dark": 0.445
+     }
+    },
+    "tile 8,4": {
+     "rect": [
+      42.4,
+      22.4,
+      47.4,
+      27.4
+     ],
+     "composition": {
+      "-": 0.059,
+      "margin": 0.31,
+      "undercoat": 0.011,
+      "tuft": 0.304,
+      "dark": 0.315
+     }
+    },
+    "tile 9,4": {
+     "rect": [
+      47.4,
+      22.4,
+      52.4,
+      27.4
+     ],
+     "composition": {
+      "-": 0.03,
+      "margin": 0.256,
+      "undercoat": 0.011,
+      "tuft": 0.246,
+      "dark": 0.456
+     }
+    },
+    "tile 10,4": {
+     "rect": [
+      52.4,
+      22.4,
+      57.4,
+      27.4
+     ],
+     "composition": {
+      "-": 0.029,
+      "margin": 0.622,
+      "undercoat": 0.011,
+      "tuft": 0.168,
+      "dark": 0.17
+     }
+    }
+   }
+  }
+ }
+}
