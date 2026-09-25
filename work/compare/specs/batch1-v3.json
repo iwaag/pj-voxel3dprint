@@ -1,0 +1,577 @@
+{
+ "title": "batch1 v3: slab-mm regions, corner picks and matched cameras",
+ "regions": "work/compare/specs/batch1-regions-mm.json",
+ "cases": {
+  "agate": {
+   "images": [
+    {
+     "path": ".local/real_print/batch1/case1/result/Unknown-2.jpg",
+     "kind": "photo",
+     "face": "top",
+     "caption": "Unknown-2",
+     "white": [
+      0.27,
+      0.45,
+      0.31,
+      0.65
+     ],
+     "corners_px": [
+      [
+       729,
+       1652
+      ],
+      [
+       707,
+       402
+      ],
+      [
+       1335,
+       401
+      ],
+      [
+       1350,
+       1650
+      ]
+     ],
+     "volume": "mirror_y",
+     "camera": {
+      "fov_deg": 21.082,
+      "position_m": [
+       0.0469946,
+       0.0056091,
+       0.2680812
+      ],
+      "target_m": [
+       0.0301687,
+       0.0153583,
+       0.0025025
+      ],
+      "up": [
+       0.9979195,
+       -0.0105143,
+       -0.0636098
+      ]
+     },
+     "pnp": {
+      "rms_px": 2.36,
+      "points": 4,
+      "focal_px": 5503.0,
+      "distance_m": 0.2663,
+      "elevation_deg": 85.8
+     }
+    },
+    {
+     "path": ".local/real_print/batch1/case1/result/Unknown.jpg",
+     "kind": "photo",
+     "face": "top",
+     "caption": "Unknown",
+     "white": [
+      0.11,
+      0.78,
+      0.25,
+      0.92
+     ],
+     "corners_px": [
+      [
+       1957,
+       638
+      ],
+      [
+       1010,
+       1782
+      ],
+      [
+       427,
+       1329
+      ],
+      [
+       1366,
+       262
+      ]
+     ],
+     "bottom_corners_px": [
+      [
+       1,
+       1017,
+       1817
+      ]
+     ],
+     "volume": "mirror_y",
+     "camera": {
+      "fov_deg": 20.8962,
+      "position_m": [
+       0.0897453,
+       0.0843479,
+       0.2063245
+      ],
+      "target_m": [
+       0.035131,
+       0.0099204,
+       0.0029811
+      ],
+      "up": [
+       -0.7334826,
+       -0.550612,
+       0.3985343
+      ]
+     },
+     "pnp": {
+      "rms_px": 2.21,
+      "points": 5,
+      "focal_px": 5553.1,
+      "distance_m": 0.2233,
+      "elevation_deg": 65.6
+     }
+    },
+    {
+     "path": ".local/real_print/batch1/case1/result/Unknown-3.jpg",
+     "kind": "photo",
+     "face": "top",
+     "caption": "Unknown-3",
+     "white": [
+      0.16,
+      0.67,
+      0.33,
+      0.81
+     ],
+     "corners_px": [
+      [
+       1410,
+       1495
+      ],
+      [
+       297,
+       898
+      ],
+      [
+       765,
+       588
+      ],
+      [
+       1853,
+       1128
+      ]
+     ],
+     "bottom_corners_px": [
+      [
+       0,
+       1416,
+       1607
+      ],
+      [
+       1,
+       318,
+       1010
+      ]
+     ],
+     "volume": "mirror_y",
+     "camera": {
+      "fov_deg": 14.9471,
+      "position_m": [
+       -0.1342411,
+       0.2120246,
+       0.2102656
+      ],
+      "target_m": [
+       0.0319642,
+       0.0153757,
+       0.0037229
+      ],
+      "up": [
+       0.3954054,
+       -0.4850431,
+       0.7799922
+      ]
+     },
+     "pnp": {
+      "rms_px": 6.72,
+      "points": 6,
+      "focal_px": 7805.9,
+      "distance_m": 0.3301,
+      "elevation_deg": 38.7
+     }
+    }
+   ]
+  },
+  "amber": {
+   "images": [
+    {
+     "path": ".local/real_print/batch1/case2/result/Unknown-5.jpg",
+     "kind": "photo",
+     "face": "bottom",
+     "caption": "Unknown-5",
+     "white": [
+      0.75,
+      0.2,
+      0.9,
+      0.35
+     ],
+     "corners_px": [
+      [
+       1300,
+       507
+      ],
+      [
+       372,
+       1171
+      ],
+      [
+       903,
+       1532
+      ],
+      [
+       1812,
+       776
+      ]
+     ],
+     "bottom_corners_px": [
+      [
+       2,
+       905,
+       1612
+      ],
+      [
+       1,
+       375,
+       1246
+      ]
+     ],
+     "volume": "mirror_z",
+     "camera": {
+      "fov_deg": 22.2023,
+      "position_m": [
+       0.1562747,
+       0.1229676,
+       0.1563177
+      ],
+      "target_m": [
+       0.0331623,
+       0.0122506,
+       0.0019499
+      ],
+      "up": [
+       -0.5087617,
+       -0.4540714,
+       0.7314238
+      ]
+     },
+     "pnp": {
+      "rms_px": 3.0,
+      "points": 6,
+      "focal_px": 5218.8,
+      "distance_m": 0.2264,
+      "elevation_deg": 43.0
+     }
+    },
+    {
+     "path": ".local/real_print/batch1/case2/result/Unknown-4.jpg",
+     "kind": "photo",
+     "face": "bottom",
+     "caption": "Unknown-4",
+     "white": [
+      0.81,
+      0.6,
+      0.95,
+      0.76
+     ],
+     "corners_px": [
+      [
+       1345,
+       378
+      ],
+      [
+       379,
+       1098
+      ],
+      [
+       658,
+       1620
+      ],
+      [
+       1686,
+       938
+      ]
+     ],
+     "volume": "mirror_z",
+     "camera": {
+      "fov_deg": 24.7731,
+      "position_m": [
+       -0.043696,
+       0.0706832,
+       0.2008533
+      ],
+      "target_m": [
+       0.0296848,
+       0.0153145,
+       0.0022958
+      ],
+      "up": [
+       -0.5411056,
+       -0.8402535,
+       0.0343327
+      ]
+     },
+     "pnp": {
+      "rms_px": 2.32,
+      "points": 4,
+      "focal_px": 4662.6,
+      "distance_m": 0.2188,
+      "elevation_deg": 65.2
+     }
+    },
+    {
+     "path": ".local/real_print/batch1/case2/result/Unknown-6.jpg",
+     "kind": "photo",
+     "face": "bottom",
+     "caption": "Unknown-6",
+     "white": [
+      0.43,
+      0.78,
+      0.65,
+      0.92
+     ],
+     "corners_px": [
+      [
+       664,
+       1058
+      ],
+      [
+       1535,
+       1460
+      ],
+      [
+       1818,
+       960
+      ],
+      [
+       934,
+       637
+      ]
+     ],
+     "bottom_corners_px": [
+      [
+       0,
+       677,
+       1085
+      ],
+      [
+       1,
+       1545,
+       1492
+      ],
+      [
+       2,
+       1826,
+       995
+      ]
+     ],
+     "volume": "mirror_z",
+     "camera": {
+      "fov_deg": 29.7697,
+      "position_m": [
+       0.137455,
+       -0.0402264,
+       0.1771731
+      ],
+      "target_m": [
+       0.0218781,
+       0.0098049,
+       0.0064766
+      ],
+      "up": [
+       -0.3293524,
+       0.8223191,
+       0.464024
+      ]
+     },
+     "pnp": {
+      "rms_px": 7.45,
+      "points": 7,
+      "focal_px": 3852.6,
+      "distance_m": 0.2121,
+      "elevation_deg": 53.6
+     }
+    }
+   ]
+  },
+  "fur": {
+   "images": [
+    {
+     "path": ".local/real_print/batch1/case3/result/Unknown-9.jpg",
+     "kind": "photo",
+     "face": "top",
+     "caption": "Unknown-9",
+     "white": [
+      0.78,
+      0.3,
+      0.9,
+      0.6
+     ],
+     "corners_px": [
+      [
+       1414,
+       299
+      ],
+      [
+       1360,
+       1757
+      ],
+      [
+       597,
+       1746
+      ],
+      [
+       684,
+       297
+      ]
+     ],
+     "volume": "mirror_y",
+     "camera": {
+      "fov_deg": 14.5876,
+      "position_m": [
+       0.1137393,
+       0.0591139,
+       0.309128
+      ],
+      "target_m": [
+       0.0300129,
+       0.0151455,
+       0.0024756
+      ],
+      "up": [
+       -0.964267,
+       -0.0101781,
+       0.2647367
+      ]
+     },
+     "pnp": {
+      "rms_px": 1.95,
+      "points": 4,
+      "focal_px": 8000.4,
+      "distance_m": 0.3209,
+      "elevation_deg": 72.9
+     }
+    },
+    {
+     "path": ".local/real_print/batch1/case3/result/Unknown-8.jpg",
+     "kind": "photo",
+     "face": "top",
+     "caption": "Unknown-8",
+     "white": [
+      0.33,
+      0.76,
+      0.49,
+      0.92
+     ],
+     "corners_px": [
+      [
+       1463,
+       757
+      ],
+      [
+       935,
+       1384
+      ],
+      [
+       551,
+       1137
+      ],
+      [
+       1091,
+       550
+      ]
+     ],
+     "bottom_corners_px": [
+      [
+       1,
+       930,
+       1432
+      ]
+     ],
+     "volume": "mirror_y",
+     "camera": {
+      "fov_deg": 22.831,
+      "position_m": [
+       0.1898505,
+       0.1155271,
+       0.273647
+      ],
+      "target_m": [
+       0.0322611,
+       0.0172671,
+       0.0003809
+      ],
+      "up": [
+       -0.6628626,
+       -0.4962208,
+       0.5606942
+      ]
+     },
+     "pnp": {
+      "rms_px": 2.6,
+      "points": 5,
+      "focal_px": 5071.4,
+      "distance_m": 0.3304,
+      "elevation_deg": 55.8
+     }
+    },
+    {
+     "path": ".local/real_print/batch1/case3/result/Unknown-7.jpg",
+     "kind": "photo",
+     "face": "top",
+     "caption": "Unknown-7",
+     "white": [
+      0.15,
+      0.8,
+      0.25,
+      0.9
+     ],
+     "corners_px": [
+      [
+       1650,
+       730
+      ],
+      [
+       655,
+       1595
+      ],
+      [
+       203,
+       1118
+      ],
+      [
+       1207,
+       262
+      ]
+     ],
+     "volume": "mirror_y",
+     "camera": {
+      "fov_deg": 10.9184,
+      "position_m": [
+       0.1198654,
+       0.1286161,
+       0.467125
+      ],
+      "target_m": [
+       0.0294867,
+       0.021156,
+       0.0011798
+      ],
+      "up": [
+       -0.6433725,
+       -0.7091731,
+       0.2883493
+      ]
+     },
+     "pnp": {
+      "rms_px": 3.33,
+      "points": 4,
+      "focal_px": 10824.4,
+      "distance_m": 0.4866,
+      "elevation_deg": 73.2
+     }
+    }
+   ]
+  }
+ }
+}

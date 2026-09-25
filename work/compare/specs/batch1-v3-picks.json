@@ -1,0 +1,352 @@
+{
+ "title": "batch1 v3: slab-mm regions, corner picks and matched cameras",
+ "regions": "work/compare/specs/batch1-regions-mm.json",
+ "cases": {
+  "agate": {
+   "images": [
+    {
+     "path": ".local/real_print/batch1/case1/result/Unknown-2.jpg",
+     "kind": "photo",
+     "face": "top",
+     "caption": "Unknown-2",
+     "white": [
+      0.27,
+      0.45,
+      0.31,
+      0.65
+     ],
+     "corners_px": [
+      [
+       729,
+       1652
+      ],
+      [
+       707,
+       402
+      ],
+      [
+       1335,
+       401
+      ],
+      [
+       1350,
+       1650
+      ]
+     ],
+     "volume": "mirror_y"
+    },
+    {
+     "path": ".local/real_print/batch1/case1/result/Unknown.jpg",
+     "kind": "photo",
+     "face": "top",
+     "caption": "Unknown",
+     "white": [
+      0.11,
+      0.78,
+      0.25,
+      0.92
+     ],
+     "corners_px": [
+      [
+       1957,
+       638
+      ],
+      [
+       1010,
+       1782
+      ],
+      [
+       427,
+       1329
+      ],
+      [
+       1366,
+       262
+      ]
+     ],
+     "bottom_corners_px": [
+      [
+       1,
+       1017,
+       1817
+      ]
+     ],
+     "volume": "mirror_y"
+    },
+    {
+     "path": ".local/real_print/batch1/case1/result/Unknown-3.jpg",
+     "kind": "photo",
+     "face": "top",
+     "caption": "Unknown-3",
+     "white": [
+      0.16,
+      0.67,
+      0.33,
+      0.81
+     ],
+     "corners_px": [
+      [
+       1410,
+       1495
+      ],
+      [
+       297,
+       898
+      ],
+      [
+       765,
+       588
+      ],
+      [
+       1853,
+       1128
+      ]
+     ],
+     "bottom_corners_px": [
+      [
+       0,
+       1416,
+       1607
+      ],
+      [
+       1,
+       318,
+       1010
+      ]
+     ],
+     "volume": "mirror_y"
+    }
+   ]
+  },
+  "amber": {
+   "images": [
+    {
+     "path": ".local/real_print/batch1/case2/result/Unknown-5.jpg",
+     "kind": "photo",
+     "face": "bottom",
+     "caption": "Unknown-5",
+     "white": [
+      0.75,
+      0.2,
+      0.9,
+      0.35
+     ],
+     "corners_px": [
+      [
+       1300,
+       507
+      ],
+      [
+       372,
+       1171
+      ],
+      [
+       903,
+       1532
+      ],
+      [
+       1812,
+       776
+      ]
+     ],
+     "bottom_corners_px": [
+      [
+       2,
+       905,
+       1612
+      ],
+      [
+       1,
+       375,
+       1246
+      ]
+     ],
+     "volume": "mirror_z"
+    },
+    {
+     "path": ".local/real_print/batch1/case2/result/Unknown-4.jpg",
+     "kind": "photo",
+     "face": "bottom",
+     "caption": "Unknown-4",
+     "white": [
+      0.81,
+      0.6,
+      0.95,
+      0.76
+     ],
+     "corners_px": [
+      [
+       1345,
+       378
+      ],
+      [
+       379,
+       1098
+      ],
+      [
+       658,
+       1620
+      ],
+      [
+       1686,
+       938
+      ]
+     ],
+     "volume": "mirror_z"
+    },
+    {
+     "path": ".local/real_print/batch1/case2/result/Unknown-6.jpg",
+     "kind": "photo",
+     "face": "bottom",
+     "caption": "Unknown-6",
+     "white": [
+      0.43,
+      0.78,
+      0.65,
+      0.92
+     ],
+     "corners_px": [
+      [
+       664,
+       1058
+      ],
+      [
+       1535,
+       1460
+      ],
+      [
+       1818,
+       960
+      ],
+      [
+       934,
+       637
+      ]
+     ],
+     "bottom_corners_px": [
+      [
+       0,
+       677,
+       1085
+      ],
+      [
+       1,
+       1545,
+       1492
+      ],
+      [
+       2,
+       1826,
+       995
+      ]
+     ],
+     "volume": "mirror_z"
+    }
+   ]
+  },
+  "fur": {
+   "images": [
+    {
+     "path": ".local/real_print/batch1/case3/result/Unknown-9.jpg",
+     "kind": "photo",
+     "face": "top",
+     "caption": "Unknown-9",
+     "white": [
+      0.78,
+      0.3,
+      0.9,
+      0.6
+     ],
+     "corners_px": [
+      [
+       1414,
+       299
+      ],
+      [
+       1360,
+       1757
+      ],
+      [
+       597,
+       1746
+      ],
+      [
+       684,
+       297
+      ]
+     ],
+     "volume": "mirror_y"
+    },
+    {
+     "path": ".local/real_print/batch1/case3/result/Unknown-8.jpg",
+     "kind": "photo",
+     "face": "top",
+     "caption": "Unknown-8",
+     "white": [
+      0.33,
+      0.76,
+      0.49,
+      0.92
+     ],
+     "corners_px": [
+      [
+       1463,
+       757
+      ],
+      [
+       935,
+       1384
+      ],
+      [
+       551,
+       1137
+      ],
+      [
+       1091,
+       550
+      ]
+     ],
+     "bottom_corners_px": [
+      [
+       1,
+       930,
+       1432
+      ]
+     ],
+     "volume": "mirror_y"
+    },
+    {
+     "path": ".local/real_print/batch1/case3/result/Unknown-7.jpg",
+     "kind": "photo",
+     "face": "top",
+     "caption": "Unknown-7",
+     "white": [
+      0.15,
+      0.8,
+      0.25,
+      0.9
+     ],
+     "corners_px": [
+      [
+       1650,
+       730
+      ],
+      [
+       655,
+       1595
+      ],
+      [
+       203,
+       1118
+      ],
+      [
+       1207,
+       262
+      ]
+     ],
+     "volume": "mirror_y"
+    }
+   ]
+  }
+ }
+}

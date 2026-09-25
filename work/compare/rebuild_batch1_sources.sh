@@ -48,3 +48,13 @@ build $D/source/amber-4102-branching-v2.voxels.json $D/source/amber-4102-branchi
 $V convert --overwrite --mapping-file $D/source/amber-4102-print-preview.optical-mapping.json \
       $D/viewer/amber-branching-material.zarr $D/print-preview-v2/amber-print-black80-optical.zarr >/dev/null
 echo $D/print-preview-v2/amber-print-black80-optical.zarr
+# the prints as photographed: mirror images of the volumes (p2 report3);
+# amber lies bottom-up, which makes it a pure z-mirror
+mirror() {  # source_stem axes material_zarr
+  $PY work/compare/flip_volume.py "$1.voxels.json" "$1-mirror-$2.voxels.json" --axes "$2" >/dev/null
+  $V import-voxels --overwrite "$1-mirror-$2.voxels.json" "$3" >/dev/null
+  echo "$3"
+}
+mirror .local/pink-agate-v3/source/pink-teal-agate-strata-v3 y .local/pink-agate-v3/viewer/pink-teal-agate-material-v3-mirror-y.zarr
+mirror .local/floating-fur/source/floating-fur-v1 y .local/floating-fur/viewer/floating-fur-material-v1-mirror-y.zarr
+mirror $D/source/amber-4102-branching-v2 z $D/viewer/amber-branching-material-mirror-z.zarr

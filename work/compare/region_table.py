@@ -14,8 +14,9 @@ SPEC (``work/compare/specs/batch1-v3.json`` and the step-specific specs):
             {"path": "...jpg", "kind": "photo", "face": "top",
              "white": [x0, y0, x1, y1],              # image fractions, paper
              "corners_px": [[u, v] x 4],             # model corners (0,0) (60,0) (60,30) (0,30) mm
+             "volume": "mirror_y",                   # see match_camera.py
              "photo_tone": null},                    # optional, see below
-            {"path": "...png", "kind": "render", "face": "top",
+            {"path": "...png", "kind": "render", "face": "top", "volume": "mirror_y",
              "white": [...], "camera": {stage-config camera block}}
           ]
         }
@@ -59,9 +60,19 @@ def _path(p: str) -> Path:
 
 
 def image_corners(entry: dict, width: int, height: int) -> np.ndarray:
+    """Image points of the region face's model corners.
+
+    Photos use their picks. Renders project the corners through their stage
+    camera, placed on the rendered input's top face according to ``volume``
+    (``match_camera.py``: ``mirror_y`` puts face (x, y) at (x, 30 - y)).
+    """
     if "corners_px" in entry:
         return np.asarray(entry["corners_px"], float)
-    return projected_corners(stage_camera(entry["camera"], width, height))
+    corners = projected_corners(stage_camera(entry["camera"], width, height))
+    if entry.get("volume") == "mirror_y":
+        # face corner (x, y) sits at (x, 30 - y): (0,0)<->(0,30), (60,0)<->(60,30)
+        corners = corners[[3, 2, 1, 0]]
+    return corners
 
 
 def normalised_linear(entry: dict) -> np.ndarray:
@@ -100,6 +111,29 @@ def measure(entry: dict, regions: dict) -> dict:
     out["face_rgb"] = lin[inner].mean(axis=0).round(5).tolist()
     out["corners_px"] = apply_h(hmat, MODEL_CORNERS_MM).round(1).tolist()
     return out
+
+
+def add_matched_renders(spec: dict, tag: str, directory: str) -> None:
+    """Append a render entry after every photo that has a matched camera."""
+    for case, cdef in spec["cases"].items():
+        images = []
+        for entry in cdef["images"]:
+            images.append(entry)
+            if entry["kind"] == "photo" and "camera" in entry:
+                stem = Path(entry["path"]).stem
+                images.append(
+                    {
+                        "path": f"{directory}/{case}-{stem}-{tag}.png",
+                        "kind": "render",
+                        "caption": f"{stem} {tag}",
+                        "photo": stem,
+                        "face": entry.get("face", "top"),
+                        "volume": entry["volume"],
+                        "white": entry["white"],
+                        "camera": entry["camera"],
+                    }
+                )
+        cdef["images"] = images
 
 
 def overlay(entry: dict, regions: dict, out: Path) -> None:
@@ -143,8 +177,16 @@ def main() -> None:
     parser.add_argument("output", type=Path)
     parser.add_argument("--md", type=Path)
     parser.add_argument("--overlay", type=Path, help="also write each image with its regions drawn, into this directory")
+    parser.add_argument(
+        "--renders",
+        nargs=2,
+        metavar=("TAG", "DIR"),
+        help="add each photo's matched render DIR/<case>-<photo stem>-<TAG>.png (render_matched.sh)",
+    )
     args = parser.parse_args()
     spec = json.loads(args.spec.read_text())
+    if args.renders:
+        add_matched_renders(spec, *args.renders)
     regions = json.loads(_path(spec["regions"]).read_text())
     result: dict = {}
     md: list[str] = []
@@ -154,7 +196,15 @@ def main() -> None:
             m = measure(entry, regions[case])
             if args.overlay:
                 overlay(entry, regions[case], args.overlay / f"{case}-{Path(entry['path']).stem}.png")
-            result[case].append({"path": entry["path"], "kind": entry["kind"], "caption": entry.get("caption", Path(entry["path"]).name), **m})
+            result[case].append(
+                {
+                    "path": entry["path"],
+                    "kind": entry["kind"],
+                    "caption": entry.get("caption", Path(entry["path"]).name),
+                    "photo": entry.get("photo", Path(entry["path"]).stem),
+                    **m,
+                }
+            )
         md += [f"### {case}", "", "| region | " + " | ".join(r["caption"] for r in result[case]) + " |", "|---|" + "---|" * len(result[case])]
         names = list(regions[case][cdef["images"][0].get("face", "top")]["regions"])
         for name in names:

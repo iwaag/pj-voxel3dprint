@@ -1,7 +1,10 @@
 #!/usr/bin/env bash
 # Print-aware optical zarr for the three batch1 cases from one resin library.
 # Usage (repo root): work/resins/build_print_aware.sh LIBRARY.json TAG [case ...]
-#   cases: agate amber fur (default: all three, converted in parallel)
+#   cases: agate amber fur (default, converted in parallel), and
+#   agate-m amber-m fur-m: the same volumes as printed and photographed
+#   (mirrored: agate/fur along y, amber along z = mirrored and bottom-up; p2
+#   report3, work/compare/flip_volume.py), written as <name>-mirror-optical.zarr
 # Output: .local/<case dir>/print-aware-<TAG>/<name>.{resin-recipes,optical-mapping}.json
 #         and <name>-optical.zarr.  Needs the material zarr from
 #         work/compare/rebuild_batch1_sources.sh.
@@ -10,14 +13,14 @@ LIB=$1; TAG=$2; shift 2
 CASES=${*:-agate amber fur}
 PY=vdbmat/.venv/bin/python
 V=vdbmat/.venv/bin/vdbmat
-one() {  # dir name export_script semantic_mapping material_zarr
+one() {  # dir name export_script semantic_mapping material_zarr [optical_suffix]
   local out=.local/$1/print-aware-$TAG
   mkdir -p "$out"
   $PY work/resins/extract_recipes.py "$3" "$out/$2.resin-recipes.json" >/dev/null
   $PY work/resins/recipes_to_mapping.py --library "$LIB" --recipes "$out/$2.resin-recipes.json" \
       --semantic "$4" --out "$out/$2.optical-mapping.json" >/dev/null
-  $V convert --overwrite --mapping-file "$out/$2.optical-mapping.json" "$5" "$out/$2-optical.zarr" >/dev/null
-  echo "$out/$2-optical.zarr"
+  $V convert --overwrite --mapping-file "$out/$2.optical-mapping.json" "$5" "$out/$2${6:-}-optical.zarr" >/dev/null
+  echo "$out/$2${6:-}-optical.zarr"
 }
 for c in $CASES; do
   case $c in
@@ -27,6 +30,15 @@ for c in $CASES; do
     amber) one amber-branching amber work/amber/export_kohaku_tree_voxelprint.py \
              .local/amber-branching/source/amber-4102-branching-v2.optical-mapping.json \
              .local/amber-branching/viewer/amber-branching-material.zarr & ;;
+    agate-m) one pink-agate-v3 agate work/agate/export_menou_voxelprint.py \
+             .local/pink-agate-v3/source/pink-teal-agate-strata-v3.optical-mapping.json \
+             .local/pink-agate-v3/viewer/pink-teal-agate-material-v3-mirror-y.zarr -mirror & ;;
+    amber-m) one amber-branching amber work/amber/export_kohaku_tree_voxelprint.py \
+             .local/amber-branching/source/amber-4102-branching-v2.optical-mapping.json \
+             .local/amber-branching/viewer/amber-branching-material-mirror-z.zarr -mirror & ;;
+    fur-m) one floating-fur fur work/fur/export_floating_fur_voxelprint.py \
+             .local/floating-fur/source/floating-fur-v1.optical-mapping.json \
+             .local/floating-fur/viewer/floating-fur-material-v1-mirror-y.zarr -mirror & ;;
     fur)   one floating-fur fur work/fur/export_floating_fur_voxelprint.py \
              .local/floating-fur/source/floating-fur-v1.optical-mapping.json \
              .local/floating-fur/viewer/floating-fur-material-v1.zarr & ;;
