@@ -16,5 +16,17 @@
   "output_prefixes": [
     "outputs/pink-teal-agate-",
     "outputs/pink-agate-"
-  ]
+  ],
+  "print_aware_variants": {
+    "resin_library": "work/resins/vero-j850-provisional-v3.json",
+    "build": "work/resins/build_print_aware.sh work/resins/vero-j850-provisional-v3.json v3 agate agate-m",
+    "optical_zarr": ".local/pink-agate-v3/print-aware-v3/agate-optical.zarr",
+    "optical_zarr_as_printed": ".local/pink-agate-v3/print-aware-v3/agate-mirror-optical.zarr",
+    "note": "Prints are mirror images of the voxel volumes (p2 report3); mirror = y."
+  },
+  "viewer": {
+    "launcher": "work/compare/view_print.sh agate v3",
+    "stage_preset": "vdbmat/examples/pipeline_run/demo/presets/stage-print-photo.stage.json",
+    "note": "Predict the print: print-aware zarr on the print-photo stage (p2 step 6)."
+  }
 }

@@ -22,5 +22,17 @@
     "black_strand_fraction": 0.15,
     "dominant_flow_axis": "+X",
     "clearance_from_surface_mm": 0.6
+  },
+  "print_aware_variants": {
+    "resin_library": "work/resins/vero-j850-provisional-v3.json",
+    "build": "work/resins/build_print_aware.sh work/resins/vero-j850-provisional-v3.json v3 fur fur-m",
+    "optical_zarr": ".local/floating-fur/print-aware-v3/fur-optical.zarr",
+    "optical_zarr_as_printed": ".local/floating-fur/print-aware-v3/fur-mirror-optical.zarr",
+    "note": "Prints are mirror images of the voxel volumes (p2 report3); mirror = y."
+  },
+  "viewer": {
+    "launcher": "work/compare/view_print.sh fur v3",
+    "stage_preset": "vdbmat/examples/pipeline_run/demo/presets/stage-print-photo.stage.json",
+    "note": "Predict the print: print-aware zarr on the print-photo stage (p2 step 6)."
   }
 }

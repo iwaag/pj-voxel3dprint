@@ -19,6 +19,17 @@
     "outputs/kohaku_tree-",
     "outputs/amber-"
   ],
-  "notes": "Legacy amber assets are classified as kohaku without moving them, preserving viewer and session references."
+  "notes": "Legacy amber assets are classified as kohaku without moving them, preserving viewer and session references.",
+  "print_aware_variants": {
+    "resin_library": "work/resins/vero-j850-provisional-v3.json",
+    "build": "work/resins/build_print_aware.sh work/resins/vero-j850-provisional-v3.json v3 amber amber-m",
+    "optical_zarr": ".local/amber-branching/print-aware-v3/amber-optical.zarr",
+    "optical_zarr_as_printed": ".local/amber-branching/print-aware-v3/amber-mirror-optical.zarr",
+    "note": "Prints are mirror images of the voxel volumes (p2 report3); the batch1 amber photos show the bottom face (mirror = z)."
+  },
+  "viewer": {
+    "launcher": "work/compare/view_print.sh amber v3",
+    "stage_preset": "vdbmat/examples/pipeline_run/demo/presets/stage-print-photo.stage.json",
+    "note": "Predict the print: print-aware zarr on the print-photo stage (p2 step 6)."
+  }
 }
-
