@@ -1,0 +1,53 @@
+{
+  "seed": 4103,
+  "shape_zyx": [25, 150, 300],
+  "voxel_size_xyz_m": [0.0002, 0.0002, 0.0002],
+  "max_axis_cells": 1200,
+  "max_total_cells": 72000000,
+  "local_to_world": [
+    [1.0, 0.0, 0.0, 0.0],
+    [0.0, 1.0, 0.0, 0.0],
+    [0.0, 0.0, 1.0, 0.0],
+    [0.0, 0.0, 0.0, 1.0]
+  ],
+  "palette": [
+    {"material_id": 0, "name": "air", "role": "background"},
+    {"material_id": 1, "name": "amber-host-80", "role": "material"},
+    {"material_id": 2, "name": "amber-host-85", "role": "material"},
+    {"material_id": 3, "name": "amber-host-90", "role": "material"},
+    {"material_id": 4, "name": "amber-host-95", "role": "material"},
+    {"material_id": 5, "name": "amber-host-100", "role": "material"},
+    {"material_id": 6, "name": "amber-dark-vein", "role": "material"},
+    {"material_id": 7, "name": "amber-clear-bubble", "role": "material"}
+  ],
+  "layers": [
+    {
+      "kind": "host",
+      "frequency_per_m": 120.0,
+      "octaves": 4,
+      "bin_edges": [-0.28, -0.08, 0.08, 0.28],
+      "material_ids": [1, 2, 3, 4, 5]
+    },
+    {"kind": "veins", "axis": "y", "material_id": 6, "offset_m": 0.0040, "width_m": 0.00020, "warp_amplitude_m": 0.0014, "warp_frequency_per_m": 190.0, "warp_octaves": 3},
+    {"kind": "veins", "axis": "y", "material_id": 6, "offset_m": 0.0105, "width_m": 0.00045, "warp_amplitude_m": 0.0018, "warp_frequency_per_m": 150.0, "warp_octaves": 4},
+    {"kind": "veins", "axis": "y", "material_id": 6, "offset_m": 0.0185, "width_m": 0.00075, "warp_amplitude_m": 0.0022, "warp_frequency_per_m": 130.0, "warp_octaves": 4},
+    {"kind": "veins", "axis": "y", "material_id": 6, "offset_m": 0.0260, "width_m": 0.00030, "warp_amplitude_m": 0.0015, "warp_frequency_per_m": 210.0, "warp_octaves": 3},
+    {"kind": "pores", "field": "fbm", "material_id": 7, "frequency_per_m": 2200.0, "octaves": 2, "threshold": 0.374, "open_radius_cells": 0, "connectivity": 6}
+  ],
+  "constraints": [
+    {"kind": "volume-fraction", "material_id": 7, "min": 0.015, "max": 0.060}
+  ],
+  "mapping": {
+    "configuration_id": "amber-natural-v1-preview",
+    "calibration_status": "provisional-uncalibrated",
+    "materials": [
+      {"name": "amber-host-80", "sigma_a_rgb_per_m": [32.0, 58.0, 115.0], "sigma_s_rgb_per_m": [18.0, 15.0, 12.0], "g": 0.05, "ior": 1.54},
+      {"name": "amber-host-85", "sigma_a_rgb_per_m": [27.0, 49.0, 98.0], "sigma_s_rgb_per_m": [14.0, 12.0, 10.0], "g": 0.05, "ior": 1.54},
+      {"name": "amber-host-90", "sigma_a_rgb_per_m": [22.0, 40.0, 82.0], "sigma_s_rgb_per_m": [10.0, 9.0, 8.0], "g": 0.04, "ior": 1.54},
+      {"name": "amber-host-95", "sigma_a_rgb_per_m": [17.0, 31.0, 66.0], "sigma_s_rgb_per_m": [7.0, 6.0, 5.0], "g": 0.04, "ior": 1.54},
+      {"name": "amber-host-100", "sigma_a_rgb_per_m": [12.0, 23.0, 50.0], "sigma_s_rgb_per_m": [4.0, 4.0, 3.0], "g": 0.03, "ior": 1.54},
+      {"name": "amber-dark-vein", "sigma_a_rgb_per_m": [85.0, 165.0, 330.0], "sigma_s_rgb_per_m": [28.0, 24.0, 20.0], "g": 0.02, "ior": 1.56},
+      {"name": "amber-clear-bubble", "sigma_a_rgb_per_m": [6.0, 11.0, 24.0], "sigma_s_rgb_per_m": [1.5, 1.2, 1.0], "g": 0.01, "ior": 1.50}
+    ]
+  }
+}

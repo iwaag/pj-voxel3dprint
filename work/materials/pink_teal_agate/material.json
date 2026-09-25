@@ -1,0 +1,20 @@
+{
+  "material_id": "pink_teal_agate",
+  "display_name": "ピンク・青緑瑪瑙 / Pink Teal Agate",
+  "aliases": ["agate", "pink agate", "pink teal agate", "瑪瑙", "アゲート"],
+  "revision_policy": "overwrite-current-unless-new-variant-is-explicitly-requested",
+  "status": "saved",
+  "saved_as_of": "2026-09-03",
+  "sources": [
+    "work/agate/generate_pink_agate.py",
+    ".local/pink-agate-v3/source"
+  ],
+  "generated_variants": [
+    ".local/pink-agate-v3/viewer/pink-teal-agate-material-v3.zarr",
+    ".local/pink-agate-v3/viewer/pink-teal-agate-optical-v3.zarr"
+  ],
+  "output_prefixes": [
+    "outputs/pink-teal-agate-",
+    "outputs/pink-agate-"
+  ]
+}

@@ -1,0 +1,26 @@
+{
+  "material_id": "floating_fur",
+  "display_name": "透明板内の浮遊ファー / Floating Fur in Clear Slab",
+  "aliases": ["fur", "floating fur", "cat fur", "ファー", "毛束"],
+  "revision_policy": "overwrite-current-unless-new-variant-is-explicitly-requested",
+  "status": "saved",
+  "saved_as_of": "2026-09-03",
+  "sources": [
+    "work/fur/generate_floating_fur.py",
+    ".local/floating-fur/source"
+  ],
+  "generated_variants": [
+    ".local/floating-fur/viewer/floating-fur-optical-v1.zarr"
+  ],
+  "print_exports": [
+    "C:/Users/ono/OneDrive/デスクトップ/FREE-D/個人３D/Voxel print/初期プリントテスト/floating_fur"
+  ],
+  "design_intent": {
+    "slab_size_mm_xyz": [60.0, 30.0, 5.0],
+    "hair_tip_diameter_mm": 0.06,
+    "hair_root_diameter_mm_range": [0.10, 0.16],
+    "black_strand_fraction": 0.15,
+    "dominant_flow_axis": "+X",
+    "clearance_from_surface_mm": 0.6
+  }
+}

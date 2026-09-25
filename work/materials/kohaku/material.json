@@ -1,0 +1,24 @@
+{
+  "material_id": "kohaku",
+  "display_name": "琥珀 / Kohaku",
+  "aliases": ["kohaku", "amber", "kohaku_tree"],
+  "revision_policy": "overwrite-current-unless-new-variant-is-explicitly-requested",
+  "status": "preserved",
+  "sources": [
+    "work/amber",
+    ".local/amber-branching",
+    ".local/amber-previews"
+  ],
+  "generated_variants": [
+    ".local/amber-branching/viewer/amber-branching-optical.zarr",
+    ".local/amber-previews/viewer/amber-4102-optical.zarr",
+    ".local/amber-branching/print-preview/amber-print-optical.zarr",
+    ".local/amber-branching/print-preview-v2/amber-print-black80-optical.zarr"
+  ],
+  "output_prefixes": [
+    "outputs/kohaku_tree-",
+    "outputs/amber-"
+  ],
+  "notes": "Legacy amber assets are classified as kohaku without moving them, preserving viewer and session references."
+}
+

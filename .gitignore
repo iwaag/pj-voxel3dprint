@@ -1,1 +1,14 @@
 .local/
+
+# Reproducible local caches and generated Stratasys slice stacks.
+**/__pycache__/
+work/uv-cache/
+work/fur/floating_fur_native_labels.dat
+work/*/*_voxelprint_staging/
+
+# Generated renders and voxel volumes are never tracked. Archived copies of what
+# was actually printed live under .local/real_print/<case>/data/.
+outputs/
+work/amber/kohaku_tree_build/*.npy
+work/amber/kohaku_tree_build/*.voxels.json
+work/amber/seed-*/
