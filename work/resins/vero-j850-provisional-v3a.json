@@ -1,0 +1,161 @@
+{
+  "format": "pj-voxel3dprint.resin-library",
+  "format_version": "1.0.0",
+  "library_id": "vero-j850-provisional-v3a",
+  "calibration_status": "provisional-uncalibrated",
+  "printer": "Stratasys J850, High Quality (14 um), glossy; clear slot = Vero UltraClear",
+  "optical_basis": "linear-srgb-effective-v1 (R, G, B), coefficients in 1/m",
+  "phase_function": "g = 0 with reduced scattering sigma_s' = sigma_s (1 - g); equivalent in the diffusive regime and cheaper for volpath than a forward-peaked phase",
+  "ior_note": "One IOR for every resin. Cured Vero resins differ by ~0.01, which reflects < 0.01 % at normal incidence, but every IOR step becomes an internal dielectric surface in prepare_mitsuba_scene (path depth, noise, dark rims). A single IOR removes all internal interfaces.",
+  "source": "Fitted (p2 step 4, work/resins/km_fit.py) to three-photo means of batch1 regions and 5 mm tiles, KM column surrogate corrected per region by camera-matched Mitsuba renders of vero-j850-provisional-v2. Bounds x/\u00f75 around vero-j850-provisional-v2. Not calibration data.",
+  "resins": [
+    {
+      "id": "white",
+      "names": [
+        "VeroPureWht",
+        "VeroPureWhite",
+        "VeroWhite",
+        "white"
+      ],
+      "sigma_a_rgb_per_m": [
+        7.9,
+        10.89,
+        13.82
+      ],
+      "sigma_s_rgb_per_m": [
+        7755.06,
+        10129.6,
+        14403.01
+      ],
+      "g": 0.0,
+      "ior": 1.52,
+      "note": "slightly more blue scattering (Rayleigh-like tint of thin white-in-clear); neutral absorption"
+    },
+    {
+      "id": "black",
+      "names": [
+        "VeroBlack_or_VeroFlexBK",
+        "VeroBlack",
+        "black"
+      ],
+      "sigma_a_rgb_per_m": [
+        18037.06,
+        14612.6,
+        19562.66
+      ],
+      "sigma_s_rgb_per_m": [
+        189.82,
+        207.36,
+        334.23
+      ],
+      "g": 0.0,
+      "ior": 1.52,
+      "note": "effectively opaque; 12000 keeps agate darks, amber chroma is limited mostly by yellow"
+    },
+    {
+      "id": "clear",
+      "names": [
+        "VeroClear_or_VeroFlexCLR",
+        "VeroUltraClear",
+        "VeroUltraClr",
+        "VeroClear",
+        "clear"
+      ],
+      "sigma_a_rgb_per_m": [
+        6.36,
+        9.73,
+        10.26
+      ],
+      "sigma_s_rgb_per_m": [
+        5.21,
+        6.27,
+        7.51
+      ],
+      "g": 0.0,
+      "ior": 1.52,
+      "note": "Vero UltraClear (not VeroClear): barely tinted; fur margin/hair were too yellow at 5/8/15"
+    },
+    {
+      "id": "cyan",
+      "names": [
+        "VeroCyan_or_VeroFlexCY",
+        "VeroCyan",
+        "cyan"
+      ],
+      "sigma_a_rgb_per_m": [
+        9308.79,
+        1419.74,
+        180.77
+      ],
+      "sigma_s_rgb_per_m": [
+        345.58,
+        866.68,
+        1059.18
+      ],
+      "g": 0.0,
+      "ior": 1.52,
+      "note": "absorbs red strongly; deep teals"
+    },
+    {
+      "id": "magenta",
+      "names": [
+        "VeroMgnt_or_VeroFlexMGT",
+        "VeroMagenta",
+        "VeroMgnt",
+        "magenta"
+      ],
+      "sigma_a_rgb_per_m": [
+        30.99,
+        2169.56,
+        915.23
+      ],
+      "sigma_s_rgb_per_m": [
+        3083.31,
+        927.5,
+        1111.32
+      ],
+      "g": 0.0,
+      "ior": 1.52,
+      "note": "red-leaning magenta: absorbs green and much of blue, so 27-38 % magenta + white reads salmon/coral, not pink-violet"
+    },
+    {
+      "id": "yellow",
+      "names": [
+        "VeroYellow_or_VeroFlexYL",
+        "VeroYellow",
+        "yellow"
+      ],
+      "sigma_a_rgb_per_m": [
+        20.36,
+        1036.06,
+        14367.79
+      ],
+      "sigma_s_rgb_per_m": [
+        6000.0,
+        2778.69,
+        1676.46
+      ],
+      "g": 0.0,
+      "ior": 1.52,
+      "note": "strong blue absorption, some green: amber host reads orange-olive"
+    }
+  ],
+  "changelog": [
+    "2026-09-25 v2a: plan.md prior table, mid-range sigma_s (white 10000, CMY 1000), single IOR 1.52.",
+    "2026-09-26 v2 frozen (p1 step 7, iterations v2b..v2e): white sa 20/20/25 -> 15/15/15, ss 10000 -> 9500/10000/11000; black sa 15000 -> 12000; clear sa 5/8/15 -> 2/3/4; cyan sa 4000/800/250 -> 8000/900/200; magenta sa 700/4000/1200 -> 150/2200/1800; yellow sa 250/500/5000 -> 60/600/12000; CMY ss 1000 -> 1200. Sum of dE76 over 6 photo regions: 58 (v2a) -> 42."
+  ],
+  "fit": {
+    "from": "vero-j850-provisional-v2",
+    "regions": ".local/real_print/batch1/renders-p2/step3/regions-v3-v2.json",
+    "prior": 3.0,
+    "tile_weight": 0.5,
+    "fur_weight": 0.5,
+    "cost": 73.99525881731114,
+    "nfev": 26,
+    "status": 3,
+    "named_region_dE_sum_before_after": [
+      163.1,
+      91.5
+    ]
+  }
+}

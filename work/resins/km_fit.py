@@ -120,20 +120,29 @@ def main() -> None:
     parser.add_argument("--prior", type=float, default=0.3)
     parser.add_argument("--tiles", type=float, default=0.5)
     parser.add_argument("--fur", type=float, default=0.5)
+    parser.add_argument(
+        "--prior-library",
+        type=Path,
+        help="centre of the prior pull and the x/÷5 bounds (default: LIBRARY). For a surrogate-"
+        "correction iteration, LIBRARY is the previous fit (start + renders) and this stays at v2.",
+    )
     args = parser.parse_args()
 
     doc, sa0, ss0 = km.load_library(args.library)
+    _, sap, ssp = km.load_library(args.prior_library or args.library)
     data = json.loads(args.regions.read_text())
     prob = Problem(data, json.loads(args.regions_mm.read_text()), sa0, ss0, args.tiles, args.fur)
     x0 = np.r_[np.log(sa0).ravel(), np.log(ss0).ravel()]
+    xp = np.r_[np.log(sap).ravel(), np.log(ssp).ravel()]
     ln5 = np.log(5.0)
 
     def residuals(x: np.ndarray) -> np.ndarray:
         sa, ss = unpack(x)
         r = prob.residual_lab(sa, ss) * prob.sqrt_w[:, None]
-        return np.r_[r.ravel(), np.sqrt(args.prior) * (x - x0) / ln5]
+        return np.r_[r.ravel(), np.sqrt(args.prior) * (x - xp) / ln5]
 
-    res = least_squares(residuals, x0, bounds=(x0 - ln5, x0 + ln5), x_scale=1.0, diff_step=1e-3, max_nfev=400)
+    lo, hi = xp - ln5, xp + ln5
+    res = least_squares(residuals, np.clip(x0, lo + 1e-9, hi - 1e-9), bounds=(lo, hi), x_scale=1.0, diff_step=1e-3, max_nfev=400)
     sa, ss = unpack(res.x)
 
     before = np.linalg.norm(prob.residual_lab(sa0, ss0), axis=1)
@@ -143,7 +152,8 @@ def main() -> None:
     out["source"] = (
         "Fitted (p2 step 4, work/resins/km_fit.py) to three-photo means of batch1 regions and 5 mm tiles, "
         "KM column surrogate corrected per region by camera-matched Mitsuba renders of "
-        f"{doc['library_id']}. Bounds x/÷5 around {doc['library_id']}. Not calibration data."
+        f"{doc['library_id']}. Prior and bounds x/÷5 around "
+        f"{json.loads((args.prior_library or args.library).read_text())['library_id']}. Not calibration data."
     )
     out["fit"] = {
         "from": doc["library_id"],
@@ -191,7 +201,7 @@ def main() -> None:
             f"| {rid} | {', '.join(f'{v:.0f}' for v in sa[k])} | {', '.join(f'{v:.2f}' for v in sa[k] / sa0[k])} | "
             f"{', '.join(f'{v:.0f}' for v in ss[k])} | {', '.join(f'{v:.2f}' for v in ss[k] / ss0[k])} |"
         )
-    at_bound = np.isclose(np.abs(res.x - x0), ln5, atol=1e-3)
+    at_bound = np.isclose(np.abs(res.x - xp), ln5, atol=1e-3)
     lines += ["", f"Parameters at a bound: {int(at_bound.sum())} / 36."]
     text = "\n".join(lines) + "\n"
     if args.report:

@@ -7,7 +7,9 @@ Usage (repo root):
 ``--build`` writes one all-ones label volume and, per test material, a
 one-material optical mapping (the recipe mixed with ``LIBRARY`` exactly as
 ``recipes_to_mapping.py`` does) and its optical zarr. ``--render`` renders each
-slab on the ``stage-print-photo`` preset (320², no denoise). Without flags it
+slab on the ``stage-print-photo`` preset (320², no denoise) at ``--depth``
+(default 256, Russian roulette off). A homogeneous white slab loses ~40 % of
+its reflectance at the preset's depth 32 (p2 report4). Without flags it
 only measures what exists. The measurement is the white-normalised mean of the
 central 20 x 10 mm of the top face (``region_table.measure``), compared with
 ``km_surrogate.material_rgb`` of the same recipe. Report: ``OUT_DIR/km-validate.md``.
@@ -84,10 +86,16 @@ def build(library: dict, out: Path) -> None:
         print("built", label)
 
 
-def render(out: Path, spp: int) -> None:
+def render(out: Path, spp: int, depth: int) -> None:
     for label, _, _ in TESTS:
         subprocess.run(
-            [ROOT / "work/compare/render_stage.sh", out / f"{slug(label)}-optical.zarr", out / f"{slug(label)}.png", "--width", "320", "--height", "320", "--spp", str(spp)],
+            [
+                ROOT / "work/compare/render_stage.sh",
+                out / f"{slug(label)}-optical.zarr",
+                out / f"{slug(label)}.png",
+                "--width", "320", "--height", "320", "--spp", str(spp),
+                "--max-depth", str(depth), "--rr-depth", str(depth),
+            ],
             check=True,
             cwd=ROOT,
         )
@@ -126,11 +134,12 @@ def main() -> None:
     parser.add_argument("--build", action="store_true")
     parser.add_argument("--render", action="store_true")
     parser.add_argument("--spp", type=int, default=128)
+    parser.add_argument("--depth", type=int, default=256, help="max_depth = rr_depth (homogeneous white slabs need >= 256)")
     args = parser.parse_args()
     if args.build:
         build(json.loads(args.library.read_text()), args.out_dir)
     if args.render:
-        render(args.out_dir, args.spp)
+        render(args.out_dir, args.spp, args.depth)
     lines = report(args.library, args.out_dir)
     (args.out_dir / "km-validate.md").write_text("\n".join(lines) + "\n")
     print("\n".join(lines))
