@@ -6,9 +6,9 @@
    "label": "case1 agate",
    "note": "render: semantic\n(weak recipe mix)",
    "photos": [
-    ".local/real_print/batch1/case1/result/Unknown.jpg",
-    ".local/real_print/batch1/case1/result/Unknown-2.jpg",
-    ".local/real_print/batch1/case1/result/Unknown-3.jpg"
+    "casestudy/real_print/batch1/case1/result/Unknown.jpg",
+    "casestudy/real_print/batch1/case1/result/Unknown-2.jpg",
+    "casestudy/real_print/batch1/case1/result/Unknown-3.jpg"
    ],
    "renders": [
     ".local/real_print/batch1/case1/data/outputs/pink-teal-agate-v3-saturated-current-camera-HQ-02.png",
@@ -26,9 +26,9 @@
    "label": "case2 amber",
    "note": "renders: semantic,\nprint-aware v1 (black80)",
    "photos": [
-    ".local/real_print/batch1/case2/result/Unknown-4.jpg",
-    ".local/real_print/batch1/case2/result/Unknown-5.jpg",
-    ".local/real_print/batch1/case2/result/Unknown-6.jpg"
+    "casestudy/real_print/batch1/case2/result/Unknown-4.jpg",
+    "casestudy/real_print/batch1/case2/result/Unknown-5.jpg",
+    "casestudy/real_print/batch1/case2/result/Unknown-6.jpg"
    ],
    "renders": [
     ".local/real_print/batch1/case2/data/outputs/amber-branching-current-frame-hq.png",
@@ -51,9 +51,9 @@
    "label": "case3 fur",
    "note": "render: semantic\n(weak recipe mix)",
    "photos": [
-    ".local/real_print/batch1/case3/result/Unknown-7.jpg",
-    ".local/real_print/batch1/case3/result/Unknown-8.jpg",
-    ".local/real_print/batch1/case3/result/Unknown-9.jpg"
+    "casestudy/real_print/batch1/case3/result/Unknown-7.jpg",
+    "casestudy/real_print/batch1/case3/result/Unknown-8.jpg",
+    "casestudy/real_print/batch1/case3/result/Unknown-9.jpg"
    ],
    "renders": [
     ".local/real_print/batch1/case3/data/outputs/floating-fur-current-camera-HQ-depth64.png",

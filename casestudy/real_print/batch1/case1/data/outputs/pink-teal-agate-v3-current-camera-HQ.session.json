@@ -1,0 +1,89 @@
+{
+  "format": "vdbmat.viewer-session",
+  "format_version": "1.1.0",
+  "input": {
+    "kind": "optical-zarr",
+    "path": "viewer/pink-teal-agate-optical-v3.zarr",
+    "optical_sha256": "sha256:1af0a1526693da01abf0b2508c1c293c0ab999fa428d6bf03213ee74db508f61"
+  },
+  "stage": {
+    "effective": {
+      "format": "vdbmat.stage-config",
+      "format_version": "1.2.0",
+      "backdrop": {
+        "enabled": true,
+        "pattern": "solid",
+        "distance_factor": 2.29,
+        "scale_factor": 2.64,
+        "checker_scale": 8,
+        "color0": [
+          0.02,
+          0.09,
+          0.11
+        ],
+        "color1": [
+          0.85,
+          0.5,
+          0.12
+        ]
+      },
+      "floor": {
+        "enabled": true,
+        "pattern": "solid",
+        "drop_factor": 0.1,
+        "scale_factor": 6.0,
+        "checker_scale": 8,
+        "color0": [
+          0.25,
+          0.25,
+          0.28
+        ],
+        "color1": [
+          0.82,
+          0.76,
+          0.14
+        ]
+      },
+      "key_light": {
+        "enabled": true,
+        "direction": [
+          -1.0,
+          -1.5,
+          2.1
+        ],
+        "distance_factor": 3.5,
+        "scale_factor": 1.4,
+        "radiance": [
+          12.0,
+          11.0,
+          9.0
+        ]
+      },
+      "camera": {
+        "azimuth_deg": -53.95,
+        "elevation_deg": 67.48,
+        "distance_factor": 1.79,
+        "fov_deg": 34.14
+      },
+      "backlight": {
+        "radiance": [
+          8.0,
+          8.0,
+          8.0
+        ]
+      }
+    },
+    "effective_digest": "sha256:0fa787716f20b63ed8ed83a95731b2d43b64596917a6b9fda8dbef9ced84d66f"
+  },
+  "render": {
+    "width": 512,
+    "height": 1024,
+    "spp": 128,
+    "max_depth": 8,
+    "denoise": true
+  },
+  "mitsuba": {
+    "variant": "cuda_ad_rgb",
+    "seed": 20260628
+  }
+}

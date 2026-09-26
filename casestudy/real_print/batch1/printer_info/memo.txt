@@ -1,0 +1,2 @@
+プリンタはJ850を使用
+ClearはVeroClearじゃなくてVero Ultra clearを使用

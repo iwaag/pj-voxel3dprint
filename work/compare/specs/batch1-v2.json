@@ -7,7 +7,7 @@
    "note": "grey box: white patch\nred: top face mean\nblue: salmon/pink band\nyellow: dark teal",
    "photos": [
     {
-     "path": ".local/real_print/batch1/case1/result/Unknown-2.jpg",
+     "path": "casestudy/real_print/batch1/case1/result/Unknown-2.jpg",
      "caption": "photo Unknown-2",
      "white": [
       0.27,
@@ -36,8 +36,8 @@
       ]
      }
     },
-    ".local/real_print/batch1/case1/result/Unknown.jpg",
-    ".local/real_print/batch1/case1/result/Unknown-3.jpg"
+    "casestudy/real_print/batch1/case1/result/Unknown.jpg",
+    "casestudy/real_print/batch1/case1/result/Unknown-3.jpg"
    ],
    "renders": [
     {
@@ -137,7 +137,7 @@
    "note": "grey box: white patch\nred: top face mean",
    "photos": [
     {
-     "path": ".local/real_print/batch1/case2/result/Unknown-5.jpg",
+     "path": "casestudy/real_print/batch1/case2/result/Unknown-5.jpg",
      "caption": "photo Unknown-5",
      "white": [
       0.75,
@@ -154,8 +154,8 @@
       ]
      }
     },
-    ".local/real_print/batch1/case2/result/Unknown-4.jpg",
-    ".local/real_print/batch1/case2/result/Unknown-6.jpg"
+    "casestudy/real_print/batch1/case2/result/Unknown-4.jpg",
+    "casestudy/real_print/batch1/case2/result/Unknown-6.jpg"
    ],
    "renders": [
     {
@@ -219,7 +219,7 @@
    "note": "grey box: white patch\nred: hair field mean\nblue: clear margin",
    "photos": [
     {
-     "path": ".local/real_print/batch1/case3/result/Unknown-9.jpg",
+     "path": "casestudy/real_print/batch1/case3/result/Unknown-9.jpg",
      "caption": "photo Unknown-9",
      "white": [
       0.78,
@@ -242,8 +242,8 @@
       ]
      }
     },
-    ".local/real_print/batch1/case3/result/Unknown-7.jpg",
-    ".local/real_print/batch1/case3/result/Unknown-8.jpg"
+    "casestudy/real_print/batch1/case3/result/Unknown-7.jpg",
+    "casestudy/real_print/batch1/case3/result/Unknown-8.jpg"
    ],
    "renders": [
     {

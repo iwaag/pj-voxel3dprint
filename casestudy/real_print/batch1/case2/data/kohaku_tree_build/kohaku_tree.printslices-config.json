@@ -1,0 +1,52 @@
+{
+  "dpi_x": 600.0,
+  "dpi_y": 300.0,
+  "layer_thickness_m": 1.4e-05,
+  "max_materials": 6,
+  "palette": {
+    "1": [
+      238,
+      203,
+      132
+    ],
+    "2": [
+      224,
+      174,
+      88
+    ],
+    "3": [
+      205,
+      143,
+      56
+    ],
+    "4": [
+      252,
+      230,
+      178
+    ],
+    "5": [
+      139,
+      78,
+      31
+    ],
+    "6": [
+      82,
+      40,
+      20
+    ]
+  },
+  "background_rgb": [
+    0,
+    0,
+    0
+  ],
+  "printer_x_axis": "x",
+  "printer_y_axis": "y",
+  "flip_x": false,
+  "flip_y": false,
+  "flip_z": false,
+  "name_prefix": "slice_",
+  "index_start": 0,
+  "min_slices": 30,
+  "max_total_pixels": 4000000000
+}

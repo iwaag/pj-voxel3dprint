@@ -9,9 +9,10 @@ Each material has one stable slug and one catalog directory under
   `work/materials/<slug>/material.json` so existing viewer sessions are not broken.
 - User-facing renders and print exports remain under `outputs/` and include the
   material slug in the filename.
-- `outputs/` is untracked. Renders and print exports for a physically printed
-  sample are archived under `.local/real_print/<case>/data/` alongside photos of
-  the result in `.local/real_print/<case>/result/`.
+- `outputs/` is untracked. For a physically printed sample, the photos
+  (`<case>/result/`), render sessions, reports and final figures are tracked
+  under `casestudy/real_print/<batch>/`; the full set of intermediate renders
+  and print exports stays untracked under `.local/real_print/<batch>/`.
 - Historical assets are not deleted unless explicitly requested.
 
 Current material slugs:

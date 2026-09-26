@@ -146,7 +146,7 @@
   ],
   "fit": {
     "from": "vero-j850-provisional-v3a",
-    "regions": ".local/real_print/batch1/renders-p2/step4/regions-v3-v3a.json",
+    "regions": "casestudy/real_print/batch1/renders-p2/step4/regions-v3-v3a.json",
     "prior": 3.0,
     "tile_weight": 0.5,
     "fur_weight": 0.5,

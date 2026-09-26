@@ -5,7 +5,7 @@
   "agate": {
    "images": [
     {
-     "path": ".local/real_print/batch1/case1/result/Unknown-2.jpg",
+     "path": "casestudy/real_print/batch1/case1/result/Unknown-2.jpg",
      "kind": "photo",
      "face": "top",
      "caption": "Unknown-2",
@@ -35,7 +35,7 @@
      ]
     },
     {
-     "path": ".local/real_print/batch1/case1/result/Unknown.jpg",
+     "path": "casestudy/real_print/batch1/case1/result/Unknown.jpg",
      "kind": "photo",
      "face": "top",
      "caption": "Unknown",
@@ -65,7 +65,7 @@
      ]
     },
     {
-     "path": ".local/real_print/batch1/case1/result/Unknown-3.jpg",
+     "path": "casestudy/real_print/batch1/case1/result/Unknown-3.jpg",
      "kind": "photo",
      "face": "top",
      "caption": "Unknown-3",
@@ -117,7 +117,7 @@
   "amber": {
    "images": [
     {
-     "path": ".local/real_print/batch1/case2/result/Unknown-5.jpg",
+     "path": "casestudy/real_print/batch1/case2/result/Unknown-5.jpg",
      "kind": "photo",
      "face": "bottom",
      "caption": "Unknown-5",
@@ -147,7 +147,7 @@
      ]
     },
     {
-     "path": ".local/real_print/batch1/case2/result/Unknown-4.jpg",
+     "path": "casestudy/real_print/batch1/case2/result/Unknown-4.jpg",
      "kind": "photo",
      "face": "bottom",
      "caption": "Unknown-4",
@@ -177,7 +177,7 @@
      ]
     },
     {
-     "path": ".local/real_print/batch1/case2/result/Unknown-6.jpg",
+     "path": "casestudy/real_print/batch1/case2/result/Unknown-6.jpg",
      "kind": "photo",
      "face": "bottom",
      "caption": "Unknown-6",
@@ -229,7 +229,7 @@
   "fur": {
    "images": [
     {
-     "path": ".local/real_print/batch1/case3/result/Unknown-9.jpg",
+     "path": "casestudy/real_print/batch1/case3/result/Unknown-9.jpg",
      "kind": "photo",
      "face": "top",
      "caption": "Unknown-9",
@@ -259,7 +259,7 @@
      ]
     },
     {
-     "path": ".local/real_print/batch1/case3/result/Unknown-8.jpg",
+     "path": "casestudy/real_print/batch1/case3/result/Unknown-8.jpg",
      "kind": "photo",
      "face": "top",
      "caption": "Unknown-8",
@@ -289,7 +289,7 @@
      ]
     },
     {
-     "path": ".local/real_print/batch1/case3/result/Unknown-7.jpg",
+     "path": "casestudy/real_print/batch1/case3/result/Unknown-7.jpg",
      "kind": "photo",
      "face": "top",
      "caption": "Unknown-7",

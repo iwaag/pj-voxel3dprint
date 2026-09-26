@@ -6,7 +6,7 @@
    "label": "case1 agate",
    "note": "grey box: white patch\nred: top face mean\nblue: salmon/pink band\nyellow: dark teal",
    "photos": [
-    {"path": ".local/real_print/batch1/case1/result/Unknown-2.jpg", "caption": "photo Unknown-2",
+    {"path": "casestudy/real_print/batch1/case1/result/Unknown-2.jpg", "caption": "photo Unknown-2",
      "white": [0.27, 0.45, 0.31, 0.65],
      "regions": {"top face": [0.38, 0.35, 0.62, 0.78], "pink band": [0.357, 0.572, 0.372, 0.592], "dark teal": [0.565, 0.425, 0.595, 0.45]}}
    ],
@@ -23,7 +23,7 @@
    "label": "case2 amber",
    "note": "grey box: white patch\nred: top face mean",
    "photos": [
-    {"path": ".local/real_print/batch1/case2/result/Unknown-5.jpg", "caption": "photo Unknown-5",
+    {"path": "casestudy/real_print/batch1/case2/result/Unknown-5.jpg", "caption": "photo Unknown-5",
      "white": [0.75, 0.2, 0.9, 0.35],
      "regions": {"top face": [0.38, 0.4, 0.55, 0.5]}}
    ],
@@ -38,7 +38,7 @@
    "label": "case3 fur",
    "note": "grey box: white patch\nred: hair field mean\nblue: clear margin",
    "photos": [
-    {"path": ".local/real_print/batch1/case3/result/Unknown-9.jpg", "caption": "photo Unknown-9",
+    {"path": "casestudy/real_print/batch1/case3/result/Unknown-9.jpg", "caption": "photo Unknown-9",
      "white": [0.78, 0.3, 0.9, 0.6],
      "regions": {"hair field": [0.40, 0.30, 0.58, 0.62], "clear margin": [0.652, 0.33, 0.668, 0.47]}}
    ],

@@ -1,0 +1,74 @@
+{
+ "format": "vdbmat.stage-config",
+ "format_version": "1.4.0",
+ "render": {
+  "width": 512,
+  "height": 512,
+  "spp": 128,
+  "max_depth": 32,
+  "rr_depth": 32,
+  "denoise": false
+ },
+ "backdrop": {
+  "enabled": false
+ },
+ "floor": {
+  "enabled": true,
+  "pattern": "solid",
+  "drop_factor": 0.005,
+  "scale_factor": 8.0,
+  "color0": [
+   0.8,
+   0.8,
+   0.8
+  ]
+ },
+ "key_light": {
+  "enabled": false
+ },
+ "ambient": {
+  "enabled": true,
+  "radiance": [
+   0.1,
+   0.1,
+   0.1
+  ],
+  "cap_radiance": [
+   2.4,
+   2.4,
+   2.4
+  ],
+  "cap_deg": 30.0,
+  "cap_softness_deg": 15.0,
+  "cap_tilt_deg": 30.0,
+  "cap_azimuth_deg": -27.2
+ },
+ "finish": {
+  "exterior_roughness": 0.0
+ },
+ "camera": {
+  "fov_deg": 29.7697,
+  "position_m": [
+   0.137455,
+   -0.0402264,
+   0.1771731
+  ],
+  "target_m": [
+   0.0218781,
+   0.0098049,
+   0.0064766
+  ],
+  "up": [
+   -0.3293524,
+   0.8223191,
+   0.464024
+  ]
+ },
+ "backlight": {
+  "radiance": [
+   0.1,
+   0.1,
+   0.1
+  ]
+ }
+}

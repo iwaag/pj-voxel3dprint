@@ -1,0 +1,93 @@
+{
+  "format": "vdbmat.voxels",
+  "format_version": "1.0.0",
+  "asset_type": "material-label",
+  "payload": {
+    "path": "kohaku_tree.material_id.npy",
+    "sha256": "9668be5dbacd01c50364c00ee8dbb517c12622c106a6f6e71ad5ddc3f42d5236",
+    "dtype": "uint16",
+    "dimensions": [
+      "z",
+      "y",
+      "x"
+    ]
+  },
+  "shape_zyx": [
+    25,
+    150,
+    300
+  ],
+  "voxel_size_xyz_m": [
+    0.0002,
+    0.0002,
+    0.0002
+  ],
+  "local_to_world": [
+    [
+      1.0,
+      0.0,
+      0.0,
+      0.0
+    ],
+    [
+      0.0,
+      1.0,
+      0.0,
+      0.0
+    ],
+    [
+      0.0,
+      0.0,
+      1.0,
+      0.0
+    ],
+    [
+      0.0,
+      0.0,
+      0.0,
+      1.0
+    ]
+  ],
+  "materials": [
+    {
+      "material_id": 0,
+      "name": "air",
+      "role": "background"
+    },
+    {
+      "material_id": 1,
+      "name": "amber-host-light",
+      "role": "material"
+    },
+    {
+      "material_id": 2,
+      "name": "amber-host-medium",
+      "role": "material"
+    },
+    {
+      "material_id": 3,
+      "name": "amber-host-deep",
+      "role": "material"
+    },
+    {
+      "material_id": 4,
+      "name": "amber-clear-inclusion",
+      "role": "material"
+    },
+    {
+      "material_id": 5,
+      "name": "amber-vein-warm",
+      "role": "material"
+    },
+    {
+      "material_id": 6,
+      "name": "amber-vein-deep",
+      "role": "material"
+    }
+  ],
+  "source": {
+    "generator": "pj-voxel3dprint.stratasys-material-remap",
+    "generator_version": "1.0.0",
+    "notes": "Six-class print remap of amber-4102-branching-v2; geometry unchanged."
+  }
+}
